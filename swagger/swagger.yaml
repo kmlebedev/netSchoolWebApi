@@ -1,0 +1,768 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "NetSchool",
+    "description" : "The API for the NetSchool irTech project",
+    "version" : "4.30.43656"
+  },
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "paths" : {
+    "/grade/assignment/types" : {
+      "get" : {
+        "tags" : [ "assignment" ],
+        "description" : "returns all assignment types",
+        "operationId" : "assignmentTypes",
+        "responses" : {
+          "200" : {
+            "description" : "All the assignment types",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/assignmentTypes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/student/diary/init" : {
+      "get" : {
+        "tags" : [ "student" ],
+        "description" : "returns strudent diary init data",
+        "operationId" : "studentDiaryInit",
+        "responses" : {
+          "200" : {
+            "description" : "Init data the strudent diary",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/studentDiaryInit"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/student/diary" : {
+      "get" : {
+        "tags" : [ "student" ],
+        "description" : "returns all assignments",
+        "operationId" : "studentDiary",
+        "parameters" : [ {
+          "name" : "studentId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "weekStart",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "weekEnd",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }, {
+          "name" : "withLaAssigns",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "withPastMandatory",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "yearId",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "All the prepareloginform",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Diary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/student/diary/assigns/{assignId}" : {
+      "get" : {
+        "tags" : [ "diary" ],
+        "description" : "returns assign information",
+        "operationId" : "diaryAssignnDetails",
+        "parameters" : [ {
+          "name" : "assignId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "studentId",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Details about assign",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/diaryAssignDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/logindata" : {
+      "get" : {
+        "tags" : [ "login" ],
+        "description" : "returns all login data",
+        "operationId" : "logindata",
+        "responses" : {
+          "200" : {
+            "description" : "All the login data",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LoginData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/prepareloginform" : {
+      "get" : {
+        "tags" : [ "login" ],
+        "description" : "returns all prepareloginform",
+        "operationId" : "prepareloginform",
+        "parameters" : [ {
+          "name" : "cacheVer",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "All the prepareloginform",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PrepareLoginForm"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/prepareemloginform" : {
+      "get" : {
+        "tags" : [ "login" ],
+        "description" : "returns all prepareemloginform",
+        "operationId" : "prepareemloginform",
+        "parameters" : [ {
+          "name" : "cacheVer",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "All the prepareemloginform",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PrepareEmLoginForm"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "diaryAssignDetails" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 5111111
+          },
+          "assignmentName" : {
+            "type" : "string",
+            "example" : "Развитие речи. Сочинение-рассуждение по рассказу «Коллекционная вещь» Тибора Фишера"
+          },
+          "activityName" : {
+            "type" : "string",
+            "example" : "nil"
+          },
+          "problemName" : {
+            "type" : "string",
+            "example" : "nil"
+          },
+          "subjectGroup" : {
+            "$ref" : "#/components/schemas/diaryAssignDetails_subjectGroup"
+          },
+          "teacher" : {
+            "$ref" : "#/components/schemas/diaryAssignDetails_teacher"
+          },
+          "productId" : {
+            "type" : "integer"
+          },
+          "isDeleted" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "weight" : {
+            "type" : "integer",
+            "example" : 10
+          },
+          "date" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "Задание по рядам - рассуждение по картине. Смотрите прикреплённый файл"
+          },
+          "attachments" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/diaryAssignDetails_attachments"
+            }
+          },
+          "contentElements" : {
+            "type" : "array",
+            "example" : "nil",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "codeContentElements" : {
+            "type" : "array",
+            "example" : "nil",
+            "items" : {
+              "type" : "object"
+            }
+          }
+        }
+      },
+      "studentDiaryInit" : {
+        "type" : "object",
+        "properties" : {
+          "students" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/studentDiaryInit_students"
+            }
+          },
+          "currentStudentId" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "weekStart" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "yaClass" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "yaClassAuthUrl" : {
+            "type" : "string",
+            "example" : "http://www.yaklass.ru/Account/NetSchoolGate?server=http%3a%2f%2fnetcity.ru%2f&ns_token=999999999999&ts=1662877853&nn=417563999&sg=7-JyisFQvEp_ayPSXfp_PpfCd0o1"
+          },
+          "newDiskToken" : {
+            "type" : "string",
+            "example" : ""
+          },
+          "newDiskWasRequest" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "ttsuRl" : {
+            "type" : "string",
+            "example" : "http://NETCITY:80/"
+          },
+          "externalUrl" : {
+            "type" : "string",
+            "example" : "http://netcity.ru/"
+          },
+          "weight" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "maxMark" : {
+            "type" : "integer",
+            "example" : 5
+          },
+          "withLaAssigns" : {
+            "type" : "boolean",
+            "example" : true
+          }
+        }
+      },
+      "assignmentTypes" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/assignmentTypes_inner"
+        }
+      },
+      "Mark" : {
+        "type" : "object",
+        "properties" : {
+          "assignmentId" : {
+            "type" : "integer"
+          },
+          "studentId" : {
+            "type" : "integer"
+          },
+          "mark" : {
+            "type" : "integer"
+          },
+          "dutyMark" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "Attachment" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "originalFileName" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          }
+        }
+      },
+      "DiaryAssignment" : {
+        "type" : "object",
+        "properties" : {
+          "mark" : {
+            "$ref" : "#/components/schemas/Mark"
+          },
+          "attachments" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Attachment"
+            }
+          },
+          "id" : {
+            "type" : "integer"
+          },
+          "typeId" : {
+            "type" : "integer"
+          },
+          "assignmentName" : {
+            "type" : "string"
+          },
+          "weight" : {
+            "type" : "integer"
+          },
+          "dueDate" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "classMeetingId" : {
+            "type" : "integer"
+          },
+          "existsTestPlan" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "DiaryLesson" : {
+        "type" : "object",
+        "properties" : {
+          "classmeetingId" : {
+            "type" : "string"
+          },
+          "day" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "number" : {
+            "type" : "integer"
+          },
+          "room" : {
+            "type" : "string"
+          },
+          "startTime" : {
+            "type" : "string"
+          },
+          "endTime" : {
+            "type" : "string"
+          },
+          "subjectName" : {
+            "type" : "string"
+          },
+          "assignments" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DiaryAssignment"
+            }
+          }
+        }
+      },
+      "DiaryWeekDays" : {
+        "type" : "object",
+        "properties" : {
+          "date" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "lessons" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DiaryLesson"
+            }
+          }
+        }
+      },
+      "Diary" : {
+        "type" : "object",
+        "properties" : {
+          "weekStart" : {
+            "type" : "string"
+          },
+          "weekEnd" : {
+            "type" : "string"
+          },
+          "weekDays" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DiaryWeekDays"
+            }
+          },
+          "termName" : {
+            "type" : "string"
+          },
+          "className" : {
+            "type" : "string"
+          }
+        }
+      },
+      "PrepareEmLoginForm" : {
+        "type" : "object",
+        "properties" : {
+          "countries" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "states" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "hlevels" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "ems" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "em_cid" : {
+            "type" : "integer"
+          },
+          "em_sid" : {
+            "type" : "integer"
+          },
+          "hlevel" : {
+            "type" : "integer"
+          },
+          "emId" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "PrepareLoginForm" : {
+        "type" : "object",
+        "properties" : {
+          "countries" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "states" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "provinces" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "cities" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "funcs" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "schools" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+            }
+          },
+          "cid" : {
+            "type" : "integer"
+          },
+          "sid" : {
+            "type" : "integer"
+          },
+          "pid" : {
+            "type" : "integer"
+          },
+          "cn" : {
+            "type" : "integer"
+          },
+          "sft" : {
+            "type" : "integer"
+          },
+          "scid" : {
+            "type" : "integer"
+          },
+          "hlevels" : {
+            "type" : "object"
+          },
+          "ems" : {
+            "type" : "object"
+          }
+        }
+      },
+      "LoginData" : {
+        "type" : "object",
+        "properties" : {
+          "productName" : {
+            "type" : "string"
+          },
+          "version" : {
+            "type" : "string"
+          },
+          "esiaLoginPage" : {
+            "type" : "string"
+          },
+          "cacheVer" : {
+            "type" : "string"
+          },
+          "schoolLogin" : {
+            "type" : "boolean"
+          },
+          "emLogin" : {
+            "type" : "boolean"
+          },
+          "windowsAuth" : {
+            "type" : "boolean"
+          },
+          "enableSms" : {
+            "type" : "boolean"
+          },
+          "esiaMainAuth" : {
+            "type" : "boolean"
+          },
+          "esiaButton" : {
+            "type" : "boolean"
+          },
+          "signatureLogin" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "diaryAssignDetails_subjectGroup" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 171111
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "5ж/Русский язык"
+          }
+        },
+        "example" : null
+      },
+      "diaryAssignDetails_teacher" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 71111
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Иванова Марья Ивановна"
+          }
+        },
+        "example" : null
+      },
+      "diaryAssignDetails_attachments" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1111
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Дз 5К.doc"
+          },
+          "originalFileName" : {
+            "type" : "string",
+            "example" : "Дз 5К.doc"
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "nil"
+          }
+        },
+        "example" : null
+      },
+      "studentDiaryInit_students" : {
+        "type" : "object",
+        "properties" : {
+          "studentId" : {
+            "type" : "integer",
+            "example" : 1111
+          },
+          "nickName" : {
+            "type" : "string",
+            "example" : "Иванов Иван"
+          },
+          "className" : {
+            "type" : "object",
+            "example" : "nil"
+          },
+          "classId" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "iupGrade" : {
+            "type" : "integer",
+            "example" : 0
+          }
+        },
+        "example" : null
+      },
+      "assignmentTypes_inner" : {
+        "type" : "object",
+        "properties" : {
+          "abbr" : {
+            "type" : "string",
+            "example" : "ДЗ"
+          },
+          "order" : {
+            "type" : "integer",
+            "example" : 15
+          },
+          "id" : {
+            "type" : "integer",
+            "example" : 3
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Домашнее задание"
+          }
+        }
+      },
+      "PrepareEmLoginForm_countries" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        },
+        "example" : null
+      }
+    }
+  }
+}
