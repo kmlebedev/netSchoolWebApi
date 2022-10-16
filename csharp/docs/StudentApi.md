@@ -1,6 +1,6 @@
 # IO.Swagger.Api.StudentApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,6 +29,7 @@ namespace Example
     {
         public void main()
         {
+
             var apiInstance = new StudentApi();
             var studentId = 56;  // int? | 
             var weekStart = 2013-10-20;  // DateTime? |  (optional) 
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -98,6 +99,7 @@ namespace Example
     {
         public void main()
         {
+
             var apiInstance = new StudentApi();
 
             try
@@ -123,7 +125,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

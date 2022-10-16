@@ -1,6 +1,6 @@
 # SwaggerClient::DiaryApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,9 @@ returns assign information
 ```ruby
 # load the gem
 require 'swagger_client'
+# setup authorization
+SwaggerClient.configure do |config|
+end
 
 api_instance = SwaggerClient::DiaryApi.new
 assign_id = 56 # Integer | 
@@ -44,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

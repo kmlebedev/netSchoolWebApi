@@ -1,6 +1,6 @@
 # StudentApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,8 +18,13 @@ returns all assignments
 ### Example
 ```java
 // Import classes:
+//import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
 //import io.swagger.client.api.StudentApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 StudentApi apiInstance = new StudentApi();
@@ -55,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -73,8 +78,13 @@ returns strudent diary init data
 ### Example
 ```java
 // Import classes:
+//import io.swagger.client.ApiClient;
 //import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
 //import io.swagger.client.api.StudentApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
 
 StudentApi apiInstance = new StudentApi();
@@ -96,7 +106,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

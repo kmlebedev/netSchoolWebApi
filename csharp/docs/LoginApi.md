@@ -1,13 +1,151 @@
 # IO.Swagger.Api.LoginApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**Getauthdata**](LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+[**Login**](LoginApi.md#login) | **POST** /login | 
 [**Logindata**](LoginApi.md#logindata) | **GET** /logindata | 
 [**Prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 [**Prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 
+<a name="getauthdata"></a>
+# **Getauthdata**
+> InlineResponse2001 Getauthdata ()
+
+
+
+returns all login data
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GetauthdataExample
+    {
+        public void main()
+        {
+            var apiInstance = new LoginApi();
+
+            try
+            {
+                InlineResponse2001 result = apiInstance.Getauthdata();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling LoginApi.Getauthdata: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="login"></a>
+# **Login**
+> Login Login (int? loginType, int? cid, int? sid, int? pid, int? cn, int? sft, int? scid, string UN, string PW, int? lt, string pw2, int? ver)
+
+
+
+returns all login data
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class LoginExample
+    {
+        public void main()
+        {
+            var apiInstance = new LoginApi();
+            var loginType = 56;  // int? | 
+            var cid = 56;  // int? | 
+            var sid = 56;  // int? | 
+            var pid = 56;  // int? | 
+            var cn = 56;  // int? | 
+            var sft = 56;  // int? | 
+            var scid = 56;  // int? | 
+            var UN = UN_example;  // string | 
+            var PW = PW_example;  // string | 
+            var lt = 56;  // int? | 
+            var pw2 = pw2_example;  // string | 
+            var ver = 56;  // int? | 
+
+            try
+            {
+                Login result = apiInstance.Login(loginType, cid, sid, pid, cn, sft, scid, UN, PW, lt, pw2, ver);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling LoginApi.Login: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **loginType** | **int?**|  | 
+ **cid** | **int?**|  | 
+ **sid** | **int?**|  | 
+ **pid** | **int?**|  | 
+ **cn** | **int?**|  | 
+ **sft** | **int?**|  | 
+ **scid** | **int?**|  | 
+ **UN** | **string**|  | 
+ **PW** | **string**|  | 
+ **lt** | **int?**|  | 
+ **pw2** | **string**|  | 
+ **ver** | **int?**|  | 
+
+### Return type
+
+[**Login**](Login.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="logindata"></a>
 # **Logindata**
 > LoginData Logindata ()

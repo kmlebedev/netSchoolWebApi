@@ -1,12 +1,126 @@
 # swagger_client.LoginApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getauthdata**](LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+[**login**](LoginApi.md#login) | **POST** /login | 
 [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
 [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 [**prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
+
+# **getauthdata**
+> InlineResponse2001 getauthdata()
+
+
+
+returns all login data
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.LoginApi()
+
+try:
+    api_response = api_instance.getauthdata()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoginApi->getauthdata: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **login**
+> Login login(login_type, cid, sid, pid, cn, sft, scid, un, pw, lt, pw2, ver)
+
+
+
+returns all login data
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.LoginApi()
+login_type = 56 # int | 
+cid = 56 # int | 
+sid = 56 # int | 
+pid = 56 # int | 
+cn = 56 # int | 
+sft = 56 # int | 
+scid = 56 # int | 
+un = 'un_example' # str | 
+pw = 'pw_example' # str | 
+lt = 56 # int | 
+pw2 = 'pw2_example' # str | 
+ver = 56 # int | 
+
+try:
+    api_response = api_instance.login(login_type, cid, sid, pid, cn, sft, scid, un, pw, lt, pw2, ver)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoginApi->login: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **login_type** | **int**|  | 
+ **cid** | **int**|  | 
+ **sid** | **int**|  | 
+ **pid** | **int**|  | 
+ **cn** | **int**|  | 
+ **sft** | **int**|  | 
+ **scid** | **int**|  | 
+ **un** | **str**|  | 
+ **pw** | **str**|  | 
+ **lt** | **int**|  | 
+ **pw2** | **str**|  | 
+ **ver** | **int**|  | 
+
+### Return type
+
+[**Login**](Login.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **logindata**
 > LoginData logindata()

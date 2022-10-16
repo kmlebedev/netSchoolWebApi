@@ -2,11 +2,42 @@ openapi: 3.0.0
 info:
   title: NetSchool
   description: The API for the NetSchool irTech project
-  version: 4.30.43656
+  version: 5.10.63221
 servers:
-- url: https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656
+- url: https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221
   description: SwaggerHub API Auto Mocking
+security:
+- bearerAuth: []
 paths:
+  /mysettings:
+    get:
+      tags:
+      - mysettings
+      description: returns my settings
+      operationId: mysettings
+      responses:
+        "200":
+          description: All my settings
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mySettings'
+  /mysettings/yearlist:
+    get:
+      tags:
+      - mysettings
+      description: returns all years
+      operationId: yearlist
+      responses:
+        "200":
+          description: All the years
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200'
+                x-content-type: application/json
   /grade/assignment/types:
     get:
       tags:
@@ -119,6 +150,40 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/diaryAssignDetails'
+  /auth/getdata:
+    get:
+      tags:
+      - login
+      description: returns all login data
+      operationId: getauthdata
+      responses:
+        "200":
+          description: All the login data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+      security: []
+  /login:
+    post:
+      tags:
+      - login
+      description: returns all login data
+      operationId: login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/login_body'
+        required: true
+      responses:
+        "200":
+          description: All the login data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Login'
+      security: []
   /logindata:
     get:
       tags:
@@ -132,6 +197,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LoginData'
+      security: []
   /prepareloginform:
     get:
       tags:
@@ -153,6 +219,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrepareLoginForm'
+      security: []
   /prepareemloginform:
     get:
       tags:
@@ -174,8 +241,147 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrepareEmLoginForm'
+      security: []
 components:
   schemas:
+    Login:
+      type: object
+      properties:
+        at:
+          type: string
+          example: "00168638015429814024329375"
+        code:
+          type: string
+        timeOut:
+          type: integer
+          example: 900000
+        accessToken:
+          type: string
+        refreshToken:
+          type: string
+        accountInfo:
+          $ref: '#/components/schemas/Login_accountInfo'
+        tokenType:
+          type: string
+          example: Bearer
+        entryPoint:
+          type: string
+          example: /asp/SecurityWarning.asp
+        requestData:
+          $ref: '#/components/schemas/Login_requestData'
+        errorMessage:
+          type: string
+      example:
+        accountInfo:
+          userRoles:
+            role:
+              name: Родитель
+              id: 2
+            schoolId: 22
+            userId: 70111
+          canLogin: true
+          loginTime: 2000-01-23
+          secureActiveToken: secureActiveToken
+          organizations:
+          - name: 'МБОУ СОШ №19 (г. Екатеринбург) '
+            id: 22
+          - name: 'МБОУ СОШ №19 (г. Екатеринбург) '
+            id: 22
+          active: true
+          currentOrganization:
+            name: МБОУ СОШ №19
+            id: 22
+          activeToken: activeToken
+          storeTokens: true
+          accessToken: "00168638015429814024329375"
+          user:
+            name: Иванов И. И.
+            id: 70111
+        at: "00168638015429814024329375"
+        code: code
+        errorMessage: errorMessage
+        entryPoint: /asp/SecurityWarning.asp
+        accessToken: accessToken
+        tokenType: Bearer
+        requestData:
+          warnType: "1"
+        timeOut: 900000
+        refreshToken: refreshToken
+    mySettings:
+      type: object
+      properties:
+        userId:
+          type: integer
+          example: 0
+        firstName:
+          type: string
+          example: Иван
+        lastName:
+          type: string
+          example: Иванов
+        middleName:
+          type: string
+          example: Иванович
+        loginName:
+          type: string
+          example: ИвановИИ
+        birthDate:
+          type: string
+          format: date
+        roles:
+          type: array
+          items:
+            type: string
+            example: Parent
+        schoolyearId:
+          type: integer
+          example: 0
+        windowsAccount:
+          type: string
+          example: ""
+        mobilePhone:
+          type: string
+          example: "79926155431"
+        preferedCom:
+          type: string
+          example: C
+        email:
+          type: string
+          example: ivanov@mail.ru
+        existsPhoto:
+          type: boolean
+          example: false
+        userSettings:
+          $ref: '#/components/schemas/mySettings_userSettings'
+      example:
+        lastName: Иванов
+        roles:
+        - Parent
+        - Parent
+        preferedCom: C
+        userId: 0
+        birthDate: 2000-01-23
+        firstName: Иван
+        userSettings:
+          recoveryAnswer: 32ecd387055d5b01d8e7ac7fef380eb1
+          defaultDesktop: 0
+          language: ru
+          theme: 0
+          favoriteReports:
+          - favoriteReports
+          - favoriteReports
+          recoveryQuestion: Девичья фамилия вашей матери
+          passwordExpired: 0
+          userId: 70111
+          showNetSchoolApp: true
+          showMobilePhone: true
+        mobilePhone: "79926155431"
+        windowsAccount: ""
+        loginName: ИвановИИ
+        schoolyearId: 0
+        middleName: Иванович
+        email: ivanov@mail.ru
+        existsPhoto: false
     diaryAssignDetails:
       type: object
       properties:
@@ -263,7 +469,7 @@ components:
             $ref: '#/components/schemas/studentDiaryInit_students'
         currentStudentId:
           type: integer
-          example: 0
+          example: 1111
         weekStart:
           type: string
           format: date
@@ -297,7 +503,7 @@ components:
       example:
         externalUrl: http://netcity.ru/
         weekStart: 2000-01-23
-        currentStudentId: 0
+        currentStudentId: 1111
         newDiskWasRequest: false
         ttsuRl: http://NETCITY:80/
         students:
@@ -936,36 +1142,289 @@ components:
           type: string
         version:
           type: string
-        esiaLoginPage:
-          type: string
-        cacheVer:
-          type: string
         schoolLogin:
           type: boolean
         emLogin:
           type: boolean
-        windowsAuth:
+        esiaLogin:
           type: boolean
-        enableSms:
-          type: boolean
+        esiaLoginPage:
+          type: string
         esiaMainAuth:
           type: boolean
         esiaButton:
           type: boolean
         signatureLogin:
           type: boolean
+        cacheVer:
+          type: string
+        windowsAuth:
+          type: boolean
+        enableSms:
+          type: boolean
+        esaLogin:
+          type: boolean
+        esaLoginPage:
+          type: string
       example:
         schoolLogin: true
-        signatureLogin: true
         esiaLoginPage: esiaLoginPage
-        esiaMainAuth: true
         cacheVer: cacheVer
         windowsAuth: true
-        emLogin: true
         version: version
         productName: productName
         esiaButton: true
         enableSms: true
+        signatureLogin: true
+        esiaMainAuth: true
+        emLogin: true
+        esaLoginPage: esaLoginPage
+        esaLogin: true
+        esiaLogin: true
+    inline_response_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 24
+        name:
+          type: string
+          example: (*) 2011/2012
+      example:
+        name: (*) 2011/2012
+        id: 24
+    inline_response_200_1:
+      type: object
+      properties:
+        lt:
+          type: string
+          example: "1073163840"
+        ver:
+          type: string
+          example: "768253229"
+        salt:
+          type: string
+          example: "1458933352"
+      example:
+        ver: "768253229"
+        salt: "1458933352"
+        lt: "1073163840"
+    login_body:
+      type: object
+      properties:
+        LoginType:
+          type: integer
+          example: 1
+        cid:
+          type: integer
+          example: 2
+        sid:
+          type: integer
+          example: 66
+        pid:
+          type: integer
+          example: -1
+        cn:
+          type: integer
+          example: 3
+        sft:
+          type: integer
+          example: 2
+        scid:
+          type: integer
+          example: 22
+        UN:
+          type: string
+          example: ИвановИИ
+        PW:
+          type: string
+          example: 913c33
+        lt:
+          type: integer
+          example: 728627461
+        pw2:
+          type: string
+          example: 913c329378a9055fed2d7cb971012ab9
+        ver:
+          type: integer
+          example: 768250818
+    Login_accountInfo_currentOrganization:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 22
+        name:
+          type: string
+          example: МБОУ СОШ №19
+      example:
+        name: МБОУ СОШ №19
+        id: 22
+    Login_accountInfo_user:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 70111
+        name:
+          type: string
+          example: Иванов И. И.
+      example:
+        name: Иванов И. И.
+        id: 70111
+    Login_accountInfo_userRoles_role:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 2
+        name:
+          type: string
+          example: Родитель
+      example:
+        name: Родитель
+        id: 2
+    Login_accountInfo_userRoles:
+      type: object
+      properties:
+        userId:
+          type: integer
+          example: 70111
+        schoolId:
+          type: integer
+          example: 22
+        role:
+          $ref: '#/components/schemas/Login_accountInfo_userRoles_role'
+      example:
+        role:
+          name: Родитель
+          id: 2
+        schoolId: 22
+        userId: 70111
+    Login_accountInfo_organizations:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 22
+        name:
+          type: string
+          example: 'МБОУ СОШ №19 (г. Екатеринбург) '
+      example:
+        name: 'МБОУ СОШ №19 (г. Екатеринбург) '
+        id: 22
+    Login_accountInfo:
+      type: object
+      properties:
+        activeToken:
+          type: string
+        secureActiveToken:
+          type: string
+        currentOrganization:
+          $ref: '#/components/schemas/Login_accountInfo_currentOrganization'
+        user:
+          $ref: '#/components/schemas/Login_accountInfo_user'
+        userRoles:
+          $ref: '#/components/schemas/Login_accountInfo_userRoles'
+        organizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Login_accountInfo_organizations'
+        loginTime:
+          type: string
+          format: date
+        active:
+          type: boolean
+          example: true
+        canLogin:
+          type: boolean
+          example: true
+        storeTokens:
+          type: boolean
+          example: true
+        accessToken:
+          type: string
+          example: "00168638015429814024329375"
+      example:
+        userRoles:
+          role:
+            name: Родитель
+            id: 2
+          schoolId: 22
+          userId: 70111
+        canLogin: true
+        loginTime: 2000-01-23
+        secureActiveToken: secureActiveToken
+        organizations:
+        - name: 'МБОУ СОШ №19 (г. Екатеринбург) '
+          id: 22
+        - name: 'МБОУ СОШ №19 (г. Екатеринбург) '
+          id: 22
+        active: true
+        currentOrganization:
+          name: МБОУ СОШ №19
+          id: 22
+        activeToken: activeToken
+        storeTokens: true
+        accessToken: "00168638015429814024329375"
+        user:
+          name: Иванов И. И.
+          id: 70111
+    Login_requestData:
+      type: object
+      properties:
+        warnType:
+          type: string
+          example: "1"
+      example:
+        warnType: "1"
+    mySettings_userSettings:
+      type: object
+      properties:
+        showMobilePhone:
+          type: boolean
+          example: true
+        defaultDesktop:
+          type: integer
+          example: 0
+        language:
+          type: string
+          example: ru
+        favoriteReports:
+          type: array
+          items:
+            type: string
+        passwordExpired:
+          type: integer
+          example: 0
+        recoveryAnswer:
+          type: string
+          example: 32ecd387055d5b01d8e7ac7fef380eb1
+        recoveryQuestion:
+          type: string
+          example: Девичья фамилия вашей матери
+        theme:
+          type: integer
+          example: 0
+        userId:
+          type: integer
+          example: 70111
+        showNetSchoolApp:
+          type: boolean
+          example: true
+      example:
+        recoveryAnswer: 32ecd387055d5b01d8e7ac7fef380eb1
+        defaultDesktop: 0
+        language: ru
+        theme: 0
+        favoriteReports:
+        - favoriteReports
+        - favoriteReports
+        recoveryQuestion: Девичья фамилия вашей матери
+        passwordExpired: 0
+        userId: 70111
+        showNetSchoolApp: true
+        showMobilePhone: true
     diaryAssignDetails_subjectGroup:
       type: object
       properties:
@@ -1064,3 +1523,8 @@ components:
       example:
         name: name
         id: 0
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

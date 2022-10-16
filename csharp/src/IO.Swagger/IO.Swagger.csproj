@@ -4,7 +4,7 @@ NetSchool
 
 The API for the NetSchool irTech project
 
-OpenAPI spec version: 4.30.43656
+OpenAPI spec version: 5.10.63221
 
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -12,7 +12,7 @@ OpenAPI spec version: 4.30.43656
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B7F237B0-DD98-4C10-B9CE-1E33651ADD6E}</ProjectGuid>
+    <ProjectGuid>{B903ECA8-D535-40E2-809B-B67CB5925372}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IO.Swagger</RootNamespace>

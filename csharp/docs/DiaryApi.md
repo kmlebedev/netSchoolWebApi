@@ -1,6 +1,6 @@
 # IO.Swagger.Api.DiaryApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,6 +28,7 @@ namespace Example
     {
         public void main()
         {
+
             var apiInstance = new DiaryApi();
             var assignId = 56;  // int? | 
             var studentId = 56;  // int? | 
@@ -59,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

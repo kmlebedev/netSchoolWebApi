@@ -1,6 +1,6 @@
 # NetSchool.AssignmentApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,8 @@ returns all assignment types
 ### Example
 ```javascript
 import {NetSchool} from 'net_school';
+let defaultClient = NetSchool.ApiClient.instance;
+
 
 let apiInstance = new NetSchool.AssignmentApi();
 apiInstance.assignmentTypes((error, data, response) => {
@@ -37,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

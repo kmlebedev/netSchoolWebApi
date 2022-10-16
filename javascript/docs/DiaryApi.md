@@ -1,6 +1,6 @@
 # NetSchool.DiaryApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,8 @@ returns assign information
 ### Example
 ```javascript
 import {NetSchool} from 'net_school';
+let defaultClient = NetSchool.ApiClient.instance;
+
 
 let apiInstance = new NetSchool.DiaryApi();
 let assignId = 56; // Number | 
@@ -44,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

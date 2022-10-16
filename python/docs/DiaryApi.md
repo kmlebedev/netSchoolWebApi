@@ -1,6 +1,6 @@
 # swagger_client.DiaryApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,8 +21,9 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
+
 # create an instance of the API class
-api_instance = swagger_client.DiaryApi()
+api_instance = swagger_client.DiaryApi(swagger_client.ApiClient(configuration))
 assign_id = 56 # int | 
 student_id = 56 # int | 
 
@@ -46,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

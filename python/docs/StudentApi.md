@@ -1,6 +1,6 @@
 # swagger_client.StudentApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,8 +22,9 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
+
 # create an instance of the API class
-api_instance = swagger_client.StudentApi()
+api_instance = swagger_client.StudentApi(swagger_client.ApiClient(configuration))
 student_id = 56 # int | 
 week_start = '2013-10-20' # date |  (optional)
 week_end = '2013-10-20' # date |  (optional)
@@ -55,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -79,8 +80,9 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
+
 # create an instance of the API class
-api_instance = swagger_client.StudentApi()
+api_instance = swagger_client.StudentApi(swagger_client.ApiClient(configuration))
 
 try:
     api_response = api_instance.student_diary_init()
@@ -98,7 +100,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

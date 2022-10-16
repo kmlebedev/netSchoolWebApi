@@ -1,12 +1,77 @@
 # {{classname}}
 
-All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656*
+All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**Getauthdata**](LoginApi.md#Getauthdata) | **Get** /auth/getdata | 
+[**Login**](LoginApi.md#Login) | **Post** /login | 
 [**Logindata**](LoginApi.md#Logindata) | **Get** /logindata | 
 [**Prepareemloginform**](LoginApi.md#Prepareemloginform) | **Get** /prepareemloginform | 
 [**Prepareloginform**](LoginApi.md#Prepareloginform) | **Get** /prepareloginform | 
+
+# **Getauthdata**
+> InlineResponse2001 Getauthdata(ctx, )
+
+
+returns all login data
+
+### Required Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse2001**](inline_response_200_1.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **Login**
+> Login Login(ctx, loginType, cid, sid, pid, cn, sft, scid, uN, pW, lt, pw2, ver)
+
+
+returns all login data
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **loginType** | **int32**|  | 
+  **cid** | **int32**|  | 
+  **sid** | **int32**|  | 
+  **pid** | **int32**|  | 
+  **cn** | **int32**|  | 
+  **sft** | **int32**|  | 
+  **scid** | **int32**|  | 
+  **uN** | **string**|  | 
+  **pW** | **string**|  | 
+  **lt** | **int32**|  | 
+  **pw2** | **string**|  | 
+  **ver** | **int32**|  | 
+
+### Return type
+
+[**Login**](Login.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **Logindata**
 > LoginData Logindata(ctx, )
