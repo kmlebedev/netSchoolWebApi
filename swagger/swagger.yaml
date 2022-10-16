@@ -3,13 +3,57 @@
   "info" : {
     "title" : "NetSchool",
     "description" : "The API for the NetSchool irTech project",
-    "version" : "4.30.43656"
+    "version" : "5.10.63221"
   },
   "servers" : [ {
-    "url" : "https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/4.30.43656",
+    "url" : "https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/5.10.63221",
     "description" : "SwaggerHub API Auto Mocking"
   } ],
+  "security" : [ {
+    "bearerAuth" : [ ]
+  } ],
   "paths" : {
+    "/mysettings" : {
+      "get" : {
+        "tags" : [ "mysettings" ],
+        "description" : "returns my settings",
+        "operationId" : "mysettings",
+        "responses" : {
+          "200" : {
+            "description" : "All my settings",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/mySettings"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mysettings/yearlist" : {
+      "get" : {
+        "tags" : [ "mysettings" ],
+        "description" : "returns all years",
+        "operationId" : "yearlist",
+        "responses" : {
+          "200" : {
+            "description" : "All the years",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/inline_response_200"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/grade/assignment/types" : {
       "get" : {
         "tags" : [ "assignment" ],
@@ -162,6 +206,56 @@
         }
       }
     },
+    "/auth/getdata" : {
+      "get" : {
+        "tags" : [ "login" ],
+        "description" : "returns all login data",
+        "operationId" : "getauthdata",
+        "responses" : {
+          "200" : {
+            "description" : "All the login data",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ ]
+      }
+    },
+    "/login" : {
+      "post" : {
+        "tags" : [ "login" ],
+        "description" : "returns all login data",
+        "operationId" : "login",
+        "requestBody" : {
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/login_body"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "All the login data",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Login"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ ]
+      }
+    },
     "/logindata" : {
       "get" : {
         "tags" : [ "login" ],
@@ -178,7 +272,8 @@
               }
             }
           }
-        }
+        },
+        "security" : [ ]
       }
     },
     "/prepareloginform" : {
@@ -207,7 +302,8 @@
               }
             }
           }
-        }
+        },
+        "security" : [ ]
       }
     },
     "/prepareemloginform" : {
@@ -236,12 +332,115 @@
               }
             }
           }
-        }
+        },
+        "security" : [ ]
       }
     }
   },
   "components" : {
     "schemas" : {
+      "Login" : {
+        "type" : "object",
+        "properties" : {
+          "at" : {
+            "type" : "string",
+            "example" : "00168638015429814024329375"
+          },
+          "code" : {
+            "type" : "string"
+          },
+          "timeOut" : {
+            "type" : "integer",
+            "example" : 900000
+          },
+          "accessToken" : {
+            "type" : "string"
+          },
+          "refreshToken" : {
+            "type" : "string"
+          },
+          "accountInfo" : {
+            "$ref" : "#/components/schemas/Login_accountInfo"
+          },
+          "tokenType" : {
+            "type" : "string",
+            "example" : "Bearer"
+          },
+          "entryPoint" : {
+            "type" : "string",
+            "example" : "/asp/SecurityWarning.asp"
+          },
+          "requestData" : {
+            "$ref" : "#/components/schemas/Login_requestData"
+          },
+          "errorMessage" : {
+            "type" : "string"
+          }
+        }
+      },
+      "mySettings" : {
+        "type" : "object",
+        "properties" : {
+          "userId" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "firstName" : {
+            "type" : "string",
+            "example" : "Иван"
+          },
+          "lastName" : {
+            "type" : "string",
+            "example" : "Иванов"
+          },
+          "middleName" : {
+            "type" : "string",
+            "example" : "Иванович"
+          },
+          "loginName" : {
+            "type" : "string",
+            "example" : "ИвановИИ"
+          },
+          "birthDate" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "roles" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "Parent"
+            }
+          },
+          "schoolyearId" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "windowsAccount" : {
+            "type" : "string",
+            "example" : ""
+          },
+          "mobilePhone" : {
+            "type" : "string",
+            "example" : "79926155431"
+          },
+          "preferedCom" : {
+            "type" : "string",
+            "example" : "C"
+          },
+          "email" : {
+            "type" : "string",
+            "example" : "ivanov@mail.ru"
+          },
+          "existsPhoto" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "userSettings" : {
+            "$ref" : "#/components/schemas/mySettings_userSettings"
+          }
+        }
+      },
       "diaryAssignDetails" : {
         "type" : "object",
         "properties" : {
@@ -319,7 +518,7 @@
           },
           "currentStudentId" : {
             "type" : "integer",
-            "example" : 0
+            "example" : 1111
           },
           "weekStart" : {
             "type" : "string",
@@ -625,23 +824,17 @@
           "version" : {
             "type" : "string"
           },
-          "esiaLoginPage" : {
-            "type" : "string"
-          },
-          "cacheVer" : {
-            "type" : "string"
-          },
           "schoolLogin" : {
             "type" : "boolean"
           },
           "emLogin" : {
             "type" : "boolean"
           },
-          "windowsAuth" : {
+          "esiaLogin" : {
             "type" : "boolean"
           },
-          "enableSms" : {
-            "type" : "boolean"
+          "esiaLoginPage" : {
+            "type" : "string"
           },
           "esiaMainAuth" : {
             "type" : "boolean"
@@ -651,6 +844,274 @@
           },
           "signatureLogin" : {
             "type" : "boolean"
+          },
+          "cacheVer" : {
+            "type" : "string"
+          },
+          "windowsAuth" : {
+            "type" : "boolean"
+          },
+          "enableSms" : {
+            "type" : "boolean"
+          },
+          "esaLogin" : {
+            "type" : "boolean"
+          },
+          "esaLoginPage" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 24
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "(*) 2011/2012"
+          }
+        }
+      },
+      "inline_response_200_1" : {
+        "type" : "object",
+        "properties" : {
+          "lt" : {
+            "type" : "string",
+            "example" : "1073163840"
+          },
+          "ver" : {
+            "type" : "string",
+            "example" : "768253229"
+          },
+          "salt" : {
+            "type" : "string",
+            "example" : "1458933352"
+          }
+        }
+      },
+      "login_body" : {
+        "type" : "object",
+        "properties" : {
+          "LoginType" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "cid" : {
+            "type" : "integer",
+            "example" : 2
+          },
+          "sid" : {
+            "type" : "integer",
+            "example" : 66
+          },
+          "pid" : {
+            "type" : "integer",
+            "example" : -1
+          },
+          "cn" : {
+            "type" : "integer",
+            "example" : 3
+          },
+          "sft" : {
+            "type" : "integer",
+            "example" : 2
+          },
+          "scid" : {
+            "type" : "integer",
+            "example" : 22
+          },
+          "UN" : {
+            "type" : "string",
+            "example" : "ИвановИИ"
+          },
+          "PW" : {
+            "type" : "string",
+            "example" : "913c33"
+          },
+          "lt" : {
+            "type" : "integer",
+            "example" : 728627461
+          },
+          "pw2" : {
+            "type" : "string",
+            "example" : "913c329378a9055fed2d7cb971012ab9"
+          },
+          "ver" : {
+            "type" : "integer",
+            "example" : 768250818
+          }
+        }
+      },
+      "Login_accountInfo_currentOrganization" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 22
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "МБОУ СОШ №19"
+          }
+        }
+      },
+      "Login_accountInfo_user" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 70111
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Иванов И. И."
+          }
+        }
+      },
+      "Login_accountInfo_userRoles_role" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 2
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Родитель"
+          }
+        }
+      },
+      "Login_accountInfo_userRoles" : {
+        "type" : "object",
+        "properties" : {
+          "userId" : {
+            "type" : "integer",
+            "example" : 70111
+          },
+          "schoolId" : {
+            "type" : "integer",
+            "example" : 22
+          },
+          "role" : {
+            "$ref" : "#/components/schemas/Login_accountInfo_userRoles_role"
+          }
+        }
+      },
+      "Login_accountInfo_organizations" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 22
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "МБОУ СОШ №19 (г. Екатеринбург) "
+          }
+        }
+      },
+      "Login_accountInfo" : {
+        "type" : "object",
+        "properties" : {
+          "activeToken" : {
+            "type" : "string"
+          },
+          "secureActiveToken" : {
+            "type" : "string"
+          },
+          "currentOrganization" : {
+            "$ref" : "#/components/schemas/Login_accountInfo_currentOrganization"
+          },
+          "user" : {
+            "$ref" : "#/components/schemas/Login_accountInfo_user"
+          },
+          "userRoles" : {
+            "$ref" : "#/components/schemas/Login_accountInfo_userRoles"
+          },
+          "organizations" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Login_accountInfo_organizations"
+            }
+          },
+          "loginTime" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "active" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "canLogin" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "storeTokens" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "accessToken" : {
+            "type" : "string",
+            "example" : "00168638015429814024329375"
+          }
+        }
+      },
+      "Login_requestData" : {
+        "type" : "object",
+        "properties" : {
+          "warnType" : {
+            "type" : "string",
+            "example" : "1"
+          }
+        }
+      },
+      "mySettings_userSettings" : {
+        "type" : "object",
+        "properties" : {
+          "showMobilePhone" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "defaultDesktop" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "language" : {
+            "type" : "string",
+            "example" : "ru"
+          },
+          "favoriteReports" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "passwordExpired" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "recoveryAnswer" : {
+            "type" : "string",
+            "example" : "32ecd387055d5b01d8e7ac7fef380eb1"
+          },
+          "recoveryQuestion" : {
+            "type" : "string",
+            "example" : "Девичья фамилия вашей матери"
+          },
+          "theme" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "userId" : {
+            "type" : "integer",
+            "example" : 70111
+          },
+          "showNetSchoolApp" : {
+            "type" : "boolean",
+            "example" : true
           }
         }
       },
@@ -665,8 +1126,7 @@
             "type" : "string",
             "example" : "5ж/Русский язык"
           }
-        },
-        "example" : null
+        }
       },
       "diaryAssignDetails_teacher" : {
         "type" : "object",
@@ -679,8 +1139,7 @@
             "type" : "string",
             "example" : "Иванова Марья Ивановна"
           }
-        },
-        "example" : null
+        }
       },
       "diaryAssignDetails_attachments" : {
         "type" : "object",
@@ -701,8 +1160,7 @@
             "type" : "string",
             "example" : "nil"
           }
-        },
-        "example" : null
+        }
       },
       "studentDiaryInit_students" : {
         "type" : "object",
@@ -727,8 +1185,7 @@
             "type" : "integer",
             "example" : 0
           }
-        },
-        "example" : null
+        }
       },
       "assignmentTypes_inner" : {
         "type" : "object",
@@ -760,8 +1217,14 @@
           "name" : {
             "type" : "string"
           }
-        },
-        "example" : null
+        }
+      }
+    },
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
       }
     }
   }
