@@ -217,7 +217,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/inline_response_200_1"
+                  "$ref" : "#/components/schemas/GetAuthData"
                 }
               }
             }
@@ -339,6 +339,23 @@
   },
   "components" : {
     "schemas" : {
+      "GetAuthData" : {
+        "type" : "object",
+        "properties" : {
+          "lt" : {
+            "type" : "string",
+            "example" : "1073163840"
+          },
+          "ver" : {
+            "type" : "string",
+            "example" : "768253229"
+          },
+          "salt" : {
+            "type" : "string",
+            "example" : "1458933352"
+          }
+        }
+      },
       "Login" : {
         "type" : "object",
         "properties" : {
@@ -872,23 +889,6 @@
           "name" : {
             "type" : "string",
             "example" : "(*) 2011/2012"
-          }
-        }
-      },
-      "inline_response_200_1" : {
-        "type" : "object",
-        "properties" : {
-          "lt" : {
-            "type" : "string",
-            "example" : "1073163840"
-          },
-          "ver" : {
-            "type" : "string",
-            "example" : "768253229"
-          },
-          "salt" : {
-            "type" : "string",
-            "example" : "1458933352"
           }
         }
       },
