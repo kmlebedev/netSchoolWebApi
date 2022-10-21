@@ -8,13 +8,17 @@ Method | HTTP request | Description
 [**Yearlist**](MysettingsApi.md#Yearlist) | **Get** /mysettings/yearlist | 
 
 # **Mysettings**
-> MySettings Mysettings(ctx, )
+> MySettings Mysettings(ctx, at)
 
 
 returns my settings
 
 ### Required Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **at** | **string**| an authorization header | 
 
 ### Return type
 
@@ -32,13 +36,17 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **Yearlist**
-> []MySettingsYearsInner Yearlist(ctx, )
+> []MySettingsYearsInner Yearlist(ctx, at)
 
 
 returns all years
 
 ### Required Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **at** | **string**| an authorization header | 
 
 ### Return type
 

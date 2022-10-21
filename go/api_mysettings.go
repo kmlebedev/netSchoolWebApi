@@ -27,10 +27,11 @@ type MysettingsApiService service
 MysettingsApiService
 returns my settings
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param at an authorization header
 
 @return MySettings
 */
-func (a *MysettingsApiService) Mysettings(ctx context.Context) (MySettings, *http.Response, error) {
+func (a *MysettingsApiService) Mysettings(ctx context.Context, at string) (MySettings, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -63,6 +64,7 @@ func (a *MysettingsApiService) Mysettings(ctx context.Context) (MySettings, *htt
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	localVarHeaderParams["at"] = parameterToString(at, "")
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -112,10 +114,11 @@ func (a *MysettingsApiService) Mysettings(ctx context.Context) (MySettings, *htt
 MysettingsApiService
 returns all years
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param at an authorization header
 
 @return []MySettingsYearsInner
 */
-func (a *MysettingsApiService) Yearlist(ctx context.Context) ([]MySettingsYearsInner, *http.Response, error) {
+func (a *MysettingsApiService) Yearlist(ctx context.Context, at string) ([]MySettingsYearsInner, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
@@ -148,6 +151,7 @@ func (a *MysettingsApiService) Yearlist(ctx context.Context) ([]MySettingsYearsI
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
+	localVarHeaderParams["at"] = parameterToString(at, "")
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err

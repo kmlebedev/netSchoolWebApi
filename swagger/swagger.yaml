@@ -16,6 +16,15 @@
     "/mysettings" : {
       "get" : {
         "tags" : [ "mysettings" ],
+        "parameters": [{
+          "name": "at",
+          "in": "header",
+          "description": "an authorization header",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }],
         "description" : "returns my settings",
         "operationId" : "mysettings",
         "responses" : {
@@ -35,6 +44,15 @@
     "/mysettings/yearlist" : {
       "get" : {
         "tags" : [ "mysettings" ],
+        "parameters": [ {
+          "name": "at",
+          "in": "header",
+          "description": "an authorization header",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        } ],
         "description" : "returns all years",
         "operationId" : "yearlist",
         "responses" : {

@@ -15,6 +15,15 @@ paths:
       - mysettings
       description: returns my settings
       operationId: mysettings
+      parameters:
+      - name: at
+        in: header
+        description: an authorization header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
       responses:
         "200":
           description: All my settings
@@ -28,6 +37,15 @@ paths:
       - mysettings
       description: returns all years
       operationId: yearlist
+      parameters:
+      - name: at
+        in: header
+        description: an authorization header
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
       responses:
         "200":
           description: All the years
