@@ -43,10 +43,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/inline_response_200"
-                  }
+                  "$ref" : "#/components/schemas/mySettingsYears"
                 }
               }
             }
@@ -393,6 +390,12 @@
           "errorMessage" : {
             "type" : "string"
           }
+        }
+      },
+      "mySettingsYears" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/mySettingsYears_inner"
         }
       },
       "mySettings" : {
@@ -879,19 +882,6 @@
           }
         }
       },
-      "inline_response_200" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "type" : "integer",
-            "example" : 24
-          },
-          "name" : {
-            "type" : "string",
-            "example" : "(*) 2011/2012"
-          }
-        }
-      },
       "login_body" : {
         "type" : "object",
         "properties" : {
@@ -1065,6 +1055,19 @@
           "warnType" : {
             "type" : "string",
             "example" : "1"
+          }
+        }
+      },
+      "mySettingsYears_inner" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 24
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "(*) 2011/2012"
           }
         }
       },
