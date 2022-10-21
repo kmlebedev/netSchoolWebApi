@@ -9,9 +9,9 @@
 package swagger
 
 type StudentDiaryInitStudents struct {
-	StudentId int32 `json:"studentId,omitempty"`
-	NickName string `json:"nickName,omitempty"`
+	StudentId int32        `json:"studentId,omitempty"`
+	NickName  string       `json:"nickName,omitempty"`
 	ClassName *interface{} `json:"className,omitempty"`
-	ClassId int32 `json:"classId,omitempty"`
-	IupGrade int32 `json:"iupGrade,omitempty"`
+	ClassId   int32        `json:"classId,omitempty"`
+	IupGrade  int32        `json:"iupGrade,omitempty"`
 }

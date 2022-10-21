@@ -9,8 +9,8 @@
 package swagger
 
 type AssignmentTypesInner struct {
-	Abbr string `json:"abbr,omitempty"`
-	Order int32 `json:"order,omitempty"`
-	Id int32 `json:"id,omitempty"`
-	Name string `json:"name,omitempty"`
+	Abbr  string `json:"abbr,omitempty"`
+	Order int32  `json:"order,omitempty"`
+	Id    int32  `json:"id,omitempty"`
+	Name  string `json:"name,omitempty"`
 }

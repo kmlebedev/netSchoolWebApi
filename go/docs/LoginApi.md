@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**Prepareloginform**](LoginApi.md#Prepareloginform) | **Get** /prepareloginform | 
 
 # **Getauthdata**
-> InlineResponse2001 Getauthdata(ctx, )
+> GetAuthData Getauthdata(ctx, )
 
 
 returns all login data
@@ -21,7 +21,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**GetAuthData**](GetAuthData.md)
 
 ### Authorization
 

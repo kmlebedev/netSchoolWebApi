@@ -9,9 +9,9 @@
 package swagger
 
 type Diary struct {
-	WeekStart string `json:"weekStart,omitempty"`
-	WeekEnd string `json:"weekEnd,omitempty"`
-	WeekDays []DiaryWeekDays `json:"weekDays,omitempty"`
-	TermName string `json:"termName,omitempty"`
-	ClassName string `json:"className,omitempty"`
+	WeekStart string          `json:"weekStart,omitempty"`
+	WeekEnd   string          `json:"weekEnd,omitempty"`
+	WeekDays  []DiaryWeekDays `json:"weekDays,omitempty"`
+	TermName  string          `json:"termName,omitempty"`
+	ClassName string          `json:"className,omitempty"`
 }

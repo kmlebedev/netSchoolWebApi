@@ -9,18 +9,18 @@
 package swagger
 
 type LoginData struct {
-	ProductName string `json:"productName,omitempty"`
-	Version string `json:"version,omitempty"`
-	SchoolLogin bool `json:"schoolLogin,omitempty"`
-	EmLogin bool `json:"emLogin,omitempty"`
-	EsiaLogin bool `json:"esiaLogin,omitempty"`
-	EsiaLoginPage string `json:"esiaLoginPage,omitempty"`
-	EsiaMainAuth bool `json:"esiaMainAuth,omitempty"`
-	EsiaButton bool `json:"esiaButton,omitempty"`
-	SignatureLogin bool `json:"signatureLogin,omitempty"`
-	CacheVer string `json:"cacheVer,omitempty"`
-	WindowsAuth bool `json:"windowsAuth,omitempty"`
-	EnableSms bool `json:"enableSms,omitempty"`
-	EsaLogin bool `json:"esaLogin,omitempty"`
-	EsaLoginPage string `json:"esaLoginPage,omitempty"`
+	ProductName    string `json:"productName,omitempty"`
+	Version        string `json:"version,omitempty"`
+	SchoolLogin    bool   `json:"schoolLogin,omitempty"`
+	EmLogin        bool   `json:"emLogin,omitempty"`
+	EsiaLogin      bool   `json:"esiaLogin,omitempty"`
+	EsiaLoginPage  string `json:"esiaLoginPage,omitempty"`
+	EsiaMainAuth   bool   `json:"esiaMainAuth,omitempty"`
+	EsiaButton     bool   `json:"esiaButton,omitempty"`
+	SignatureLogin bool   `json:"signatureLogin,omitempty"`
+	CacheVer       string `json:"cacheVer,omitempty"`
+	WindowsAuth    bool   `json:"windowsAuth,omitempty"`
+	EnableSms      bool   `json:"enableSms,omitempty"`
+	EsaLogin       bool   `json:"esaLogin,omitempty"`
+	EsaLoginPage   string `json:"esaLoginPage,omitempty"`
 }

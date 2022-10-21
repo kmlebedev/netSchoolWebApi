@@ -9,13 +9,13 @@
 package swagger
 
 type DiaryAssignment struct {
-	Mark *Mark `json:"mark,omitempty"`
-	Attachments []Attachment `json:"attachments,omitempty"`
-	Id int32 `json:"id,omitempty"`
-	TypeId int32 `json:"typeId,omitempty"`
-	AssignmentName string `json:"assignmentName,omitempty"`
-	Weight int32 `json:"weight,omitempty"`
-	DueDate string `json:"dueDate,omitempty"`
-	ClassMeetingId int32 `json:"classMeetingId,omitempty"`
-	ExistsTestPlan bool `json:"existsTestPlan,omitempty"`
+	Mark           *Mark        `json:"mark,omitempty"`
+	Attachments    []Attachment `json:"attachments,omitempty"`
+	Id             int32        `json:"id,omitempty"`
+	TypeId         int32        `json:"typeId,omitempty"`
+	AssignmentName string       `json:"assignmentName,omitempty"`
+	Weight         int32        `json:"weight,omitempty"`
+	DueDate        string       `json:"dueDate,omitempty"`
+	ClassMeetingId int32        `json:"classMeetingId,omitempty"`
+	ExistsTestPlan bool         `json:"existsTestPlan,omitempty"`
 }
