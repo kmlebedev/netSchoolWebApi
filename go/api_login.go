@@ -33,7 +33,7 @@ returns all login data
 */
 func (a *LoginApiService) Getauthdata(ctx context.Context) (GetAuthData, *http.Response, error) {
 	var (
-		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte

@@ -4,7 +4,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Getauthdata**](LoginApi.md#Getauthdata) | **Get** /auth/getdata | 
+[**Getauthdata**](LoginApi.md#Getauthdata) | **Post** /auth/getdata | 
 [**Login**](LoginApi.md#Login) | **Post** /login | 
 [**Logindata**](LoginApi.md#Logindata) | **Get** /logindata | 
 [**Prepareemloginform**](LoginApi.md#Prepareemloginform) | **Get** /prepareemloginform | 

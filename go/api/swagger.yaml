@@ -34,7 +34,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/mySettingsYears'
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200'
+                x-content-type: application/json
   /grade/assignment/types:
     get:
       tags:
@@ -148,7 +151,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/diaryAssignDetails'
   /auth/getdata:
-    get:
+    post:
       tags:
       - login
       description: returns all login data
@@ -320,11 +323,6 @@ components:
           warnType: "1"
         timeOut: 900000
         refreshToken: refreshToken
-    mySettingsYears:
-      type: array
-      items:
-        $ref: '#/components/schemas/mySettingsYears_inner'
-      x-schema-name: mySettingsYears
     mySettings:
       type: object
       properties:
@@ -1199,6 +1197,18 @@ components:
         esaLoginPage: esaLoginPage
         esaLogin: true
         esiaLogin: true
+    inline_response_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 24
+        name:
+          type: string
+          example: (*) 2011/2012
+      example:
+        name: (*) 2011/2012
+        id: 24
     login_body:
       type: object
       properties:
@@ -1368,18 +1378,6 @@ components:
           example: "1"
       example:
         warnType: "1"
-    mySettingsYears_inner:
-      type: object
-      properties:
-        id:
-          type: integer
-          example: 24
-        name:
-          type: string
-          example: (*) 2011/2012
-      example:
-        name: (*) 2011/2012
-        id: 24
     mySettings_userSettings:
       type: object
       properties:
