@@ -204,7 +204,7 @@
       }
     },
     "/auth/getdata" : {
-      "get" : {
+      "post" : {
         "tags" : [ "login" ],
         "description" : "returns all login data",
         "operationId" : "getauthdata",
