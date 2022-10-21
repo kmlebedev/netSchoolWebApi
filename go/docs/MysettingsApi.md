@@ -32,7 +32,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **Yearlist**
-> []InlineResponse200 Yearlist(ctx, )
+> []MySettingsYearsInner Yearlist(ctx, )
 
 
 returns all years
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[]InlineResponse200**](inline_response_200.md)
+[**[]MySettingsYearsInner**](array.md)
 
 ### Authorization
 

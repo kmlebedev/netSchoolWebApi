@@ -113,15 +113,15 @@ MysettingsApiService
 returns all years
   - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
-@return []InlineResponse200
+@return []MySettingsYearsInner
 */
-func (a *MysettingsApiService) Yearlist(ctx context.Context) ([]InlineResponse200, *http.Response, error) {
+func (a *MysettingsApiService) Yearlist(ctx context.Context) ([]MySettingsYearsInner, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue []InlineResponse200
+		localVarReturnValue []MySettingsYearsInner
 	)
 
 	// create path and map variables
@@ -178,7 +178,7 @@ func (a *MysettingsApiService) Yearlist(ctx context.Context) ([]InlineResponse20
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []InlineResponse200
+			var v []MySettingsYearsInner
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
