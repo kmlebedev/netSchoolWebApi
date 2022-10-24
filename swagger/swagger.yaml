@@ -483,8 +483,11 @@
           "subjectGroup" : {
             "$ref" : "#/components/schemas/diaryAssignDetails_subjectGroup"
           },
-          "teacher" : {
-            "$ref" : "#/components/schemas/diaryAssignDetails_teacher"
+          "teachers" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/diaryAssignDetails_teachers"
+            }
           },
           "productId" : {
             "type" : "integer"
@@ -1131,7 +1134,7 @@
           }
         }
       },
-      "diaryAssignDetails_teacher" : {
+      "diaryAssignDetails_teachers" : {
         "type" : "object",
         "properties" : {
           "id" : {
