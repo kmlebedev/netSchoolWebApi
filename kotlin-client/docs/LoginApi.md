@@ -4,7 +4,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getauthdata**](LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+[**getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 [**login**](LoginApi.md#login) | **POST** /login | 
 [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
 [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getauthdata"></a>
 # **getauthdata**
-> InlineResponse2001 getauthdata()
+> GetAuthData getauthdata()
 
 
 
@@ -26,7 +26,7 @@ returns all login data
 
 val apiInstance = LoginApi()
 try {
-    val result : InlineResponse2001 = apiInstance.getauthdata()
+    val result : GetAuthData = apiInstance.getauthdata()
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling LoginApi#getauthdata")
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**GetAuthData**](GetAuthData.md)
 
 ### Authorization
 

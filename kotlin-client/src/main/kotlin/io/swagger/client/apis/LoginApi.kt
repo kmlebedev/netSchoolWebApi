@@ -11,7 +11,7 @@
  */
 package io.swagger.client.apis
 
-import io.swagger.client.models.InlineResponse2001
+import io.swagger.client.models.GetAuthData
 import io.swagger.client.models.Login
 import io.swagger.client.models.LoginData
 import io.swagger.client.models.PrepareEmLoginForm
@@ -24,21 +24,21 @@ class LoginApi(basePath: kotlin.String = "https://virtserver.swaggerhub.com/LEBE
     /**
      * 
      * returns all login data
-     * @return InlineResponse2001
+     * @return GetAuthData
      */
     @Suppress("UNCHECKED_CAST")
-    fun getauthdata(): InlineResponse2001 {
+    fun getauthdata(): GetAuthData {
         
         val localVariableConfig = RequestConfig(
-                RequestMethod.GET,
+                RequestMethod.POST,
                 "/auth/getdata"
         )
-        val response = request<InlineResponse2001>(
+        val response = request<GetAuthData>(
                 localVariableConfig
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as InlineResponse2001
+            ResponseType.Success -> (response as Success<*>).data as GetAuthData
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")

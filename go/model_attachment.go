@@ -9,8 +9,8 @@
 package swagger
 
 type Attachment struct {
-	Id               int32  `json:"id,omitempty"`
-	Name             string `json:"name,omitempty"`
+	Id int32 `json:"id,omitempty"`
+	Name string `json:"name,omitempty"`
 	OriginalFileName string `json:"originalFileName,omitempty"`
-	Description      string `json:"description,omitempty"`
+	Description string `json:"description,omitempty"`
 }

@@ -10,11 +10,11 @@ package swagger
 
 type PrepareEmLoginForm struct {
 	Countries []PrepareEmLoginFormCountries `json:"countries,omitempty"`
-	States    []PrepareEmLoginFormCountries `json:"states,omitempty"`
-	Hlevels   []PrepareEmLoginFormCountries `json:"hlevels,omitempty"`
-	Ems       []PrepareEmLoginFormCountries `json:"ems,omitempty"`
-	EmCid     int32                         `json:"em_cid,omitempty"`
-	EmSid     int32                         `json:"em_sid,omitempty"`
-	Hlevel    int32                         `json:"hlevel,omitempty"`
-	EmId      int32                         `json:"emId,omitempty"`
+	States []PrepareEmLoginFormCountries `json:"states,omitempty"`
+	Hlevels []PrepareEmLoginFormCountries `json:"hlevels,omitempty"`
+	Ems []PrepareEmLoginFormCountries `json:"ems,omitempty"`
+	EmCid int32 `json:"em_cid,omitempty"`
+	EmSid int32 `json:"em_sid,omitempty"`
+	Hlevel int32 `json:"hlevel,omitempty"`
+	EmId int32 `json:"emId,omitempty"`
 }

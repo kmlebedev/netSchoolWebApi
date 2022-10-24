@@ -9,7 +9,7 @@
 package swagger
 
 type GetAuthData struct {
-	Lt   string `json:"lt,omitempty"`
-	Ver  string `json:"ver,omitempty"`
+	Lt string `json:"lt,omitempty"`
+	Ver string `json:"ver,omitempty"`
 	Salt string `json:"salt,omitempty"`
 }

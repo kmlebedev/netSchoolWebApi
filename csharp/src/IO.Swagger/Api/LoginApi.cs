@@ -30,8 +30,8 @@ namespace IO.Swagger.Api
         /// returns all login data
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse2001</returns>
-        InlineResponse2001 Getauthdata ();
+        /// <returns>GetAuthData</returns>
+        GetAuthData Getauthdata ();
 
         /// <summary>
         /// 
@@ -40,8 +40,8 @@ namespace IO.Swagger.Api
         /// returns all login data
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse2001</returns>
-        ApiResponse<InlineResponse2001> GetauthdataWithHttpInfo ();
+        /// <returns>ApiResponse of GetAuthData</returns>
+        ApiResponse<GetAuthData> GetauthdataWithHttpInfo ();
         /// <summary>
         /// 
         /// </summary>
@@ -155,8 +155,8 @@ namespace IO.Swagger.Api
         /// returns all login data
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse2001</returns>
-        System.Threading.Tasks.Task<InlineResponse2001> GetauthdataAsync ();
+        /// <returns>Task of GetAuthData</returns>
+        System.Threading.Tasks.Task<GetAuthData> GetauthdataAsync ();
 
         /// <summary>
         /// 
@@ -165,8 +165,8 @@ namespace IO.Swagger.Api
         /// returns all login data
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2001>> GetauthdataAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (GetAuthData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetAuthData>> GetauthdataAsyncWithHttpInfo ();
         /// <summary>
         /// 
         /// </summary>
@@ -386,10 +386,10 @@ namespace IO.Swagger.Api
         ///  returns all login data
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>InlineResponse2001</returns>
-        public InlineResponse2001 Getauthdata ()
+        /// <returns>GetAuthData</returns>
+        public GetAuthData Getauthdata ()
         {
-             ApiResponse<InlineResponse2001> localVarResponse = GetauthdataWithHttpInfo();
+             ApiResponse<GetAuthData> localVarResponse = GetauthdataWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -397,8 +397,8 @@ namespace IO.Swagger.Api
         ///  returns all login data
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of InlineResponse2001</returns>
-        public ApiResponse< InlineResponse2001 > GetauthdataWithHttpInfo ()
+        /// <returns>ApiResponse of GetAuthData</returns>
+        public ApiResponse< GetAuthData > GetauthdataWithHttpInfo ()
         {
 
             var localVarPath = "/auth/getdata";
@@ -425,7 +425,7 @@ namespace IO.Swagger.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
@@ -436,19 +436,19 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse2001>(localVarStatusCode,
+            return new ApiResponse<GetAuthData>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse2001) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2001)));
+                (GetAuthData) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAuthData)));
         }
 
         /// <summary>
         ///  returns all login data
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of InlineResponse2001</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2001> GetauthdataAsync ()
+        /// <returns>Task of GetAuthData</returns>
+        public async System.Threading.Tasks.Task<GetAuthData> GetauthdataAsync ()
         {
-             ApiResponse<InlineResponse2001> localVarResponse = await GetauthdataAsyncWithHttpInfo();
+             ApiResponse<GetAuthData> localVarResponse = await GetauthdataAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -457,8 +457,8 @@ namespace IO.Swagger.Api
         ///  returns all login data
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2001>> GetauthdataAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (GetAuthData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetAuthData>> GetauthdataAsyncWithHttpInfo ()
         {
 
             var localVarPath = "/auth/getdata";
@@ -485,7 +485,7 @@ namespace IO.Swagger.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
@@ -496,9 +496,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<InlineResponse2001>(localVarStatusCode,
+            return new ApiResponse<GetAuthData>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (InlineResponse2001) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2001)));
+                (GetAuthData) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAuthData)));
         }
 
         /// <summary>

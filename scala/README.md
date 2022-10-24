@@ -67,7 +67,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AssignmentApi* | [**assignmentTypes**](AssignmentApi.md#assignmentTypes) | **GET** /grade/assignment/types | 
 *DiaryApi* | [**diaryAssignnDetails**](DiaryApi.md#diaryAssignnDetails) | **GET** /student/diary/assigns/{assignId} | 
-*LoginApi* | [**getauthdata**](LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+*LoginApi* | [**getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *LoginApi* | [**login**](LoginApi.md#login) | **POST** /login | 
 *LoginApi* | [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
 *LoginApi* | [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
@@ -90,8 +90,7 @@ Class | Method | HTTP request | Description
  - [DiaryAssignment](DiaryAssignment.md)
  - [DiaryLesson](DiaryLesson.md)
  - [DiaryWeekDays](DiaryWeekDays.md)
- - [InlineResponse200](InlineResponse200.md)
- - [InlineResponse2001](InlineResponse2001.md)
+ - [GetAuthData](GetAuthData.md)
  - [Login](Login.md)
  - [LoginAccountInfo](LoginAccountInfo.md)
  - [LoginAccountInfoCurrentOrganization](LoginAccountInfoCurrentOrganization.md)
@@ -105,6 +104,8 @@ Class | Method | HTTP request | Description
  - [Mark](Mark.md)
  - [MySettings](MySettings.md)
  - [MySettingsUserSettings](MySettingsUserSettings.md)
+ - [MySettingsYears](MySettingsYears.md)
+ - [MySettingsYearsInner](MySettingsYearsInner.md)
  - [PrepareEmLoginForm](PrepareEmLoginForm.md)
  - [PrepareEmLoginFormCountries](PrepareEmLoginFormCountries.md)
  - [PrepareLoginForm](PrepareLoginForm.md)

@@ -13,7 +13,7 @@
  *
  */
 import {ApiClient} from "../ApiClient";
-import {InlineResponse2001} from '../model/InlineResponse2001';
+import {GetAuthData} from '../model/GetAuthData';
 import {Login} from '../model/Login';
 import {LoginData} from '../model/LoginData';
 import {PrepareEmLoginForm} from '../model/PrepareEmLoginForm';
@@ -42,7 +42,7 @@ export class LoginApi {
      * Callback function to receive the result of the getauthdata operation.
      * @callback moduleapi/LoginApi~getauthdataCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001{ data The data returned by the service call.
+     * @param {module:model/GetAuthData{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -71,10 +71,10 @@ export class LoginApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = GetAuthData;
 
       return this.apiClient.callApi(
-        '/auth/getdata', 'GET',
+        '/auth/getdata', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

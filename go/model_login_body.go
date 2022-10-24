@@ -9,16 +9,16 @@
 package swagger
 
 type LoginBody struct {
-	LoginType int32  `json:"LoginType,omitempty"`
-	Cid       int32  `json:"cid,omitempty"`
-	Sid       int32  `json:"sid,omitempty"`
-	Pid       int32  `json:"pid,omitempty"`
-	Cn        int32  `json:"cn,omitempty"`
-	Sft       int32  `json:"sft,omitempty"`
-	Scid      int32  `json:"scid,omitempty"`
-	UN        string `json:"UN,omitempty"`
-	PW        string `json:"PW,omitempty"`
-	Lt        int32  `json:"lt,omitempty"`
-	Pw2       string `json:"pw2,omitempty"`
-	Ver       int32  `json:"ver,omitempty"`
+	LoginType int32 `json:"LoginType,omitempty"`
+	Cid int32 `json:"cid,omitempty"`
+	Sid int32 `json:"sid,omitempty"`
+	Pid int32 `json:"pid,omitempty"`
+	Cn int32 `json:"cn,omitempty"`
+	Sft int32 `json:"sft,omitempty"`
+	Scid int32 `json:"scid,omitempty"`
+	UN string `json:"UN,omitempty"`
+	PW string `json:"PW,omitempty"`
+	Lt int32 `json:"lt,omitempty"`
+	Pw2 string `json:"pw2,omitempty"`
+	Ver int32 `json:"ver,omitempty"`
 }

@@ -35,8 +35,7 @@ from swagger_client.models.diary_assign_details_teacher import DiaryAssignDetail
 from swagger_client.models.diary_assignment import DiaryAssignment
 from swagger_client.models.diary_lesson import DiaryLesson
 from swagger_client.models.diary_week_days import DiaryWeekDays
-from swagger_client.models.inline_response200 import InlineResponse200
-from swagger_client.models.inline_response2001 import InlineResponse2001
+from swagger_client.models.get_auth_data import GetAuthData
 from swagger_client.models.login import Login
 from swagger_client.models.login_account_info import LoginAccountInfo
 from swagger_client.models.login_account_info_current_organization import LoginAccountInfoCurrentOrganization
@@ -50,6 +49,8 @@ from swagger_client.models.login_request_data import LoginRequestData
 from swagger_client.models.mark import Mark
 from swagger_client.models.my_settings import MySettings
 from swagger_client.models.my_settings_user_settings import MySettingsUserSettings
+from swagger_client.models.my_settings_years import MySettingsYears
+from swagger_client.models.my_settings_years_inner import MySettingsYearsInner
 from swagger_client.models.prepare_em_login_form import PrepareEmLoginForm
 from swagger_client.models.prepare_em_login_form_countries import PrepareEmLoginFormCountries
 from swagger_client.models.prepare_login_form import PrepareLoginForm

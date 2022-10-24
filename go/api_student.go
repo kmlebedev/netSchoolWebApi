@@ -1,3 +1,4 @@
+
 /*
  * NetSchool
  *
@@ -10,11 +11,11 @@ package swagger
 
 import (
 	"context"
-	"github.com/antihax/optional"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -23,35 +24,34 @@ var (
 )
 
 type StudentApiService service
-
 /*
 StudentApiService
 returns all assignments
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param studentId
  * @param optional nil or *StudentApiStudentDiaryOpts - Optional Parameters:
-     * @param "WeekStart" (optional.String) -
-     * @param "WeekEnd" (optional.String) -
-     * @param "WithLaAssigns" (optional.Bool) -
-     * @param "WithPastMandatory" (optional.Bool) -
-     * @param "YearId" (optional.Int32) -
+     * @param "WeekStart" (optional.String) - 
+     * @param "WeekEnd" (optional.String) - 
+     * @param "WithLaAssigns" (optional.Bool) - 
+     * @param "WithPastMandatory" (optional.Bool) - 
+     * @param "YearId" (optional.Int32) - 
 @return Diary
 */
 
 type StudentApiStudentDiaryOpts struct {
-	WeekStart         optional.String
-	WeekEnd           optional.String
-	WithLaAssigns     optional.Bool
-	WithPastMandatory optional.Bool
-	YearId            optional.Int32
+    WeekStart optional.String
+    WeekEnd optional.String
+    WithLaAssigns optional.Bool
+    WithPastMandatory optional.Bool
+    YearId optional.Int32
 }
 
 func (a *StudentApiService) StudentDiary(ctx context.Context, studentId int32, localVarOptionals *StudentApiStudentDiaryOpts) (Diary, *http.Response, error) {
 	var (
-		localVarHttpMethod  = strings.ToUpper("Get")
-		localVarPostBody    interface{}
-		localVarFileName    string
-		localVarFileBytes   []byte
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
 		localVarReturnValue Diary
 	)
 
@@ -113,46 +113,44 @@ func (a *StudentApiService) StudentDiary(ctx context.Context, studentId int32, l
 
 	if localVarHttpResponse.StatusCode < 300 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-		if err == nil {
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		if err == nil { 
 			return localVarReturnValue, localVarHttpResponse, err
 		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body:  localVarBody,
+			body: localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v Diary
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
 				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}
 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
-
 /*
 StudentApiService
 returns strudent diary init data
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 @return StudentDiaryInit
 */
 func (a *StudentApiService) StudentDiaryInit(ctx context.Context) (StudentDiaryInit, *http.Response, error) {
 	var (
-		localVarHttpMethod  = strings.ToUpper("Get")
-		localVarPostBody    interface{}
-		localVarFileName    string
-		localVarFileBytes   []byte
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
 		localVarReturnValue StudentDiaryInit
 	)
 
@@ -198,26 +196,26 @@ func (a *StudentApiService) StudentDiaryInit(ctx context.Context) (StudentDiaryI
 
 	if localVarHttpResponse.StatusCode < 300 {
 		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-		if err == nil {
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		if err == nil { 
 			return localVarReturnValue, localVarHttpResponse, err
 		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body:  localVarBody,
+			body: localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v StudentDiaryInit
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
 				return localVarReturnValue, localVarHttpResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		return localVarReturnValue, localVarHttpResponse, newErr
 	}

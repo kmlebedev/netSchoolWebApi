@@ -91,7 +91,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *NetSchool.AssignmentApi* | [**assignmentTypes**](docs/AssignmentApi.md#assignmentTypes) | **GET** /grade/assignment/types | 
 *NetSchool.DiaryApi* | [**diaryAssignnDetails**](docs/DiaryApi.md#diaryAssignnDetails) | **GET** /student/diary/assigns/{assignId} | 
-*NetSchool.LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+*NetSchool.LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *NetSchool.LoginApi* | [**login**](docs/LoginApi.md#login) | **POST** /login | 
 *NetSchool.LoginApi* | [**logindata**](docs/LoginApi.md#logindata) | **GET** /logindata | 
 *NetSchool.LoginApi* | [**prepareemloginform**](docs/LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
@@ -114,8 +114,7 @@ Class | Method | HTTP request | Description
  - [NetSchool.DiaryAssignment](docs/DiaryAssignment.md)
  - [NetSchool.DiaryLesson](docs/DiaryLesson.md)
  - [NetSchool.DiaryWeekDays](docs/DiaryWeekDays.md)
- - [NetSchool.InlineResponse200](docs/InlineResponse200.md)
- - [NetSchool.InlineResponse2001](docs/InlineResponse2001.md)
+ - [NetSchool.GetAuthData](docs/GetAuthData.md)
  - [NetSchool.Login](docs/Login.md)
  - [NetSchool.LoginAccountInfo](docs/LoginAccountInfo.md)
  - [NetSchool.LoginAccountInfoCurrentOrganization](docs/LoginAccountInfoCurrentOrganization.md)
@@ -129,6 +128,8 @@ Class | Method | HTTP request | Description
  - [NetSchool.Mark](docs/Mark.md)
  - [NetSchool.MySettings](docs/MySettings.md)
  - [NetSchool.MySettingsUserSettings](docs/MySettingsUserSettings.md)
+ - [NetSchool.MySettingsYears](docs/MySettingsYears.md)
+ - [NetSchool.MySettingsYearsInner](docs/MySettingsYearsInner.md)
  - [NetSchool.PrepareEmLoginForm](docs/PrepareEmLoginForm.md)
  - [NetSchool.PrepareEmLoginFormCountries](docs/PrepareEmLoginFormCountries.md)
  - [NetSchool.PrepareLoginForm](docs/PrepareLoginForm.md)

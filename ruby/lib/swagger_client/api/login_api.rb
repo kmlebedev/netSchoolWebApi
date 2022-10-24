@@ -18,7 +18,7 @@ module SwaggerClient
     end
     # returns all login data
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2001]
+    # @return [GetAuthData]
     def getauthdata(opts = {})
       data, _status_code, _headers = getauthdata_with_http_info(opts)
       data
@@ -26,7 +26,7 @@ module SwaggerClient
 
     # returns all login data
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2001, Integer, Hash)>] InlineResponse2001 data, response status code and response headers
+    # @return [Array<(GetAuthData, Integer, Hash)>] GetAuthData data, response status code and response headers
     def getauthdata_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: LoginApi.getauthdata ...'
@@ -48,10 +48,10 @@ module SwaggerClient
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'InlineResponse2001' 
+      return_type = opts[:return_type] || 'GetAuthData' 
 
       auth_names = opts[:auth_names] || []
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,

@@ -9,15 +9,15 @@
 package swagger
 
 type LoginAccountInfo struct {
-	ActiveToken         string                               `json:"activeToken,omitempty"`
-	SecureActiveToken   string                               `json:"secureActiveToken,omitempty"`
+	ActiveToken string `json:"activeToken,omitempty"`
+	SecureActiveToken string `json:"secureActiveToken,omitempty"`
 	CurrentOrganization *LoginAccountInfoCurrentOrganization `json:"currentOrganization,omitempty"`
-	User                *LoginAccountInfoUser                `json:"user,omitempty"`
-	UserRoles           *LoginAccountInfoUserRoles           `json:"userRoles,omitempty"`
-	Organizations       []LoginAccountInfoOrganizations      `json:"organizations,omitempty"`
-	LoginTime           string                               `json:"loginTime,omitempty"`
-	Active              bool                                 `json:"active,omitempty"`
-	CanLogin            bool                                 `json:"canLogin,omitempty"`
-	StoreTokens         bool                                 `json:"storeTokens,omitempty"`
-	AccessToken         string                               `json:"accessToken,omitempty"`
+	User *LoginAccountInfoUser `json:"user,omitempty"`
+	UserRoles *LoginAccountInfoUserRoles `json:"userRoles,omitempty"`
+	Organizations []LoginAccountInfoOrganizations `json:"organizations,omitempty"`
+	LoginTime string `json:"loginTime,omitempty"`
+	Active bool `json:"active,omitempty"`
+	CanLogin bool `json:"canLogin,omitempty"`
+	StoreTokens bool `json:"storeTokens,omitempty"`
+	AccessToken string `json:"accessToken,omitempty"`
 }

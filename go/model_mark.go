@@ -10,7 +10,7 @@ package swagger
 
 type Mark struct {
 	AssignmentId int32 `json:"assignmentId,omitempty"`
-	StudentId    int32 `json:"studentId,omitempty"`
-	Mark         int32 `json:"mark,omitempty"`
-	DutyMark     bool  `json:"dutyMark,omitempty"`
+	StudentId int32 `json:"studentId,omitempty"`
+	Mark int32 `json:"mark,omitempty"`
+	DutyMark bool `json:"dutyMark,omitempty"`
 }

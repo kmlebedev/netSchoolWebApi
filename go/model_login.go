@@ -9,14 +9,14 @@
 package swagger
 
 type Login struct {
-	At           string            `json:"at,omitempty"`
-	Code         string            `json:"code,omitempty"`
-	TimeOut      int32             `json:"timeOut,omitempty"`
-	AccessToken  string            `json:"accessToken,omitempty"`
-	RefreshToken string            `json:"refreshToken,omitempty"`
-	AccountInfo  *LoginAccountInfo `json:"accountInfo,omitempty"`
-	TokenType    string            `json:"tokenType,omitempty"`
-	EntryPoint   string            `json:"entryPoint,omitempty"`
-	RequestData  *LoginRequestData `json:"requestData,omitempty"`
-	ErrorMessage string            `json:"errorMessage,omitempty"`
+	At string `json:"at,omitempty"`
+	Code string `json:"code,omitempty"`
+	TimeOut int32 `json:"timeOut,omitempty"`
+	AccessToken string `json:"accessToken,omitempty"`
+	RefreshToken string `json:"refreshToken,omitempty"`
+	AccountInfo *LoginAccountInfo `json:"accountInfo,omitempty"`
+	TokenType string `json:"tokenType,omitempty"`
+	EntryPoint string `json:"entryPoint,omitempty"`
+	RequestData *LoginRequestData `json:"requestData,omitempty"`
+	ErrorMessage string `json:"errorMessage,omitempty"`
 }

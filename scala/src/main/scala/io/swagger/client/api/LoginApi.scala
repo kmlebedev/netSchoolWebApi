@@ -13,11 +13,11 @@ package io.swagger.client.api
 
 import java.text.SimpleDateFormat
 
+import io.swagger.client.model.GetAuthData
 import io.swagger.client.model.Login
 import io.swagger.client.model.LoginData
 import io.swagger.client.model.PrepareEmLoginForm
 import io.swagger.client.model.PrepareLoginForm
-import io.swagger.client.model.inline_response_200_1
 import io.swagger.client.{ApiInvoker, ApiException}
 
 import com.sun.jersey.multipart.FormDataMultiPart
@@ -86,9 +86,9 @@ class LoginApi(
    * 
    * returns all login data
    *
-   * @return inline_response_200_1
+   * @return GetAuthData
    */
-  def getauthdata(): Option[inline_response_200_1] = {
+  def getauthdata(): Option[GetAuthData] = {
     val await = Try(Await.result(getauthdataAsync(), Duration.Inf))
     await match {
       case Success(i) => Some(await.get)
@@ -100,9 +100,9 @@ class LoginApi(
    *  asynchronously
    * returns all login data
    *
-   * @return Future(inline_response_200_1)
+   * @return Future(GetAuthData)
    */
-  def getauthdataAsync(): Future[inline_response_200_1] = {
+  def getauthdataAsync(): Future[GetAuthData] = {
       helper.getauthdata()
   }
 
@@ -234,7 +234,7 @@ class LoginApi(
 
 class LoginApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extends ApiClient(client, config) {
 
-  def getauthdata()(implicit reader: ClientResponseReader[inline_response_200_1]): Future[inline_response_200_1] = {
+  def getauthdata()(implicit reader: ClientResponseReader[GetAuthData]): Future[GetAuthData] = {
     // create path and map variables
     val path = (addFmt("/auth/getdata"))
 
@@ -243,7 +243,7 @@ class LoginApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extend
     val headerParams = new mutable.HashMap[String, String]
 
 
-    val resFuture = client.submit("GET", path, queryParams.toMap, headerParams.toMap, "")
+    val resFuture = client.submit("POST", path, queryParams.toMap, headerParams.toMap, "")
     resFuture flatMap { resp =>
       process(reader.read(resp))
     }

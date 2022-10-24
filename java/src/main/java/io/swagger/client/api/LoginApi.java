@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.InlineResponse2001;
+import io.swagger.client.model.GetAuthData;
 import io.swagger.client.model.Login;
 import io.swagger.client.model.LoginData;
 import io.swagger.client.model.PrepareEmLoginForm;
@@ -102,7 +102,7 @@ public class LoginApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
@@ -120,23 +120,23 @@ public class LoginApi {
     /**
      * 
      * returns all login data
-     * @return InlineResponse2001
+     * @return GetAuthData
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2001 getauthdata() throws ApiException {
-        ApiResponse<InlineResponse2001> resp = getauthdataWithHttpInfo();
+    public GetAuthData getauthdata() throws ApiException {
+        ApiResponse<GetAuthData> resp = getauthdataWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * 
      * returns all login data
-     * @return ApiResponse&lt;InlineResponse2001&gt;
+     * @return ApiResponse&lt;GetAuthData&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2001> getauthdataWithHttpInfo() throws ApiException {
+    public ApiResponse<GetAuthData> getauthdataWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = getauthdataValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAuthData>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -147,7 +147,7 @@ public class LoginApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getauthdataAsync(final ApiCallback<InlineResponse2001> callback) throws ApiException {
+    public com.squareup.okhttp.Call getauthdataAsync(final ApiCallback<GetAuthData> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -169,7 +169,7 @@ public class LoginApi {
         }
 
         com.squareup.okhttp.Call call = getauthdataValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
+        Type localVarReturnType = new TypeToken<GetAuthData>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

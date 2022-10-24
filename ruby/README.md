@@ -149,9 +149,11 @@ SwaggerClient.configure do |config|
 end
 
 api_instance = SwaggerClient::MysettingsApi.new
+at = 'at_example' # String | an authorization header
+
 
 begin
-  result = api_instance.mysettings
+  result = api_instance.mysettings(at)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling MysettingsApi->mysettings: #{e}"
@@ -161,9 +163,11 @@ SwaggerClient.configure do |config|
 end
 
 api_instance = SwaggerClient::MysettingsApi.new
+at = 'at_example' # String | an authorization header
+
 
 begin
-  result = api_instance.yearlist
+  result = api_instance.yearlist(at)
   p result
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling MysettingsApi->yearlist: #{e}"
@@ -210,7 +214,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SwaggerClient::AssignmentApi* | [**assignment_types**](docs/AssignmentApi.md#assignment_types) | **GET** /grade/assignment/types | 
 *SwaggerClient::DiaryApi* | [**diary_assignn_details**](docs/DiaryApi.md#diary_assignn_details) | **GET** /student/diary/assigns/{assignId} | 
-*SwaggerClient::LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+*SwaggerClient::LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *SwaggerClient::LoginApi* | [**login**](docs/LoginApi.md#login) | **POST** /login | 
 *SwaggerClient::LoginApi* | [**logindata**](docs/LoginApi.md#logindata) | **GET** /logindata | 
 *SwaggerClient::LoginApi* | [**prepareemloginform**](docs/LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
@@ -233,8 +237,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::DiaryAssignment](docs/DiaryAssignment.md)
  - [SwaggerClient::DiaryLesson](docs/DiaryLesson.md)
  - [SwaggerClient::DiaryWeekDays](docs/DiaryWeekDays.md)
- - [SwaggerClient::InlineResponse200](docs/InlineResponse200.md)
- - [SwaggerClient::InlineResponse2001](docs/InlineResponse2001.md)
+ - [SwaggerClient::GetAuthData](docs/GetAuthData.md)
  - [SwaggerClient::Login](docs/Login.md)
  - [SwaggerClient::LoginAccountInfo](docs/LoginAccountInfo.md)
  - [SwaggerClient::LoginAccountInfoCurrentOrganization](docs/LoginAccountInfoCurrentOrganization.md)
@@ -248,6 +251,8 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::Mark](docs/Mark.md)
  - [SwaggerClient::MySettings](docs/MySettings.md)
  - [SwaggerClient::MySettingsUserSettings](docs/MySettingsUserSettings.md)
+ - [SwaggerClient::MySettingsYears](docs/MySettingsYears.md)
+ - [SwaggerClient::MySettingsYearsInner](docs/MySettingsYearsInner.md)
  - [SwaggerClient::PrepareEmLoginForm](docs/PrepareEmLoginForm.md)
  - [SwaggerClient::PrepareEmLoginFormCountries](docs/PrepareEmLoginFormCountries.md)
  - [SwaggerClient::PrepareLoginForm](docs/PrepareLoginForm.md)

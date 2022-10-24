@@ -28,7 +28,7 @@ import java.util.List;
  * PrepareEmLoginForm
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-10-16T17:55:39.713Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-10-24T12:37:15.210Z[GMT]")
 public class PrepareEmLoginForm {
   @SerializedName("countries")
   private List<PrepareEmLoginFormCountries> countries = null;

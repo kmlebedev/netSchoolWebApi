@@ -9,6 +9,6 @@
 package swagger
 
 type DiaryAssignDetailsSubjectGroup struct {
-	Id   int32  `json:"id,omitempty"`
+	Id int32 `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
 }

@@ -9,6 +9,6 @@
 package swagger
 
 type DiaryWeekDays struct {
-	Date    string        `json:"date,omitempty"`
+	Date string `json:"date,omitempty"`
 	Lessons []DiaryLesson `json:"lessons,omitempty"`
 }

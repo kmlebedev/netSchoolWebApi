@@ -92,7 +92,7 @@ class LoginApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\InlineResponse2001
+     * @return \Swagger\Client\Model\GetAuthData
      */
     public function getauthdata()
     {
@@ -106,11 +106,11 @@ class LoginApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\GetAuthData, HTTP status code, HTTP response headers (array of strings)
      */
     public function getauthdataWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2001';
+        $returnType = '\Swagger\Client\Model\GetAuthData';
         $request = $this->getauthdataRequest();
 
         try {
@@ -162,7 +162,7 @@ class LoginApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\InlineResponse2001',
+                        '\Swagger\Client\Model\GetAuthData',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -202,7 +202,7 @@ class LoginApi
      */
     public function getauthdataAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\InlineResponse2001';
+        $returnType = '\Swagger\Client\Model\GetAuthData';
         $request = $this->getauthdataRequest();
 
         return $this->client
@@ -318,7 +318,7 @@ class LoginApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

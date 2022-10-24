@@ -24,8 +24,7 @@ import {DiaryAssignDetailsTeacher} from './model/DiaryAssignDetailsTeacher';
 import {DiaryAssignment} from './model/DiaryAssignment';
 import {DiaryLesson} from './model/DiaryLesson';
 import {DiaryWeekDays} from './model/DiaryWeekDays';
-import {InlineResponse200} from './model/InlineResponse200';
-import {InlineResponse2001} from './model/InlineResponse2001';
+import {GetAuthData} from './model/GetAuthData';
 import {Login} from './model/Login';
 import {LoginAccountInfo} from './model/LoginAccountInfo';
 import {LoginAccountInfoCurrentOrganization} from './model/LoginAccountInfoCurrentOrganization';
@@ -39,6 +38,8 @@ import {LoginRequestData} from './model/LoginRequestData';
 import {Mark} from './model/Mark';
 import {MySettings} from './model/MySettings';
 import {MySettingsUserSettings} from './model/MySettingsUserSettings';
+import {MySettingsYears} from './model/MySettingsYears';
+import {MySettingsYearsInner} from './model/MySettingsYearsInner';
 import {PrepareEmLoginForm} from './model/PrepareEmLoginForm';
 import {PrepareEmLoginFormCountries} from './model/PrepareEmLoginFormCountries';
 import {PrepareLoginForm} from './model/PrepareLoginForm';
@@ -155,16 +156,10 @@ export {
     DiaryWeekDays,
 
     /**
-     * The InlineResponse200 model constructor.
-     * @property {module:model/InlineResponse200}
+     * The GetAuthData model constructor.
+     * @property {module:model/GetAuthData}
      */
-    InlineResponse200,
-
-    /**
-     * The InlineResponse2001 model constructor.
-     * @property {module:model/InlineResponse2001}
-     */
-    InlineResponse2001,
+    GetAuthData,
 
     /**
      * The Login model constructor.
@@ -243,6 +238,18 @@ export {
      * @property {module:model/MySettingsUserSettings}
      */
     MySettingsUserSettings,
+
+    /**
+     * The MySettingsYears model constructor.
+     * @property {module:model/MySettingsYears}
+     */
+    MySettingsYears,
+
+    /**
+     * The MySettingsYearsInner model constructor.
+     * @property {module:model/MySettingsYearsInner}
+     */
+    MySettingsYearsInner,
 
     /**
      * The PrepareEmLoginForm model constructor.

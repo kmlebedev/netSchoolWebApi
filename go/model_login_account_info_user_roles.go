@@ -9,7 +9,7 @@
 package swagger
 
 type LoginAccountInfoUserRoles struct {
-	UserId   int32                          `json:"userId,omitempty"`
-	SchoolId int32                          `json:"schoolId,omitempty"`
-	Role     *LoginAccountInfoUserRolesRole `json:"role,omitempty"`
+	UserId int32 `json:"userId,omitempty"`
+	SchoolId int32 `json:"schoolId,omitempty"`
+	Role *LoginAccountInfoUserRolesRole `json:"role,omitempty"`
 }

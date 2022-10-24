@@ -37,7 +37,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AssignmentApi* | [**assignmentTypes**](docs/AssignmentApi.md#assignmenttypes) | **GET** /grade/assignment/types | 
 *DiaryApi* | [**diaryAssignnDetails**](docs/DiaryApi.md#diaryassignndetails) | **GET** /student/diary/assigns/{assignId} | 
-*LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+*LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *LoginApi* | [**login**](docs/LoginApi.md#login) | **POST** /login | 
 *LoginApi* | [**logindata**](docs/LoginApi.md#logindata) | **GET** /logindata | 
 *LoginApi* | [**prepareemloginform**](docs/LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
@@ -61,8 +61,7 @@ Class | Method | HTTP request | Description
  - [io.swagger.client.models.DiaryAssignment](docs/DiaryAssignment.md)
  - [io.swagger.client.models.DiaryLesson](docs/DiaryLesson.md)
  - [io.swagger.client.models.DiaryWeekDays](docs/DiaryWeekDays.md)
- - [io.swagger.client.models.InlineResponse200](docs/InlineResponse200.md)
- - [io.swagger.client.models.InlineResponse2001](docs/InlineResponse2001.md)
+ - [io.swagger.client.models.GetAuthData](docs/GetAuthData.md)
  - [io.swagger.client.models.Login](docs/Login.md)
  - [io.swagger.client.models.LoginAccountInfo](docs/LoginAccountInfo.md)
  - [io.swagger.client.models.LoginAccountInfoCurrentOrganization](docs/LoginAccountInfoCurrentOrganization.md)
@@ -76,6 +75,8 @@ Class | Method | HTTP request | Description
  - [io.swagger.client.models.Mark](docs/Mark.md)
  - [io.swagger.client.models.MySettings](docs/MySettings.md)
  - [io.swagger.client.models.MySettingsUserSettings](docs/MySettingsUserSettings.md)
+ - [io.swagger.client.models.MySettingsYears](docs/MySettingsYears.md)
+ - [io.swagger.client.models.MySettingsYearsInner](docs/MySettingsYearsInner.md)
  - [io.swagger.client.models.PrepareEmLoginForm](docs/PrepareEmLoginForm.md)
  - [io.swagger.client.models.PrepareEmLoginFormCountries](docs/PrepareEmLoginFormCountries.md)
  - [io.swagger.client.models.PrepareLoginForm](docs/PrepareLoginForm.md)

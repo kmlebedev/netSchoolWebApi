@@ -9,6 +9,6 @@
 package swagger
 
 type LoginAccountInfoUserRolesRole struct {
-	Id   int32  `json:"id,omitempty"`
+	Id int32 `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
 }

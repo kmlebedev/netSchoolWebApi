@@ -9,14 +9,14 @@
 package swagger
 
 type MySettingsUserSettings struct {
-	ShowMobilePhone  bool     `json:"showMobilePhone,omitempty"`
-	DefaultDesktop   int32    `json:"defaultDesktop,omitempty"`
-	Language         string   `json:"language,omitempty"`
-	FavoriteReports  []string `json:"favoriteReports,omitempty"`
-	PasswordExpired  int32    `json:"passwordExpired,omitempty"`
-	RecoveryAnswer   string   `json:"recoveryAnswer,omitempty"`
-	RecoveryQuestion string   `json:"recoveryQuestion,omitempty"`
-	Theme            int32    `json:"theme,omitempty"`
-	UserId           int32    `json:"userId,omitempty"`
-	ShowNetSchoolApp bool     `json:"showNetSchoolApp,omitempty"`
+	ShowMobilePhone bool `json:"showMobilePhone,omitempty"`
+	DefaultDesktop int32 `json:"defaultDesktop,omitempty"`
+	Language string `json:"language,omitempty"`
+	FavoriteReports []string `json:"favoriteReports,omitempty"`
+	PasswordExpired int32 `json:"passwordExpired,omitempty"`
+	RecoveryAnswer string `json:"recoveryAnswer,omitempty"`
+	RecoveryQuestion string `json:"recoveryQuestion,omitempty"`
+	Theme int32 `json:"theme,omitempty"`
+	UserId int32 `json:"userId,omitempty"`
+	ShowNetSchoolApp bool `json:"showNetSchoolApp,omitempty"`
 }

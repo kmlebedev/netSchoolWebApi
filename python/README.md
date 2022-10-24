@@ -70,7 +70,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AssignmentApi* | [**assignment_types**](docs/AssignmentApi.md#assignment_types) | **GET** /grade/assignment/types | 
 *DiaryApi* | [**diary_assignn_details**](docs/DiaryApi.md#diary_assignn_details) | **GET** /student/diary/assigns/{assignId} | 
-*LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+*LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *LoginApi* | [**login**](docs/LoginApi.md#login) | **POST** /login | 
 *LoginApi* | [**logindata**](docs/LoginApi.md#logindata) | **GET** /logindata | 
 *LoginApi* | [**prepareemloginform**](docs/LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
@@ -93,8 +93,7 @@ Class | Method | HTTP request | Description
  - [DiaryAssignment](docs/DiaryAssignment.md)
  - [DiaryLesson](docs/DiaryLesson.md)
  - [DiaryWeekDays](docs/DiaryWeekDays.md)
- - [InlineResponse200](docs/InlineResponse200.md)
- - [InlineResponse2001](docs/InlineResponse2001.md)
+ - [GetAuthData](docs/GetAuthData.md)
  - [Login](docs/Login.md)
  - [LoginAccountInfo](docs/LoginAccountInfo.md)
  - [LoginAccountInfoCurrentOrganization](docs/LoginAccountInfoCurrentOrganization.md)
@@ -108,6 +107,8 @@ Class | Method | HTTP request | Description
  - [Mark](docs/Mark.md)
  - [MySettings](docs/MySettings.md)
  - [MySettingsUserSettings](docs/MySettingsUserSettings.md)
+ - [MySettingsYears](docs/MySettingsYears.md)
+ - [MySettingsYearsInner](docs/MySettingsYearsInner.md)
  - [PrepareEmLoginForm](docs/PrepareEmLoginForm.md)
  - [PrepareEmLoginFormCountries](docs/PrepareEmLoginFormCountries.md)
  - [PrepareLoginForm](docs/PrepareLoginForm.md)

@@ -4,7 +4,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Getauthdata**](LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+[**Getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 [**Login**](LoginApi.md#login) | **POST** /login | 
 [**Logindata**](LoginApi.md#logindata) | **GET** /logindata | 
 [**Prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getauthdata"></a>
 # **Getauthdata**
-> InlineResponse2001 Getauthdata ()
+> GetAuthData Getauthdata ()
 
 
 
@@ -36,7 +36,7 @@ namespace Example
 
             try
             {
-                InlineResponse2001 result = apiInstance.Getauthdata();
+                GetAuthData result = apiInstance.Getauthdata();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**GetAuthData**](GetAuthData.md)
 
 ### Authorization
 

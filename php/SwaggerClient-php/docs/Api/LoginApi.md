@@ -4,14 +4,14 @@ All URIs are relative to *https://virtserver.swaggerhub.com/LEBEDEVKM/NetSchool/
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getauthdata**](LoginApi.md#getauthdata) | **GET** /auth/getdata | 
+[**getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 [**login**](LoginApi.md#login) | **POST** /login | 
 [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
 [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 [**prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 
 # **getauthdata**
-> \Swagger\Client\Model\InlineResponse2001 getauthdata()
+> \Swagger\Client\Model\GetAuthData getauthdata()
 
 
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Swagger\Client\Model\GetAuthData**](../Model/GetAuthData.md)
 
 ### Authorization
 

@@ -9,18 +9,18 @@
 package swagger
 
 type DiaryAssignDetails struct {
-	Id                  int32                           `json:"id,omitempty"`
-	AssignmentName      string                          `json:"assignmentName,omitempty"`
-	ActivityName        string                          `json:"activityName,omitempty"`
-	ProblemName         string                          `json:"problemName,omitempty"`
-	SubjectGroup        *DiaryAssignDetailsSubjectGroup `json:"subjectGroup,omitempty"`
-	Teacher             *DiaryAssignDetailsTeacher      `json:"teacher,omitempty"`
-	ProductId           int32                           `json:"productId,omitempty"`
-	IsDeleted           bool                            `json:"isDeleted,omitempty"`
-	Weight              int32                           `json:"weight,omitempty"`
-	Date                string                          `json:"date,omitempty"`
-	Description         string                          `json:"description,omitempty"`
-	Attachments         []DiaryAssignDetailsAttachments `json:"attachments,omitempty"`
-	ContentElements     []interface{}                   `json:"contentElements,omitempty"`
-	CodeContentElements []interface{}                   `json:"codeContentElements,omitempty"`
+	Id int32 `json:"id,omitempty"`
+	AssignmentName string `json:"assignmentName,omitempty"`
+	ActivityName string `json:"activityName,omitempty"`
+	ProblemName string `json:"problemName,omitempty"`
+	SubjectGroup *DiaryAssignDetailsSubjectGroup `json:"subjectGroup,omitempty"`
+	Teacher *DiaryAssignDetailsTeacher `json:"teacher,omitempty"`
+	ProductId int32 `json:"productId,omitempty"`
+	IsDeleted bool `json:"isDeleted,omitempty"`
+	Weight int32 `json:"weight,omitempty"`
+	Date string `json:"date,omitempty"`
+	Description string `json:"description,omitempty"`
+	Attachments []DiaryAssignDetailsAttachments `json:"attachments,omitempty"`
+	ContentElements []interface{} `json:"contentElements,omitempty"`
+	CodeContentElements []interface{} `json:"codeContentElements,omitempty"`
 }

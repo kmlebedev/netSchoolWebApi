@@ -1,0 +1,18 @@
+# SwaggerClient::LoginBody
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**login_type** | **Integer** |  | [optional] 
+**cid** | **Integer** |  | [optional] 
+**sid** | **Integer** |  | [optional] 
+**pid** | **Integer** |  | [optional] 
+**cn** | **Integer** |  | [optional] 
+**sft** | **Integer** |  | [optional] 
+**scid** | **Integer** |  | [optional] 
+**un** | **String** |  | [optional] 
+**pw** | **String** |  | [optional] 
+**lt** | **Integer** |  | [optional] 
+**pw2** | **String** |  | [optional] 
+**ver** | **Integer** |  | [optional] 
+
