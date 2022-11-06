@@ -18,7 +18,7 @@ package io.swagger.client.model
  * @param activityName  for example: '''nil'''
  * @param problemName  for example: '''nil'''
  * @param subjectGroup 
- * @param teacher 
+ * @param teachers 
  * @param productId 
  * @param isDeleted  for example: '''false'''
  * @param weight  for example: '''10'''
@@ -34,7 +34,7 @@ case class DiaryAssignDetails (
   activityName: Option[String] = None,
   problemName: Option[String] = None,
   subjectGroup: Option[diaryAssignDetails_subjectGroup] = None,
-  teacher: Option[diaryAssignDetails_teacher] = None,
+  teachers: Option[List[diaryAssignDetails_teachers]] = None,
   productId: Option[Integer] = None,
   isDeleted: Option[Boolean] = None,
   weight: Option[Integer] = None,

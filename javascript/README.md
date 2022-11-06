@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
 *NetSchool.LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *NetSchool.LoginApi* | [**login**](docs/LoginApi.md#login) | **POST** /login | 
 *NetSchool.LoginApi* | [**logindata**](docs/LoginApi.md#logindata) | **GET** /logindata | 
+*NetSchool.LoginApi* | [**loginform**](docs/LoginApi.md#loginform) | **GET** /loginform | 
 *NetSchool.LoginApi* | [**prepareemloginform**](docs/LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 *NetSchool.LoginApi* | [**prepareloginform**](docs/LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 *NetSchool.MysettingsApi* | [**mysettings**](docs/MysettingsApi.md#mysettings) | **GET** /mysettings | 
@@ -110,7 +111,7 @@ Class | Method | HTTP request | Description
  - [NetSchool.DiaryAssignDetails](docs/DiaryAssignDetails.md)
  - [NetSchool.DiaryAssignDetailsAttachments](docs/DiaryAssignDetailsAttachments.md)
  - [NetSchool.DiaryAssignDetailsSubjectGroup](docs/DiaryAssignDetailsSubjectGroup.md)
- - [NetSchool.DiaryAssignDetailsTeacher](docs/DiaryAssignDetailsTeacher.md)
+ - [NetSchool.DiaryAssignDetailsTeachers](docs/DiaryAssignDetailsTeachers.md)
  - [NetSchool.DiaryAssignment](docs/DiaryAssignment.md)
  - [NetSchool.DiaryLesson](docs/DiaryLesson.md)
  - [NetSchool.DiaryWeekDays](docs/DiaryWeekDays.md)
@@ -124,6 +125,7 @@ Class | Method | HTTP request | Description
  - [NetSchool.LoginAccountInfoUserRolesRole](docs/LoginAccountInfoUserRolesRole.md)
  - [NetSchool.LoginBody](docs/LoginBody.md)
  - [NetSchool.LoginData](docs/LoginData.md)
+ - [NetSchool.LoginForm](docs/LoginForm.md)
  - [NetSchool.LoginRequestData](docs/LoginRequestData.md)
  - [NetSchool.Mark](docs/Mark.md)
  - [NetSchool.MySettings](docs/MySettings.md)

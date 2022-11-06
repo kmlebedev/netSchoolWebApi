@@ -16,6 +16,7 @@ import {ApiClient} from "../ApiClient";
 import {GetAuthData} from '../model/GetAuthData';
 import {Login} from '../model/Login';
 import {LoginData} from '../model/LoginData';
+import {LoginForm} from '../model/LoginForm';
 import {PrepareEmLoginForm} from '../model/PrepareEmLoginForm';
 import {PrepareLoginForm} from '../model/PrepareLoginForm';
 
@@ -222,6 +223,55 @@ export class LoginApi {
       );
     }
     /**
+     * Callback function to receive the result of the loginform operation.
+     * @callback moduleapi/LoginApi~loginformCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LoginForm{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * returns all loginform
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.cid 
+     * @param {Number} opts.sid 
+     * @param {Number} opts.pid 
+     * @param {Number} opts.cn 
+     * @param {Number} opts.sft 
+     * @param {String} opts.LASTNAME 
+     * @param {String} opts.cacheVer 
+     * @param {module:api/LoginApi~loginformCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    loginform(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'cid': opts['cid'],'sid': opts['sid'],'pid': opts['pid'],'cn': opts['cn'],'sft': opts['sft'],'LASTNAME': opts['LASTNAME'],'cacheVer': opts['cacheVer']
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = LoginForm;
+
+      return this.apiClient.callApi(
+        '/loginform', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the prepareemloginform operation.
      * @callback moduleapi/LoginApi~prepareemloginformCallback
      * @param {String} error Error message, if any.
@@ -275,6 +325,12 @@ export class LoginApi {
     /**
      * returns all prepareloginform
      * @param {Object} opts Optional parameters
+     * @param {Number} opts.cid 
+     * @param {Number} opts.sid 
+     * @param {Number} opts.pid 
+     * @param {Number} opts.cn 
+     * @param {Number} opts.sft 
+     * @param {String} opts.LASTNAME 
      * @param {String} opts.cacheVer 
      * @param {module:api/LoginApi~prepareloginformCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
@@ -287,7 +343,7 @@ export class LoginApi {
         
       };
       let queryParams = {
-        'cacheVer': opts['cacheVer']
+        'cid': opts['cid'],'sid': opts['sid'],'pid': opts['pid'],'cn': opts['cn'],'sft': opts['sft'],'LASTNAME': opts['LASTNAME'],'cacheVer': opts['cacheVer']
       };
       let headerParams = {
         

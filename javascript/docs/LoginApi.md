@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 [**login**](LoginApi.md#login) | **POST** /login | 
 [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
+[**loginform**](LoginApi.md#loginform) | **GET** /loginform | 
 [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 [**prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 
@@ -151,6 +152,62 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="loginform"></a>
+# **loginform**
+> LoginForm loginform(opts)
+
+
+
+returns all loginform
+
+### Example
+```javascript
+import {NetSchool} from 'net_school';
+
+let apiInstance = new NetSchool.LoginApi();
+let opts = { 
+  'cid': 56, // Number | 
+  'sid': 56, // Number | 
+  'pid': 56, // Number | 
+  'cn': 56, // Number | 
+  'sft': 56, // Number | 
+  'LASTNAME': "LASTNAME_example", // String | 
+  'cacheVer': "cacheVer_example" // String | 
+};
+apiInstance.loginform(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cid** | **Number**|  | [optional] 
+ **sid** | **Number**|  | [optional] 
+ **pid** | **Number**|  | [optional] 
+ **cn** | **Number**|  | [optional] 
+ **sft** | **Number**|  | [optional] 
+ **LASTNAME** | **String**|  | [optional] 
+ **cacheVer** | **String**|  | [optional] 
+
+### Return type
+
+[**LoginForm**](LoginForm.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="prepareemloginform"></a>
 # **prepareemloginform**
 > PrepareEmLoginForm prepareemloginform(opts)
@@ -209,6 +266,12 @@ import {NetSchool} from 'net_school';
 
 let apiInstance = new NetSchool.LoginApi();
 let opts = { 
+  'cid': 56, // Number | 
+  'sid': 56, // Number | 
+  'pid': 56, // Number | 
+  'cn': 56, // Number | 
+  'sft': 56, // Number | 
+  'LASTNAME': "LASTNAME_example", // String | 
   'cacheVer': "cacheVer_example" // String | 
 };
 apiInstance.prepareloginform(opts, (error, data, response) => {
@@ -224,6 +287,12 @@ apiInstance.prepareloginform(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cid** | **Number**|  | [optional] 
+ **sid** | **Number**|  | [optional] 
+ **pid** | **Number**|  | [optional] 
+ **cn** | **Number**|  | [optional] 
+ **sft** | **Number**|  | [optional] 
+ **LASTNAME** | **String**|  | [optional] 
  **cacheVer** | **String**|  | [optional] 
 
 ### Return type

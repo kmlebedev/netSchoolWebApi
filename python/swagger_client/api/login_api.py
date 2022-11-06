@@ -393,6 +393,121 @@ class LoginApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def loginform(self, **kwargs):  # noqa: E501
+        """loginform  # noqa: E501
+
+        returns all loginform  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.loginform(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int cid:
+        :param int sid:
+        :param int pid:
+        :param int cn:
+        :param int sft:
+        :param str lastname:
+        :param str cache_ver:
+        :return: LoginForm
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.loginform_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.loginform_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def loginform_with_http_info(self, **kwargs):  # noqa: E501
+        """loginform  # noqa: E501
+
+        returns all loginform  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.loginform_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int cid:
+        :param int sid:
+        :param int pid:
+        :param int cn:
+        :param int sft:
+        :param str lastname:
+        :param str cache_ver:
+        :return: LoginForm
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cid', 'sid', 'pid', 'cn', 'sft', 'lastname', 'cache_ver']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method loginform" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'cid' in params:
+            query_params.append(('cid', params['cid']))  # noqa: E501
+        if 'sid' in params:
+            query_params.append(('sid', params['sid']))  # noqa: E501
+        if 'pid' in params:
+            query_params.append(('pid', params['pid']))  # noqa: E501
+        if 'cn' in params:
+            query_params.append(('cn', params['cn']))  # noqa: E501
+        if 'sft' in params:
+            query_params.append(('sft', params['sft']))  # noqa: E501
+        if 'lastname' in params:
+            query_params.append(('LASTNAME', params['lastname']))  # noqa: E501
+        if 'cache_ver' in params:
+            query_params.append(('cacheVer', params['cache_ver']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/loginform', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='LoginForm',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def prepareemloginform(self, **kwargs):  # noqa: E501
         """prepareemloginform  # noqa: E501
 
@@ -494,6 +609,12 @@ class LoginApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param int cid:
+        :param int sid:
+        :param int pid:
+        :param int cn:
+        :param int sft:
+        :param str lastname:
         :param str cache_ver:
         :return: PrepareLoginForm
                  If the method is called asynchronously,
@@ -516,13 +637,19 @@ class LoginApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param int cid:
+        :param int sid:
+        :param int pid:
+        :param int cn:
+        :param int sft:
+        :param str lastname:
         :param str cache_ver:
         :return: PrepareLoginForm
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cache_ver']  # noqa: E501
+        all_params = ['cid', 'sid', 'pid', 'cn', 'sft', 'lastname', 'cache_ver']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -543,6 +670,18 @@ class LoginApi(object):
         path_params = {}
 
         query_params = []
+        if 'cid' in params:
+            query_params.append(('cid', params['cid']))  # noqa: E501
+        if 'sid' in params:
+            query_params.append(('sid', params['sid']))  # noqa: E501
+        if 'pid' in params:
+            query_params.append(('pid', params['pid']))  # noqa: E501
+        if 'cn' in params:
+            query_params.append(('cn', params['cn']))  # noqa: E501
+        if 'sft' in params:
+            query_params.append(('sft', params['sft']))  # noqa: E501
+        if 'lastname' in params:
+            query_params.append(('LASTNAME', params['lastname']))  # noqa: E501
         if 'cache_ver' in params:
             query_params.append(('cacheVer', params['cache_ver']))  # noqa: E501
 

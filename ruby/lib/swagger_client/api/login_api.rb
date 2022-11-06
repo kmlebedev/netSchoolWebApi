@@ -246,6 +246,75 @@ module SwaggerClient
       end
       return data, status_code, headers
     end
+    # returns all loginform
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :cid 
+    # @option opts [Integer] :sid 
+    # @option opts [Integer] :pid 
+    # @option opts [Integer] :cn 
+    # @option opts [Integer] :sft 
+    # @option opts [String] :lastname 
+    # @option opts [String] :cache_ver 
+    # @return [LoginForm]
+    def loginform(opts = {})
+      data, _status_code, _headers = loginform_with_http_info(opts)
+      data
+    end
+
+    # returns all loginform
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :cid 
+    # @option opts [Integer] :sid 
+    # @option opts [Integer] :pid 
+    # @option opts [Integer] :cn 
+    # @option opts [Integer] :sft 
+    # @option opts [String] :lastname 
+    # @option opts [String] :cache_ver 
+    # @return [Array<(LoginForm, Integer, Hash)>] LoginForm data, response status code and response headers
+    def loginform_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: LoginApi.loginform ...'
+      end
+      # resource path
+      local_var_path = '/loginform'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'cid'] = opts[:'cid'] if !opts[:'cid'].nil?
+      query_params[:'sid'] = opts[:'sid'] if !opts[:'sid'].nil?
+      query_params[:'pid'] = opts[:'pid'] if !opts[:'pid'].nil?
+      query_params[:'cn'] = opts[:'cn'] if !opts[:'cn'].nil?
+      query_params[:'sft'] = opts[:'sft'] if !opts[:'sft'].nil?
+      query_params[:'LASTNAME'] = opts[:'lastname'] if !opts[:'lastname'].nil?
+      query_params[:'cacheVer'] = opts[:'cache_ver'] if !opts[:'cache_ver'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:body] 
+
+      return_type = opts[:return_type] || 'LoginForm' 
+
+      auth_names = opts[:auth_names] || []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type)
+
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: LoginApi#loginform\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # returns all prepareemloginform
     # @param [Hash] opts the optional parameters
     # @option opts [String] :cache_ver 
@@ -299,6 +368,12 @@ module SwaggerClient
     end
     # returns all prepareloginform
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :cid 
+    # @option opts [Integer] :sid 
+    # @option opts [Integer] :pid 
+    # @option opts [Integer] :cn 
+    # @option opts [Integer] :sft 
+    # @option opts [String] :lastname 
     # @option opts [String] :cache_ver 
     # @return [PrepareLoginForm]
     def prepareloginform(opts = {})
@@ -308,6 +383,12 @@ module SwaggerClient
 
     # returns all prepareloginform
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :cid 
+    # @option opts [Integer] :sid 
+    # @option opts [Integer] :pid 
+    # @option opts [Integer] :cn 
+    # @option opts [Integer] :sft 
+    # @option opts [String] :lastname 
     # @option opts [String] :cache_ver 
     # @return [Array<(PrepareLoginForm, Integer, Hash)>] PrepareLoginForm data, response status code and response headers
     def prepareloginform_with_http_info(opts = {})
@@ -319,6 +400,12 @@ module SwaggerClient
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'cid'] = opts[:'cid'] if !opts[:'cid'].nil?
+      query_params[:'sid'] = opts[:'sid'] if !opts[:'sid'].nil?
+      query_params[:'pid'] = opts[:'pid'] if !opts[:'pid'].nil?
+      query_params[:'cn'] = opts[:'cn'] if !opts[:'cn'].nil?
+      query_params[:'sft'] = opts[:'sft'] if !opts[:'sft'].nil?
+      query_params[:'LASTNAME'] = opts[:'lastname'] if !opts[:'lastname'].nil?
       query_params[:'cacheVer'] = opts[:'cache_ver'] if !opts[:'cache_ver'].nil?
 
       # header parameters

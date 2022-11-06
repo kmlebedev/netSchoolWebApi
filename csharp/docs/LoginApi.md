@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**Getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 [**Login**](LoginApi.md#login) | **POST** /login | 
 [**Logindata**](LoginApi.md#logindata) | **GET** /logindata | 
+[**Loginform**](LoginApi.md#loginform) | **GET** /loginform | 
 [**Prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 [**Prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 
@@ -201,6 +202,77 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="loginform"></a>
+# **Loginform**
+> LoginForm Loginform (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
+
+
+
+returns all loginform
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class LoginformExample
+    {
+        public void main()
+        {
+            var apiInstance = new LoginApi();
+            var cid = 56;  // int? |  (optional) 
+            var sid = 56;  // int? |  (optional) 
+            var pid = 56;  // int? |  (optional) 
+            var cn = 56;  // int? |  (optional) 
+            var sft = 56;  // int? |  (optional) 
+            var LASTNAME = LASTNAME_example;  // string |  (optional) 
+            var cacheVer = cacheVer_example;  // string |  (optional) 
+
+            try
+            {
+                LoginForm result = apiInstance.Loginform(cid, sid, pid, cn, sft, LASTNAME, cacheVer);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling LoginApi.Loginform: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cid** | **int?**|  | [optional] 
+ **sid** | **int?**|  | [optional] 
+ **pid** | **int?**|  | [optional] 
+ **cn** | **int?**|  | [optional] 
+ **sft** | **int?**|  | [optional] 
+ **LASTNAME** | **string**|  | [optional] 
+ **cacheVer** | **string**|  | [optional] 
+
+### Return type
+
+[**LoginForm**](LoginForm.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="prepareemloginform"></a>
 # **Prepareemloginform**
 > PrepareEmLoginForm Prepareemloginform (string cacheVer = null)
@@ -262,7 +334,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="prepareloginform"></a>
 # **Prepareloginform**
-> PrepareLoginForm Prepareloginform (string cacheVer = null)
+> PrepareLoginForm Prepareloginform (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
 
 
 
@@ -283,11 +355,17 @@ namespace Example
         public void main()
         {
             var apiInstance = new LoginApi();
+            var cid = 56;  // int? |  (optional) 
+            var sid = 56;  // int? |  (optional) 
+            var pid = 56;  // int? |  (optional) 
+            var cn = 56;  // int? |  (optional) 
+            var sft = 56;  // int? |  (optional) 
+            var LASTNAME = LASTNAME_example;  // string |  (optional) 
             var cacheVer = cacheVer_example;  // string |  (optional) 
 
             try
             {
-                PrepareLoginForm result = apiInstance.Prepareloginform(cacheVer);
+                PrepareLoginForm result = apiInstance.Prepareloginform(cid, sid, pid, cn, sft, LASTNAME, cacheVer);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -303,6 +381,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cid** | **int?**|  | [optional] 
+ **sid** | **int?**|  | [optional] 
+ **pid** | **int?**|  | [optional] 
+ **cn** | **int?**|  | [optional] 
+ **sft** | **int?**|  | [optional] 
+ **LASTNAME** | **string**|  | [optional] 
  **cacheVer** | **string**|  | [optional] 
 
 ### Return type

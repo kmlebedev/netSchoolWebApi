@@ -31,7 +31,7 @@ from swagger_client.models.diary import Diary
 from swagger_client.models.diary_assign_details import DiaryAssignDetails
 from swagger_client.models.diary_assign_details_attachments import DiaryAssignDetailsAttachments
 from swagger_client.models.diary_assign_details_subject_group import DiaryAssignDetailsSubjectGroup
-from swagger_client.models.diary_assign_details_teacher import DiaryAssignDetailsTeacher
+from swagger_client.models.diary_assign_details_teachers import DiaryAssignDetailsTeachers
 from swagger_client.models.diary_assignment import DiaryAssignment
 from swagger_client.models.diary_lesson import DiaryLesson
 from swagger_client.models.diary_week_days import DiaryWeekDays
@@ -45,6 +45,7 @@ from swagger_client.models.login_account_info_user_roles import LoginAccountInfo
 from swagger_client.models.login_account_info_user_roles_role import LoginAccountInfoUserRolesRole
 from swagger_client.models.login_body import LoginBody
 from swagger_client.models.login_data import LoginData
+from swagger_client.models.login_form import LoginForm
 from swagger_client.models.login_request_data import LoginRequestData
 from swagger_client.models.mark import Mark
 from swagger_client.models.my_settings import MySettings

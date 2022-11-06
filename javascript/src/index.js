@@ -20,7 +20,7 @@ import {Diary} from './model/Diary';
 import {DiaryAssignDetails} from './model/DiaryAssignDetails';
 import {DiaryAssignDetailsAttachments} from './model/DiaryAssignDetailsAttachments';
 import {DiaryAssignDetailsSubjectGroup} from './model/DiaryAssignDetailsSubjectGroup';
-import {DiaryAssignDetailsTeacher} from './model/DiaryAssignDetailsTeacher';
+import {DiaryAssignDetailsTeachers} from './model/DiaryAssignDetailsTeachers';
 import {DiaryAssignment} from './model/DiaryAssignment';
 import {DiaryLesson} from './model/DiaryLesson';
 import {DiaryWeekDays} from './model/DiaryWeekDays';
@@ -34,6 +34,7 @@ import {LoginAccountInfoUserRoles} from './model/LoginAccountInfoUserRoles';
 import {LoginAccountInfoUserRolesRole} from './model/LoginAccountInfoUserRolesRole';
 import {LoginBody} from './model/LoginBody';
 import {LoginData} from './model/LoginData';
+import {LoginForm} from './model/LoginForm';
 import {LoginRequestData} from './model/LoginRequestData';
 import {Mark} from './model/Mark';
 import {MySettings} from './model/MySettings';
@@ -132,10 +133,10 @@ export {
     DiaryAssignDetailsSubjectGroup,
 
     /**
-     * The DiaryAssignDetailsTeacher model constructor.
-     * @property {module:model/DiaryAssignDetailsTeacher}
+     * The DiaryAssignDetailsTeachers model constructor.
+     * @property {module:model/DiaryAssignDetailsTeachers}
      */
-    DiaryAssignDetailsTeacher,
+    DiaryAssignDetailsTeachers,
 
     /**
      * The DiaryAssignment model constructor.
@@ -214,6 +215,12 @@ export {
      * @property {module:model/LoginData}
      */
     LoginData,
+
+    /**
+     * The LoginForm model constructor.
+     * @property {module:model/LoginForm}
+     */
+    LoginForm,
 
     /**
      * The LoginRequestData model constructor.

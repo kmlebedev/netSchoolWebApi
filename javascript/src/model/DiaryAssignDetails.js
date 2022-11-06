@@ -15,7 +15,7 @@
 import {ApiClient} from '../ApiClient';
 import {DiaryAssignDetailsAttachments} from './DiaryAssignDetailsAttachments';
 import {DiaryAssignDetailsSubjectGroup} from './DiaryAssignDetailsSubjectGroup';
-import {DiaryAssignDetailsTeacher} from './DiaryAssignDetailsTeacher';
+import {DiaryAssignDetailsTeachers} from './DiaryAssignDetailsTeachers';
 
 /**
  * The DiaryAssignDetails model module.
@@ -51,8 +51,8 @@ export class DiaryAssignDetails {
         obj.problemName = ApiClient.convertToType(data['problemName'], 'String');
       if (data.hasOwnProperty('subjectGroup'))
         obj.subjectGroup = DiaryAssignDetailsSubjectGroup.constructFromObject(data['subjectGroup']);
-      if (data.hasOwnProperty('teacher'))
-        obj.teacher = DiaryAssignDetailsTeacher.constructFromObject(data['teacher']);
+      if (data.hasOwnProperty('teachers'))
+        obj.teachers = ApiClient.convertToType(data['teachers'], [DiaryAssignDetailsTeachers]);
       if (data.hasOwnProperty('productId'))
         obj.productId = ApiClient.convertToType(data['productId'], 'Number');
       if (data.hasOwnProperty('isDeleted'))
@@ -100,9 +100,9 @@ DiaryAssignDetails.prototype.problemName = undefined;
 DiaryAssignDetails.prototype.subjectGroup = undefined;
 
 /**
- * @member {module:model/DiaryAssignDetailsTeacher} teacher
+ * @member {Array.<module:model/DiaryAssignDetailsTeachers>} teachers
  */
-DiaryAssignDetails.prototype.teacher = undefined;
+DiaryAssignDetails.prototype.teachers = undefined;
 
 /**
  * @member {Number} productId

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 [**login**](LoginApi.md#login) | **POST** /login | 
 [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
+[**loginform**](LoginApi.md#loginform) | **GET** /loginform | 
 [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 [**prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 
@@ -165,6 +166,65 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **loginform**
+> LoginForm loginform(cid=cid, sid=sid, pid=pid, cn=cn, sft=sft, lastname=lastname, cache_ver=cache_ver)
+
+
+
+returns all loginform
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.LoginApi()
+cid = 56 # int |  (optional)
+sid = 56 # int |  (optional)
+pid = 56 # int |  (optional)
+cn = 56 # int |  (optional)
+sft = 56 # int |  (optional)
+lastname = 'lastname_example' # str |  (optional)
+cache_ver = 'cache_ver_example' # str |  (optional)
+
+try:
+    api_response = api_instance.loginform(cid=cid, sid=sid, pid=pid, cn=cn, sft=sft, lastname=lastname, cache_ver=cache_ver)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LoginApi->loginform: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cid** | **int**|  | [optional] 
+ **sid** | **int**|  | [optional] 
+ **pid** | **int**|  | [optional] 
+ **cn** | **int**|  | [optional] 
+ **sft** | **int**|  | [optional] 
+ **lastname** | **str**|  | [optional] 
+ **cache_ver** | **str**|  | [optional] 
+
+### Return type
+
+[**LoginForm**](LoginForm.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **prepareemloginform**
 > PrepareEmLoginForm prepareemloginform(cache_ver=cache_ver)
 
@@ -213,7 +273,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **prepareloginform**
-> PrepareLoginForm prepareloginform(cache_ver=cache_ver)
+> PrepareLoginForm prepareloginform(cid=cid, sid=sid, pid=pid, cn=cn, sft=sft, lastname=lastname, cache_ver=cache_ver)
 
 
 
@@ -229,10 +289,16 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.LoginApi()
+cid = 56 # int |  (optional)
+sid = 56 # int |  (optional)
+pid = 56 # int |  (optional)
+cn = 56 # int |  (optional)
+sft = 56 # int |  (optional)
+lastname = 'lastname_example' # str |  (optional)
 cache_ver = 'cache_ver_example' # str |  (optional)
 
 try:
-    api_response = api_instance.prepareloginform(cache_ver=cache_ver)
+    api_response = api_instance.prepareloginform(cid=cid, sid=sid, pid=pid, cn=cn, sft=sft, lastname=lastname, cache_ver=cache_ver)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LoginApi->prepareloginform: %s\n" % e)
@@ -242,6 +308,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cid** | **int**|  | [optional] 
+ **sid** | **int**|  | [optional] 
+ **pid** | **int**|  | [optional] 
+ **cn** | **int**|  | [optional] 
+ **sft** | **int**|  | [optional] 
+ **lastname** | **str**|  | [optional] 
  **cache_ver** | **str**|  | [optional] 
 
 ### Return type

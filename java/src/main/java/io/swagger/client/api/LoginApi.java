@@ -29,6 +29,7 @@ import java.io.IOException;
 import io.swagger.client.model.GetAuthData;
 import io.swagger.client.model.Login;
 import io.swagger.client.model.LoginData;
+import io.swagger.client.model.LoginForm;
 import io.swagger.client.model.PrepareEmLoginForm;
 import io.swagger.client.model.PrepareLoginForm;
 
@@ -526,6 +527,164 @@ public class LoginApi {
         return call;
     }
     /**
+     * Build call for loginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param LASTNAME  (optional)
+     * @param cacheVer  (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call loginformCall(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/loginform";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (cid != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("cid", cid));
+        if (sid != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sid", sid));
+        if (pid != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pid", pid));
+        if (cn != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("cn", cn));
+        if (sft != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sft", sft));
+        if (LASTNAME != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("LASTNAME", LASTNAME));
+        if (cacheVer != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("cacheVer", cacheVer));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call loginformValidateBeforeCall(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        com.squareup.okhttp.Call call = loginformCall(cid, sid, pid, cn, sft, LASTNAME, cacheVer, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * 
+     * returns all loginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param LASTNAME  (optional)
+     * @param cacheVer  (optional)
+     * @return LoginForm
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public LoginForm loginform(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer) throws ApiException {
+        ApiResponse<LoginForm> resp = loginformWithHttpInfo(cid, sid, pid, cn, sft, LASTNAME, cacheVer);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * returns all loginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param LASTNAME  (optional)
+     * @param cacheVer  (optional)
+     * @return ApiResponse&lt;LoginForm&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<LoginForm> loginformWithHttpInfo(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer) throws ApiException {
+        com.squareup.okhttp.Call call = loginformValidateBeforeCall(cid, sid, pid, cn, sft, LASTNAME, cacheVer, null, null);
+        Type localVarReturnType = new TypeToken<LoginForm>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * returns all loginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param LASTNAME  (optional)
+     * @param cacheVer  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call loginformAsync(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer, final ApiCallback<LoginForm> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = loginformValidateBeforeCall(cid, sid, pid, cn, sft, LASTNAME, cacheVer, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<LoginForm>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for prepareemloginform
      * @param cacheVer  (optional)
      * @param progressListener Progress listener
@@ -649,13 +808,19 @@ public class LoginApi {
     }
     /**
      * Build call for prepareloginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param LASTNAME  (optional)
      * @param cacheVer  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call prepareloginformCall(String cacheVer, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call prepareloginformCall(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -663,6 +828,18 @@ public class LoginApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (cid != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("cid", cid));
+        if (sid != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sid", sid));
+        if (pid != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("pid", pid));
+        if (cn != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("cn", cn));
+        if (sft != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("sft", sft));
+        if (LASTNAME != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("LASTNAME", LASTNAME));
         if (cacheVer != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("cacheVer", cacheVer));
 
@@ -699,9 +876,9 @@ public class LoginApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call prepareloginformValidateBeforeCall(String cacheVer, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call prepareloginformValidateBeforeCall(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = prepareloginformCall(cacheVer, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = prepareloginformCall(cid, sid, pid, cn, sft, LASTNAME, cacheVer, progressListener, progressRequestListener);
         return call;
 
         
@@ -713,24 +890,36 @@ public class LoginApi {
     /**
      * 
      * returns all prepareloginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param LASTNAME  (optional)
      * @param cacheVer  (optional)
      * @return PrepareLoginForm
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PrepareLoginForm prepareloginform(String cacheVer) throws ApiException {
-        ApiResponse<PrepareLoginForm> resp = prepareloginformWithHttpInfo(cacheVer);
+    public PrepareLoginForm prepareloginform(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer) throws ApiException {
+        ApiResponse<PrepareLoginForm> resp = prepareloginformWithHttpInfo(cid, sid, pid, cn, sft, LASTNAME, cacheVer);
         return resp.getData();
     }
 
     /**
      * 
      * returns all prepareloginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param LASTNAME  (optional)
      * @param cacheVer  (optional)
      * @return ApiResponse&lt;PrepareLoginForm&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PrepareLoginForm> prepareloginformWithHttpInfo(String cacheVer) throws ApiException {
-        com.squareup.okhttp.Call call = prepareloginformValidateBeforeCall(cacheVer, null, null);
+    public ApiResponse<PrepareLoginForm> prepareloginformWithHttpInfo(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer) throws ApiException {
+        com.squareup.okhttp.Call call = prepareloginformValidateBeforeCall(cid, sid, pid, cn, sft, LASTNAME, cacheVer, null, null);
         Type localVarReturnType = new TypeToken<PrepareLoginForm>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -738,12 +927,18 @@ public class LoginApi {
     /**
      *  (asynchronously)
      * returns all prepareloginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param LASTNAME  (optional)
      * @param cacheVer  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call prepareloginformAsync(String cacheVer, final ApiCallback<PrepareLoginForm> callback) throws ApiException {
+    public com.squareup.okhttp.Call prepareloginformAsync(Integer cid, Integer sid, Integer pid, Integer cn, Integer sft, String LASTNAME, String cacheVer, final ApiCallback<PrepareLoginForm> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -764,7 +959,7 @@ public class LoginApi {
             };
         }
 
-        com.squareup.okhttp.Call call = prepareloginformValidateBeforeCall(cacheVer, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = prepareloginformValidateBeforeCall(cid, sid, pid, cn, sft, LASTNAME, cacheVer, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PrepareLoginForm>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

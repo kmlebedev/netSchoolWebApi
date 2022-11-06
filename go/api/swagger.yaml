@@ -213,6 +213,70 @@ paths:
               schema:
                 $ref: '#/components/schemas/LoginData'
       security: []
+  /loginform:
+    get:
+      tags:
+      - login
+      description: returns all loginform
+      operationId: loginform
+      parameters:
+      - name: cid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: sid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: pid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: cn
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: sft
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: LASTNAME
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: cacheVer
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: All the LoginForm
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginForm'
+      security: []
   /prepareloginform:
     get:
       tags:
@@ -220,6 +284,48 @@ paths:
       description: returns all prepareloginform
       operationId: prepareloginform
       parameters:
+      - name: cid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: sid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: pid
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: cn
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: sft
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: LASTNAME
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
       - name: cacheVer
         in: query
         required: false
@@ -436,8 +542,10 @@ components:
           example: nil
         subjectGroup:
           $ref: '#/components/schemas/diaryAssignDetails_subjectGroup'
-        teacher:
-          $ref: '#/components/schemas/diaryAssignDetails_teacher'
+        teachers:
+          type: array
+          items:
+            $ref: '#/components/schemas/diaryAssignDetails_teachers'
         productId:
           type: integer
         isDeleted:
@@ -488,10 +596,12 @@ components:
         description: Задание по рядам - рассуждение по картине. Смотрите прикреплённый
           файл
         problemName: nil
-        teacher:
-          name: Иванова Марья Ивановна
-          id: 71111
         isDeleted: false
+        teachers:
+        - name: Иванова Марья Ивановна
+          id: 71111
+        - name: Иванова Марья Ивановна
+          id: 71111
         codeContentElements: nil
         id: 5111111
         assignmentName: Развитие речи. Сочинение-рассуждение по рассказу «Коллекционная
@@ -1143,14 +1253,14 @@ components:
         ems:
           type: object
       example:
-        sft: 2
+        sft: 5
         provinces:
         - null
         - null
         cities:
         - null
         - null
-        pid: 5
+        pid: 1
         ems: {}
         countries:
         - name: name
@@ -1162,15 +1272,31 @@ components:
         states:
         - null
         - null
-        sid: 1
+        sid: 6
         schools:
         - null
         - null
         funcs:
         - null
         - null
-        scid: 7
-        cid: 6
+        scid: 2
+        cid: 0
+    LoginForm:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrepareEmLoginForm_countries'
+        lastElem:
+          type: string
+      example:
+        lastElem: lastElem
+        items:
+        - name: name
+          id: 0
+        - name: name
+          id: 0
     LoginData:
       type: object
       properties:
@@ -1457,7 +1583,7 @@ components:
       example:
         name: 5ж/Русский язык
         id: 171111
-    diaryAssignDetails_teacher:
+    diaryAssignDetails_teachers:
       type: object
       properties:
         id:

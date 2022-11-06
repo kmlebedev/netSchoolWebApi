@@ -108,6 +108,39 @@ namespace IO.Swagger.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// returns all loginform
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
+        /// <param name="cacheVer"> (optional)</param>
+        /// <returns>LoginForm</returns>
+        LoginForm Loginform (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// returns all loginform
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
+        /// <param name="cacheVer"> (optional)</param>
+        /// <returns>ApiResponse of LoginForm</returns>
+        ApiResponse<LoginForm> LoginformWithHttpInfo (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// returns all prepareemloginform
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -132,9 +165,15 @@ namespace IO.Swagger.Api
         /// returns all prepareloginform
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
         /// <param name="cacheVer"> (optional)</param>
         /// <returns>PrepareLoginForm</returns>
-        PrepareLoginForm Prepareloginform (string cacheVer = null);
+        PrepareLoginForm Prepareloginform (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null);
 
         /// <summary>
         /// 
@@ -143,9 +182,15 @@ namespace IO.Swagger.Api
         /// returns all prepareloginform
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
         /// <param name="cacheVer"> (optional)</param>
         /// <returns>ApiResponse of PrepareLoginForm</returns>
-        ApiResponse<PrepareLoginForm> PrepareloginformWithHttpInfo (string cacheVer = null);
+        ApiResponse<PrepareLoginForm> PrepareloginformWithHttpInfo (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -233,6 +278,39 @@ namespace IO.Swagger.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// returns all loginform
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
+        /// <param name="cacheVer"> (optional)</param>
+        /// <returns>Task of LoginForm</returns>
+        System.Threading.Tasks.Task<LoginForm> LoginformAsync (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// returns all loginform
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
+        /// <param name="cacheVer"> (optional)</param>
+        /// <returns>Task of ApiResponse (LoginForm)</returns>
+        System.Threading.Tasks.Task<ApiResponse<LoginForm>> LoginformAsyncWithHttpInfo (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// returns all prepareemloginform
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -257,9 +335,15 @@ namespace IO.Swagger.Api
         /// returns all prepareloginform
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
         /// <param name="cacheVer"> (optional)</param>
         /// <returns>Task of PrepareLoginForm</returns>
-        System.Threading.Tasks.Task<PrepareLoginForm> PrepareloginformAsync (string cacheVer = null);
+        System.Threading.Tasks.Task<PrepareLoginForm> PrepareloginformAsync (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null);
 
         /// <summary>
         /// 
@@ -268,9 +352,15 @@ namespace IO.Swagger.Api
         /// returns all prepareloginform
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
         /// <param name="cacheVer"> (optional)</param>
         /// <returns>Task of ApiResponse (PrepareLoginForm)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PrepareLoginForm>> PrepareloginformAsyncWithHttpInfo (string cacheVer = null);
+        System.Threading.Tasks.Task<ApiResponse<PrepareLoginForm>> PrepareloginformAsyncWithHttpInfo (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null);
         #endregion Asynchronous Operations
     }
 
@@ -886,6 +976,167 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        ///  returns all loginform
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
+        /// <param name="cacheVer"> (optional)</param>
+        /// <returns>LoginForm</returns>
+        public LoginForm Loginform (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
+        {
+             ApiResponse<LoginForm> localVarResponse = LoginformWithHttpInfo(cid, sid, pid, cn, sft, LASTNAME, cacheVer);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  returns all loginform
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
+        /// <param name="cacheVer"> (optional)</param>
+        /// <returns>ApiResponse of LoginForm</returns>
+        public ApiResponse< LoginForm > LoginformWithHttpInfo (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
+        {
+
+            var localVarPath = "/loginform";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (cid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cid", cid)); // query parameter
+            if (sid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sid", sid)); // query parameter
+            if (pid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pid", pid)); // query parameter
+            if (cn != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cn", cn)); // query parameter
+            if (sft != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sft", sft)); // query parameter
+            if (LASTNAME != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "LASTNAME", LASTNAME)); // query parameter
+            if (cacheVer != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cacheVer", cacheVer)); // query parameter
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("Loginform", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<LoginForm>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (LoginForm) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginForm)));
+        }
+
+        /// <summary>
+        ///  returns all loginform
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
+        /// <param name="cacheVer"> (optional)</param>
+        /// <returns>Task of LoginForm</returns>
+        public async System.Threading.Tasks.Task<LoginForm> LoginformAsync (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
+        {
+             ApiResponse<LoginForm> localVarResponse = await LoginformAsyncWithHttpInfo(cid, sid, pid, cn, sft, LASTNAME, cacheVer);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  returns all loginform
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
+        /// <param name="cacheVer"> (optional)</param>
+        /// <returns>Task of ApiResponse (LoginForm)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<LoginForm>> LoginformAsyncWithHttpInfo (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
+        {
+
+            var localVarPath = "/loginform";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (cid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cid", cid)); // query parameter
+            if (sid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sid", sid)); // query parameter
+            if (pid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pid", pid)); // query parameter
+            if (cn != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cn", cn)); // query parameter
+            if (sft != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sft", sft)); // query parameter
+            if (LASTNAME != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "LASTNAME", LASTNAME)); // query parameter
+            if (cacheVer != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cacheVer", cacheVer)); // query parameter
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("Loginform", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<LoginForm>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (LoginForm) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LoginForm)));
+        }
+
+        /// <summary>
         ///  returns all prepareemloginform
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1014,11 +1265,17 @@ namespace IO.Swagger.Api
         ///  returns all prepareloginform
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
         /// <param name="cacheVer"> (optional)</param>
         /// <returns>PrepareLoginForm</returns>
-        public PrepareLoginForm Prepareloginform (string cacheVer = null)
+        public PrepareLoginForm Prepareloginform (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
         {
-             ApiResponse<PrepareLoginForm> localVarResponse = PrepareloginformWithHttpInfo(cacheVer);
+             ApiResponse<PrepareLoginForm> localVarResponse = PrepareloginformWithHttpInfo(cid, sid, pid, cn, sft, LASTNAME, cacheVer);
              return localVarResponse.Data;
         }
 
@@ -1026,9 +1283,15 @@ namespace IO.Swagger.Api
         ///  returns all prepareloginform
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
         /// <param name="cacheVer"> (optional)</param>
         /// <returns>ApiResponse of PrepareLoginForm</returns>
-        public ApiResponse< PrepareLoginForm > PrepareloginformWithHttpInfo (string cacheVer = null)
+        public ApiResponse< PrepareLoginForm > PrepareloginformWithHttpInfo (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
         {
 
             var localVarPath = "/prepareloginform";
@@ -1052,6 +1315,12 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (cid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cid", cid)); // query parameter
+            if (sid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sid", sid)); // query parameter
+            if (pid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pid", pid)); // query parameter
+            if (cn != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cn", cn)); // query parameter
+            if (sft != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sft", sft)); // query parameter
+            if (LASTNAME != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "LASTNAME", LASTNAME)); // query parameter
             if (cacheVer != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cacheVer", cacheVer)); // query parameter
 
             // make the HTTP request
@@ -1076,11 +1345,17 @@ namespace IO.Swagger.Api
         ///  returns all prepareloginform
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
         /// <param name="cacheVer"> (optional)</param>
         /// <returns>Task of PrepareLoginForm</returns>
-        public async System.Threading.Tasks.Task<PrepareLoginForm> PrepareloginformAsync (string cacheVer = null)
+        public async System.Threading.Tasks.Task<PrepareLoginForm> PrepareloginformAsync (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
         {
-             ApiResponse<PrepareLoginForm> localVarResponse = await PrepareloginformAsyncWithHttpInfo(cacheVer);
+             ApiResponse<PrepareLoginForm> localVarResponse = await PrepareloginformAsyncWithHttpInfo(cid, sid, pid, cn, sft, LASTNAME, cacheVer);
              return localVarResponse.Data;
 
         }
@@ -1089,9 +1364,15 @@ namespace IO.Swagger.Api
         ///  returns all prepareloginform
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cid"> (optional)</param>
+        /// <param name="sid"> (optional)</param>
+        /// <param name="pid"> (optional)</param>
+        /// <param name="cn"> (optional)</param>
+        /// <param name="sft"> (optional)</param>
+        /// <param name="LASTNAME"> (optional)</param>
         /// <param name="cacheVer"> (optional)</param>
         /// <returns>Task of ApiResponse (PrepareLoginForm)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PrepareLoginForm>> PrepareloginformAsyncWithHttpInfo (string cacheVer = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PrepareLoginForm>> PrepareloginformAsyncWithHttpInfo (int? cid = null, int? sid = null, int? pid = null, int? cn = null, int? sft = null, string LASTNAME = null, string cacheVer = null)
         {
 
             var localVarPath = "/prepareloginform";
@@ -1115,6 +1396,12 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (cid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cid", cid)); // query parameter
+            if (sid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sid", sid)); // query parameter
+            if (pid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pid", pid)); // query parameter
+            if (cn != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cn", cn)); // query parameter
+            if (sft != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "sft", sft)); // query parameter
+            if (LASTNAME != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "LASTNAME", LASTNAME)); // query parameter
             if (cacheVer != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "cacheVer", cacheVer)); // query parameter
 
             // make the HTTP request

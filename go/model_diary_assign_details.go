@@ -14,7 +14,7 @@ type DiaryAssignDetails struct {
 	ActivityName string `json:"activityName,omitempty"`
 	ProblemName string `json:"problemName,omitempty"`
 	SubjectGroup *DiaryAssignDetailsSubjectGroup `json:"subjectGroup,omitempty"`
-	Teacher *DiaryAssignDetailsTeacher `json:"teacher,omitempty"`
+	Teachers []DiaryAssignDetailsTeachers `json:"teachers,omitempty"`
 	ProductId int32 `json:"productId,omitempty"`
 	IsDeleted bool `json:"isDeleted,omitempty"`
 	Weight int32 `json:"weight,omitempty"`

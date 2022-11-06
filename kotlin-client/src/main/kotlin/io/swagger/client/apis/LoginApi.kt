@@ -14,6 +14,7 @@ package io.swagger.client.apis
 import io.swagger.client.models.GetAuthData
 import io.swagger.client.models.Login
 import io.swagger.client.models.LoginData
+import io.swagger.client.models.LoginForm
 import io.swagger.client.models.PrepareEmLoginForm
 import io.swagger.client.models.PrepareLoginForm
 
@@ -109,6 +110,37 @@ class LoginApi(basePath: kotlin.String = "https://virtserver.swaggerhub.com/LEBE
     }
     /**
      * 
+     * returns all loginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param lASTNAME  (optional)
+     * @param cacheVer  (optional)
+     * @return LoginForm
+     */
+    @Suppress("UNCHECKED_CAST")
+    fun loginform(cid: kotlin.Int? = null, sid: kotlin.Int? = null, pid: kotlin.Int? = null, cn: kotlin.Int? = null, sft: kotlin.Int? = null, lASTNAME: kotlin.String? = null, cacheVer: kotlin.String? = null): LoginForm {
+        val localVariableQuery: MultiValueMap = mapOf("cid" to listOf("$cid"), "sid" to listOf("$sid"), "pid" to listOf("$pid"), "cn" to listOf("$cn"), "sft" to listOf("$sft"), "LASTNAME" to listOf("$lASTNAME"), "cacheVer" to listOf("$cacheVer"))
+        val localVariableConfig = RequestConfig(
+                RequestMethod.GET,
+                "/loginform", query = localVariableQuery
+        )
+        val response = request<LoginForm>(
+                localVariableConfig
+        )
+
+        return when (response.responseType) {
+            ResponseType.Success -> (response as Success<*>).data as LoginForm
+            ResponseType.Informational -> TODO()
+            ResponseType.Redirection -> TODO()
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+        }
+    }
+    /**
+     * 
      * returns all prepareemloginform
      * @param cacheVer  (optional)
      * @return PrepareEmLoginForm
@@ -135,12 +167,18 @@ class LoginApi(basePath: kotlin.String = "https://virtserver.swaggerhub.com/LEBE
     /**
      * 
      * returns all prepareloginform
+     * @param cid  (optional)
+     * @param sid  (optional)
+     * @param pid  (optional)
+     * @param cn  (optional)
+     * @param sft  (optional)
+     * @param lASTNAME  (optional)
      * @param cacheVer  (optional)
      * @return PrepareLoginForm
      */
     @Suppress("UNCHECKED_CAST")
-    fun prepareloginform(cacheVer: kotlin.String? = null): PrepareLoginForm {
-        val localVariableQuery: MultiValueMap = mapOf("cacheVer" to listOf("$cacheVer"))
+    fun prepareloginform(cid: kotlin.Int? = null, sid: kotlin.Int? = null, pid: kotlin.Int? = null, cn: kotlin.Int? = null, sft: kotlin.Int? = null, lASTNAME: kotlin.String? = null, cacheVer: kotlin.String? = null): PrepareLoginForm {
+        val localVariableQuery: MultiValueMap = mapOf("cid" to listOf("$cid"), "sid" to listOf("$sid"), "pid" to listOf("$pid"), "cn" to listOf("$cn"), "sft" to listOf("$sft"), "LASTNAME" to listOf("$lASTNAME"), "cacheVer" to listOf("$cacheVer"))
         val localVariableConfig = RequestConfig(
                 RequestMethod.GET,
                 "/prepareloginform", query = localVariableQuery

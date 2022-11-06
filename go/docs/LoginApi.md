@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**Getauthdata**](LoginApi.md#Getauthdata) | **Post** /auth/getdata | 
 [**Login**](LoginApi.md#Login) | **Post** /login | 
 [**Logindata**](LoginApi.md#Logindata) | **Get** /logindata | 
+[**Loginform**](LoginApi.md#Loginform) | **Get** /loginform | 
 [**Prepareemloginform**](LoginApi.md#Prepareemloginform) | **Get** /prepareemloginform | 
 [**Prepareloginform**](LoginApi.md#Prepareloginform) | **Get** /prepareloginform | 
 
@@ -97,6 +98,46 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **Loginform**
+> LoginForm Loginform(ctx, optional)
+
+
+returns all loginform
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***LoginApiLoginformOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a LoginApiLoginformOpts struct
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cid** | **optional.Int32**|  | 
+ **sid** | **optional.Int32**|  | 
+ **pid** | **optional.Int32**|  | 
+ **cn** | **optional.Int32**|  | 
+ **sft** | **optional.Int32**|  | 
+ **lASTNAME** | **optional.String**|  | 
+ **cacheVer** | **optional.String**|  | 
+
+### Return type
+
+[**LoginForm**](LoginForm.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **Prepareemloginform**
 > PrepareEmLoginForm Prepareemloginform(ctx, optional)
 
@@ -148,6 +189,12 @@ Name | Type | Description  | Notes
 Optional parameters are passed through a pointer to a LoginApiPrepareloginformOpts struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cid** | **optional.Int32**|  | 
+ **sid** | **optional.Int32**|  | 
+ **pid** | **optional.Int32**|  | 
+ **cn** | **optional.Int32**|  | 
+ **sft** | **optional.Int32**|  | 
+ **lASTNAME** | **optional.String**|  | 
  **cacheVer** | **optional.String**|  | 
 
 ### Return type

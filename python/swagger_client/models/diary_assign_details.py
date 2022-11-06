@@ -33,7 +33,7 @@ class DiaryAssignDetails(object):
         'activity_name': 'str',
         'problem_name': 'str',
         'subject_group': 'DiaryAssignDetailsSubjectGroup',
-        'teacher': 'DiaryAssignDetailsTeacher',
+        'teachers': 'list[DiaryAssignDetailsTeachers]',
         'product_id': 'int',
         'is_deleted': 'bool',
         'weight': 'int',
@@ -50,7 +50,7 @@ class DiaryAssignDetails(object):
         'activity_name': 'activityName',
         'problem_name': 'problemName',
         'subject_group': 'subjectGroup',
-        'teacher': 'teacher',
+        'teachers': 'teachers',
         'product_id': 'productId',
         'is_deleted': 'isDeleted',
         'weight': 'weight',
@@ -61,14 +61,14 @@ class DiaryAssignDetails(object):
         'code_content_elements': 'codeContentElements'
     }
 
-    def __init__(self, id=None, assignment_name=None, activity_name=None, problem_name=None, subject_group=None, teacher=None, product_id=None, is_deleted=None, weight=None, _date=None, description=None, attachments=None, content_elements=None, code_content_elements=None):  # noqa: E501
+    def __init__(self, id=None, assignment_name=None, activity_name=None, problem_name=None, subject_group=None, teachers=None, product_id=None, is_deleted=None, weight=None, _date=None, description=None, attachments=None, content_elements=None, code_content_elements=None):  # noqa: E501
         """DiaryAssignDetails - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._assignment_name = None
         self._activity_name = None
         self._problem_name = None
         self._subject_group = None
-        self._teacher = None
+        self._teachers = None
         self._product_id = None
         self._is_deleted = None
         self._weight = None
@@ -88,8 +88,8 @@ class DiaryAssignDetails(object):
             self.problem_name = problem_name
         if subject_group is not None:
             self.subject_group = subject_group
-        if teacher is not None:
-            self.teacher = teacher
+        if teachers is not None:
+            self.teachers = teachers
         if product_id is not None:
             self.product_id = product_id
         if is_deleted is not None:
@@ -213,25 +213,25 @@ class DiaryAssignDetails(object):
         self._subject_group = subject_group
 
     @property
-    def teacher(self):
-        """Gets the teacher of this DiaryAssignDetails.  # noqa: E501
+    def teachers(self):
+        """Gets the teachers of this DiaryAssignDetails.  # noqa: E501
 
 
-        :return: The teacher of this DiaryAssignDetails.  # noqa: E501
-        :rtype: DiaryAssignDetailsTeacher
+        :return: The teachers of this DiaryAssignDetails.  # noqa: E501
+        :rtype: list[DiaryAssignDetailsTeachers]
         """
-        return self._teacher
+        return self._teachers
 
-    @teacher.setter
-    def teacher(self, teacher):
-        """Sets the teacher of this DiaryAssignDetails.
+    @teachers.setter
+    def teachers(self, teachers):
+        """Sets the teachers of this DiaryAssignDetails.
 
 
-        :param teacher: The teacher of this DiaryAssignDetails.  # noqa: E501
-        :type: DiaryAssignDetailsTeacher
+        :param teachers: The teachers of this DiaryAssignDetails.  # noqa: E501
+        :type: list[DiaryAssignDetailsTeachers]
         """
 
-        self._teacher = teacher
+        self._teachers = teachers
 
     @property
     def product_id(self):

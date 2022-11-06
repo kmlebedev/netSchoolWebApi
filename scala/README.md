@@ -70,6 +70,7 @@ Class | Method | HTTP request | Description
 *LoginApi* | [**getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *LoginApi* | [**login**](LoginApi.md#login) | **POST** /login | 
 *LoginApi* | [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
+*LoginApi* | [**loginform**](LoginApi.md#loginform) | **GET** /loginform | 
 *LoginApi* | [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 *LoginApi* | [**prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 *MysettingsApi* | [**mysettings**](MysettingsApi.md#mysettings) | **GET** /mysettings | 
@@ -86,7 +87,7 @@ Class | Method | HTTP request | Description
  - [DiaryAssignDetails](DiaryAssignDetails.md)
  - [DiaryAssignDetailsAttachments](DiaryAssignDetailsAttachments.md)
  - [DiaryAssignDetailsSubjectGroup](DiaryAssignDetailsSubjectGroup.md)
- - [DiaryAssignDetailsTeacher](DiaryAssignDetailsTeacher.md)
+ - [DiaryAssignDetailsTeachers](DiaryAssignDetailsTeachers.md)
  - [DiaryAssignment](DiaryAssignment.md)
  - [DiaryLesson](DiaryLesson.md)
  - [DiaryWeekDays](DiaryWeekDays.md)
@@ -100,6 +101,7 @@ Class | Method | HTTP request | Description
  - [LoginAccountInfoUserRolesRole](LoginAccountInfoUserRolesRole.md)
  - [LoginBody](LoginBody.md)
  - [LoginData](LoginData.md)
+ - [LoginForm](LoginForm.md)
  - [LoginRequestData](LoginRequestData.md)
  - [Mark](Mark.md)
  - [MySettings](MySettings.md)

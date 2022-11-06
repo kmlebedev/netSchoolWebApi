@@ -40,6 +40,7 @@ Class | Method | HTTP request | Description
 *LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *LoginApi* | [**login**](docs/LoginApi.md#login) | **POST** /login | 
 *LoginApi* | [**logindata**](docs/LoginApi.md#logindata) | **GET** /logindata | 
+*LoginApi* | [**loginform**](docs/LoginApi.md#loginform) | **GET** /loginform | 
 *LoginApi* | [**prepareemloginform**](docs/LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 *LoginApi* | [**prepareloginform**](docs/LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 *MysettingsApi* | [**mysettings**](docs/MysettingsApi.md#mysettings) | **GET** /mysettings | 
@@ -57,7 +58,7 @@ Class | Method | HTTP request | Description
  - [io.swagger.client.models.DiaryAssignDetails](docs/DiaryAssignDetails.md)
  - [io.swagger.client.models.DiaryAssignDetailsAttachments](docs/DiaryAssignDetailsAttachments.md)
  - [io.swagger.client.models.DiaryAssignDetailsSubjectGroup](docs/DiaryAssignDetailsSubjectGroup.md)
- - [io.swagger.client.models.DiaryAssignDetailsTeacher](docs/DiaryAssignDetailsTeacher.md)
+ - [io.swagger.client.models.DiaryAssignDetailsTeachers](docs/DiaryAssignDetailsTeachers.md)
  - [io.swagger.client.models.DiaryAssignment](docs/DiaryAssignment.md)
  - [io.swagger.client.models.DiaryLesson](docs/DiaryLesson.md)
  - [io.swagger.client.models.DiaryWeekDays](docs/DiaryWeekDays.md)
@@ -71,6 +72,7 @@ Class | Method | HTTP request | Description
  - [io.swagger.client.models.LoginAccountInfoUserRolesRole](docs/LoginAccountInfoUserRolesRole.md)
  - [io.swagger.client.models.LoginBody](docs/LoginBody.md)
  - [io.swagger.client.models.LoginData](docs/LoginData.md)
+ - [io.swagger.client.models.LoginForm](docs/LoginForm.md)
  - [io.swagger.client.models.LoginRequestData](docs/LoginRequestData.md)
  - [io.swagger.client.models.Mark](docs/Mark.md)
  - [io.swagger.client.models.MySettings](docs/MySettings.md)

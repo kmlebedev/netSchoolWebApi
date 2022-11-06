@@ -37,7 +37,7 @@ namespace IO.Swagger.Model
         /// <param name="activityName">activityName.</param>
         /// <param name="problemName">problemName.</param>
         /// <param name="subjectGroup">subjectGroup.</param>
-        /// <param name="teacher">teacher.</param>
+        /// <param name="teachers">teachers.</param>
         /// <param name="productId">productId.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="weight">weight.</param>
@@ -46,14 +46,14 @@ namespace IO.Swagger.Model
         /// <param name="attachments">attachments.</param>
         /// <param name="contentElements">contentElements.</param>
         /// <param name="codeContentElements">codeContentElements.</param>
-        public DiaryAssignDetails(int? id = default(int?), string assignmentName = default(string), string activityName = default(string), string problemName = default(string), DiaryAssignDetailsSubjectGroup subjectGroup = default(DiaryAssignDetailsSubjectGroup), DiaryAssignDetailsTeacher teacher = default(DiaryAssignDetailsTeacher), int? productId = default(int?), bool? isDeleted = default(bool?), int? weight = default(int?), DateTime? date = default(DateTime?), string description = default(string), List<DiaryAssignDetailsAttachments> attachments = default(List<DiaryAssignDetailsAttachments>), List<Object> contentElements = default(List<Object>), List<Object> codeContentElements = default(List<Object>))
+        public DiaryAssignDetails(int? id = default(int?), string assignmentName = default(string), string activityName = default(string), string problemName = default(string), DiaryAssignDetailsSubjectGroup subjectGroup = default(DiaryAssignDetailsSubjectGroup), List<DiaryAssignDetailsTeachers> teachers = default(List<DiaryAssignDetailsTeachers>), int? productId = default(int?), bool? isDeleted = default(bool?), int? weight = default(int?), DateTime? date = default(DateTime?), string description = default(string), List<DiaryAssignDetailsAttachments> attachments = default(List<DiaryAssignDetailsAttachments>), List<Object> contentElements = default(List<Object>), List<Object> codeContentElements = default(List<Object>))
         {
             this.Id = id;
             this.AssignmentName = assignmentName;
             this.ActivityName = activityName;
             this.ProblemName = problemName;
             this.SubjectGroup = subjectGroup;
-            this.Teacher = teacher;
+            this.Teachers = teachers;
             this.ProductId = productId;
             this.IsDeleted = isDeleted;
             this.Weight = weight;
@@ -95,10 +95,10 @@ namespace IO.Swagger.Model
         public DiaryAssignDetailsSubjectGroup SubjectGroup { get; set; }
 
         /// <summary>
-        /// Gets or Sets Teacher
+        /// Gets or Sets Teachers
         /// </summary>
-        [DataMember(Name="teacher", EmitDefaultValue=false)]
-        public DiaryAssignDetailsTeacher Teacher { get; set; }
+        [DataMember(Name="teachers", EmitDefaultValue=false)]
+        public List<DiaryAssignDetailsTeachers> Teachers { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductId
@@ -162,7 +162,7 @@ namespace IO.Swagger.Model
             sb.Append("  ActivityName: ").Append(ActivityName).Append("\n");
             sb.Append("  ProblemName: ").Append(ProblemName).Append("\n");
             sb.Append("  SubjectGroup: ").Append(SubjectGroup).Append("\n");
-            sb.Append("  Teacher: ").Append(Teacher).Append("\n");
+            sb.Append("  Teachers: ").Append(Teachers).Append("\n");
             sb.Append("  ProductId: ").Append(ProductId).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  Weight: ").Append(Weight).Append("\n");
@@ -231,9 +231,10 @@ namespace IO.Swagger.Model
                     this.SubjectGroup.Equals(input.SubjectGroup))
                 ) && 
                 (
-                    this.Teacher == input.Teacher ||
-                    (this.Teacher != null &&
-                    this.Teacher.Equals(input.Teacher))
+                    this.Teachers == input.Teachers ||
+                    this.Teachers != null &&
+                    input.Teachers != null &&
+                    this.Teachers.SequenceEqual(input.Teachers)
                 ) && 
                 (
                     this.ProductId == input.ProductId ||
@@ -299,8 +300,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.ProblemName.GetHashCode();
                 if (this.SubjectGroup != null)
                     hashCode = hashCode * 59 + this.SubjectGroup.GetHashCode();
-                if (this.Teacher != null)
-                    hashCode = hashCode * 59 + this.Teacher.GetHashCode();
+                if (this.Teachers != null)
+                    hashCode = hashCode * 59 + this.Teachers.GetHashCode();
                 if (this.ProductId != null)
                     hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 if (this.IsDeleted != null)

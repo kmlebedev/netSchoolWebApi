@@ -13,7 +13,7 @@ package io.swagger.client.models
 
 import io.swagger.client.models.DiaryAssignDetailsAttachments
 import io.swagger.client.models.DiaryAssignDetailsSubjectGroup
-import io.swagger.client.models.DiaryAssignDetailsTeacher
+import io.swagger.client.models.DiaryAssignDetailsTeachers
 
 /**
  * 
@@ -22,7 +22,7 @@ import io.swagger.client.models.DiaryAssignDetailsTeacher
  * @param activityName 
  * @param problemName 
  * @param subjectGroup 
- * @param teacher 
+ * @param teachers 
  * @param productId 
  * @param isDeleted 
  * @param weight 
@@ -39,7 +39,7 @@ data class DiaryAssignDetails (
     val activityName: kotlin.String? = null,
     val problemName: kotlin.String? = null,
     val subjectGroup: DiaryAssignDetailsSubjectGroup? = null,
-    val teacher: DiaryAssignDetailsTeacher? = null,
+    val teachers: kotlin.Array<DiaryAssignDetailsTeachers>? = null,
     val productId: kotlin.Int? = null,
     val isDeleted: kotlin.Boolean? = null,
     val weight: kotlin.Int? = null,

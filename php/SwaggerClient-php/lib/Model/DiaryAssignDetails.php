@@ -61,7 +61,7 @@ class DiaryAssignDetails implements ModelInterface, ArrayAccess
 'activity_name' => 'string',
 'problem_name' => 'string',
 'subject_group' => '\Swagger\Client\Model\DiaryAssignDetailsSubjectGroup',
-'teacher' => '\Swagger\Client\Model\DiaryAssignDetailsTeacher',
+'teachers' => '\Swagger\Client\Model\DiaryAssignDetailsTeachers[]',
 'product_id' => 'int',
 'is_deleted' => 'bool',
 'weight' => 'int',
@@ -82,7 +82,7 @@ class DiaryAssignDetails implements ModelInterface, ArrayAccess
 'activity_name' => null,
 'problem_name' => null,
 'subject_group' => null,
-'teacher' => null,
+'teachers' => null,
 'product_id' => null,
 'is_deleted' => null,
 'weight' => null,
@@ -124,7 +124,7 @@ class DiaryAssignDetails implements ModelInterface, ArrayAccess
 'activity_name' => 'activityName',
 'problem_name' => 'problemName',
 'subject_group' => 'subjectGroup',
-'teacher' => 'teacher',
+'teachers' => 'teachers',
 'product_id' => 'productId',
 'is_deleted' => 'isDeleted',
 'weight' => 'weight',
@@ -145,7 +145,7 @@ class DiaryAssignDetails implements ModelInterface, ArrayAccess
 'activity_name' => 'setActivityName',
 'problem_name' => 'setProblemName',
 'subject_group' => 'setSubjectGroup',
-'teacher' => 'setTeacher',
+'teachers' => 'setTeachers',
 'product_id' => 'setProductId',
 'is_deleted' => 'setIsDeleted',
 'weight' => 'setWeight',
@@ -166,7 +166,7 @@ class DiaryAssignDetails implements ModelInterface, ArrayAccess
 'activity_name' => 'getActivityName',
 'problem_name' => 'getProblemName',
 'subject_group' => 'getSubjectGroup',
-'teacher' => 'getTeacher',
+'teachers' => 'getTeachers',
 'product_id' => 'getProductId',
 'is_deleted' => 'getIsDeleted',
 'weight' => 'getWeight',
@@ -239,7 +239,7 @@ class DiaryAssignDetails implements ModelInterface, ArrayAccess
         $this->container['activity_name'] = isset($data['activity_name']) ? $data['activity_name'] : null;
         $this->container['problem_name'] = isset($data['problem_name']) ? $data['problem_name'] : null;
         $this->container['subject_group'] = isset($data['subject_group']) ? $data['subject_group'] : null;
-        $this->container['teacher'] = isset($data['teacher']) ? $data['teacher'] : null;
+        $this->container['teachers'] = isset($data['teachers']) ? $data['teachers'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['is_deleted'] = isset($data['is_deleted']) ? $data['is_deleted'] : null;
         $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
@@ -395,25 +395,25 @@ class DiaryAssignDetails implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets teacher
+     * Gets teachers
      *
-     * @return \Swagger\Client\Model\DiaryAssignDetailsTeacher
+     * @return \Swagger\Client\Model\DiaryAssignDetailsTeachers[]
      */
-    public function getTeacher()
+    public function getTeachers()
     {
-        return $this->container['teacher'];
+        return $this->container['teachers'];
     }
 
     /**
-     * Sets teacher
+     * Sets teachers
      *
-     * @param \Swagger\Client\Model\DiaryAssignDetailsTeacher $teacher teacher
+     * @param \Swagger\Client\Model\DiaryAssignDetailsTeachers[] $teachers teachers
      *
      * @return $this
      */
-    public function setTeacher($teacher)
+    public function setTeachers($teachers)
     {
-        $this->container['teacher'] = $teacher;
+        $this->container['teachers'] = $teachers;
 
         return $this;
     }

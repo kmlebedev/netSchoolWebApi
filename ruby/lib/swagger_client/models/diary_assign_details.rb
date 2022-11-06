@@ -23,7 +23,7 @@ module SwaggerClient
 
     attr_accessor :subject_group
 
-    attr_accessor :teacher
+    attr_accessor :teachers
 
     attr_accessor :product_id
 
@@ -49,7 +49,7 @@ module SwaggerClient
         :'activity_name' => :'activityName',
         :'problem_name' => :'problemName',
         :'subject_group' => :'subjectGroup',
-        :'teacher' => :'teacher',
+        :'teachers' => :'teachers',
         :'product_id' => :'productId',
         :'is_deleted' => :'isDeleted',
         :'weight' => :'weight',
@@ -69,7 +69,7 @@ module SwaggerClient
         :'activity_name' => :'Object',
         :'problem_name' => :'Object',
         :'subject_group' => :'Object',
-        :'teacher' => :'Object',
+        :'teachers' => :'Object',
         :'product_id' => :'Object',
         :'is_deleted' => :'Object',
         :'weight' => :'Object',
@@ -122,8 +122,10 @@ module SwaggerClient
         self.subject_group = attributes[:'subject_group']
       end
 
-      if attributes.key?(:'teacher')
-        self.teacher = attributes[:'teacher']
+      if attributes.key?(:'teachers')
+        if (value = attributes[:'teachers']).is_a?(Array)
+          self.teachers = value
+        end
       end
 
       if attributes.key?(:'product_id')
@@ -188,7 +190,7 @@ module SwaggerClient
           activity_name == o.activity_name &&
           problem_name == o.problem_name &&
           subject_group == o.subject_group &&
-          teacher == o.teacher &&
+          teachers == o.teachers &&
           product_id == o.product_id &&
           is_deleted == o.is_deleted &&
           weight == o.weight &&
@@ -208,7 +210,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, assignment_name, activity_name, problem_name, subject_group, teacher, product_id, is_deleted, weight, date, description, attachments, content_elements, code_content_elements].hash
+      [id, assignment_name, activity_name, problem_name, subject_group, teachers, product_id, is_deleted, weight, date, description, attachments, content_elements, code_content_elements].hash
     end
 
     # Builds the object from hash

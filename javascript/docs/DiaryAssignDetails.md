@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **activityName** | **String** |  | [optional] 
 **problemName** | **String** |  | [optional] 
 **subjectGroup** | [**DiaryAssignDetailsSubjectGroup**](DiaryAssignDetailsSubjectGroup.md) |  | [optional] 
-**teacher** | [**DiaryAssignDetailsTeacher**](DiaryAssignDetailsTeacher.md) |  | [optional] 
+**teachers** | [**[DiaryAssignDetailsTeachers]**](DiaryAssignDetailsTeachers.md) |  | [optional] 
 **productId** | **Number** |  | [optional] 
 **isDeleted** | **Boolean** |  | [optional] 
 **weight** | **Number** |  | [optional] 

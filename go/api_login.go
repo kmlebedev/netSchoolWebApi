@@ -299,6 +299,129 @@ func (a *LoginApiService) Logindata(ctx context.Context) (LoginData, *http.Respo
 }
 /*
 LoginApiService
+returns all loginform
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *LoginApiLoginformOpts - Optional Parameters:
+     * @param "Cid" (optional.Int32) - 
+     * @param "Sid" (optional.Int32) - 
+     * @param "Pid" (optional.Int32) - 
+     * @param "Cn" (optional.Int32) - 
+     * @param "Sft" (optional.Int32) - 
+     * @param "LASTNAME" (optional.String) - 
+     * @param "CacheVer" (optional.String) - 
+@return LoginForm
+*/
+
+type LoginApiLoginformOpts struct {
+    Cid optional.Int32
+    Sid optional.Int32
+    Pid optional.Int32
+    Cn optional.Int32
+    Sft optional.Int32
+    LASTNAME optional.String
+    CacheVer optional.String
+}
+
+func (a *LoginApiService) Loginform(ctx context.Context, localVarOptionals *LoginApiLoginformOpts) (LoginForm, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue LoginForm
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/loginform"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.Cid.IsSet() {
+		localVarQueryParams.Add("cid", parameterToString(localVarOptionals.Cid.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Sid.IsSet() {
+		localVarQueryParams.Add("sid", parameterToString(localVarOptionals.Sid.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Pid.IsSet() {
+		localVarQueryParams.Add("pid", parameterToString(localVarOptionals.Pid.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Cn.IsSet() {
+		localVarQueryParams.Add("cn", parameterToString(localVarOptionals.Cn.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Sft.IsSet() {
+		localVarQueryParams.Add("sft", parameterToString(localVarOptionals.Sft.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.LASTNAME.IsSet() {
+		localVarQueryParams.Add("LASTNAME", parameterToString(localVarOptionals.LASTNAME.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.CacheVer.IsSet() {
+		localVarQueryParams.Add("cacheVer", parameterToString(localVarOptionals.CacheVer.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		if err == nil { 
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body: localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v LoginForm
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+/*
+LoginApiService
 returns all prepareemloginform
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *LoginApiPrepareemloginformOpts - Optional Parameters:
@@ -395,11 +518,23 @@ LoginApiService
 returns all prepareloginform
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param optional nil or *LoginApiPrepareloginformOpts - Optional Parameters:
+     * @param "Cid" (optional.Int32) - 
+     * @param "Sid" (optional.Int32) - 
+     * @param "Pid" (optional.Int32) - 
+     * @param "Cn" (optional.Int32) - 
+     * @param "Sft" (optional.Int32) - 
+     * @param "LASTNAME" (optional.String) - 
      * @param "CacheVer" (optional.String) - 
 @return PrepareLoginForm
 */
 
 type LoginApiPrepareloginformOpts struct {
+    Cid optional.Int32
+    Sid optional.Int32
+    Pid optional.Int32
+    Cn optional.Int32
+    Sft optional.Int32
+    LASTNAME optional.String
     CacheVer optional.String
 }
 
@@ -419,6 +554,24 @@ func (a *LoginApiService) Prepareloginform(ctx context.Context, localVarOptional
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.Cid.IsSet() {
+		localVarQueryParams.Add("cid", parameterToString(localVarOptionals.Cid.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Sid.IsSet() {
+		localVarQueryParams.Add("sid", parameterToString(localVarOptionals.Sid.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Pid.IsSet() {
+		localVarQueryParams.Add("pid", parameterToString(localVarOptionals.Pid.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Cn.IsSet() {
+		localVarQueryParams.Add("cn", parameterToString(localVarOptionals.Cn.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Sft.IsSet() {
+		localVarQueryParams.Add("sft", parameterToString(localVarOptionals.Sft.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.LASTNAME.IsSet() {
+		localVarQueryParams.Add("LASTNAME", parameterToString(localVarOptionals.LASTNAME.Value(), ""))
+	}
 	if localVarOptionals != nil && localVarOptionals.CacheVer.IsSet() {
 		localVarQueryParams.Add("cacheVer", parameterToString(localVarOptionals.CacheVer.Value(), ""))
 	}

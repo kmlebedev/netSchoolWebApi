@@ -984,6 +984,308 @@ class LoginApi
     }
 
     /**
+     * Operation loginform
+     *
+     * @param  int $cid cid (optional)
+     * @param  int $sid sid (optional)
+     * @param  int $pid pid (optional)
+     * @param  int $cn cn (optional)
+     * @param  int $sft sft (optional)
+     * @param  string $lastname lastname (optional)
+     * @param  string $cache_ver cache_ver (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\LoginForm
+     */
+    public function loginform($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
+    {
+        list($response) = $this->loginformWithHttpInfo($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver);
+        return $response;
+    }
+
+    /**
+     * Operation loginformWithHttpInfo
+     *
+     * @param  int $cid (optional)
+     * @param  int $sid (optional)
+     * @param  int $pid (optional)
+     * @param  int $cn (optional)
+     * @param  int $sft (optional)
+     * @param  string $lastname (optional)
+     * @param  string $cache_ver (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\LoginForm, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function loginformWithHttpInfo($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
+    {
+        $returnType = '\Swagger\Client\Model\LoginForm';
+        $request = $this->loginformRequest($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\LoginForm',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation loginformAsync
+     *
+     * 
+     *
+     * @param  int $cid (optional)
+     * @param  int $sid (optional)
+     * @param  int $pid (optional)
+     * @param  int $cn (optional)
+     * @param  int $sft (optional)
+     * @param  string $lastname (optional)
+     * @param  string $cache_ver (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function loginformAsync($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
+    {
+        return $this->loginformAsyncWithHttpInfo($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation loginformAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  int $cid (optional)
+     * @param  int $sid (optional)
+     * @param  int $pid (optional)
+     * @param  int $cn (optional)
+     * @param  int $sft (optional)
+     * @param  string $lastname (optional)
+     * @param  string $cache_ver (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function loginformAsyncWithHttpInfo($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
+    {
+        $returnType = '\Swagger\Client\Model\LoginForm';
+        $request = $this->loginformRequest($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'loginform'
+     *
+     * @param  int $cid (optional)
+     * @param  int $sid (optional)
+     * @param  int $pid (optional)
+     * @param  int $cn (optional)
+     * @param  int $sft (optional)
+     * @param  string $lastname (optional)
+     * @param  string $cache_ver (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function loginformRequest($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
+    {
+
+        $resourcePath = '/loginform';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($cid !== null) {
+            $queryParams['cid'] = ObjectSerializer::toQueryValue($cid, null);
+        }
+        // query params
+        if ($sid !== null) {
+            $queryParams['sid'] = ObjectSerializer::toQueryValue($sid, null);
+        }
+        // query params
+        if ($pid !== null) {
+            $queryParams['pid'] = ObjectSerializer::toQueryValue($pid, null);
+        }
+        // query params
+        if ($cn !== null) {
+            $queryParams['cn'] = ObjectSerializer::toQueryValue($cn, null);
+        }
+        // query params
+        if ($sft !== null) {
+            $queryParams['sft'] = ObjectSerializer::toQueryValue($sft, null);
+        }
+        // query params
+        if ($lastname !== null) {
+            $queryParams['LASTNAME'] = ObjectSerializer::toQueryValue($lastname, null);
+        }
+        // query params
+        if ($cache_ver !== null) {
+            $queryParams['cacheVer'] = ObjectSerializer::toQueryValue($cache_ver, null);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation prepareemloginform
      *
      * @param  string $cache_ver cache_ver (optional)
@@ -1234,31 +1536,43 @@ class LoginApi
     /**
      * Operation prepareloginform
      *
+     * @param  int $cid cid (optional)
+     * @param  int $sid sid (optional)
+     * @param  int $pid pid (optional)
+     * @param  int $cn cn (optional)
+     * @param  int $sft sft (optional)
+     * @param  string $lastname lastname (optional)
      * @param  string $cache_ver cache_ver (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\PrepareLoginForm
      */
-    public function prepareloginform($cache_ver = null)
+    public function prepareloginform($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
     {
-        list($response) = $this->prepareloginformWithHttpInfo($cache_ver);
+        list($response) = $this->prepareloginformWithHttpInfo($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver);
         return $response;
     }
 
     /**
      * Operation prepareloginformWithHttpInfo
      *
+     * @param  int $cid (optional)
+     * @param  int $sid (optional)
+     * @param  int $pid (optional)
+     * @param  int $cn (optional)
+     * @param  int $sft (optional)
+     * @param  string $lastname (optional)
      * @param  string $cache_ver (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\PrepareLoginForm, HTTP status code, HTTP response headers (array of strings)
      */
-    public function prepareloginformWithHttpInfo($cache_ver = null)
+    public function prepareloginformWithHttpInfo($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
     {
         $returnType = '\Swagger\Client\Model\PrepareLoginForm';
-        $request = $this->prepareloginformRequest($cache_ver);
+        $request = $this->prepareloginformRequest($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1324,14 +1638,20 @@ class LoginApi
      *
      * 
      *
+     * @param  int $cid (optional)
+     * @param  int $sid (optional)
+     * @param  int $pid (optional)
+     * @param  int $cn (optional)
+     * @param  int $sft (optional)
+     * @param  string $lastname (optional)
      * @param  string $cache_ver (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function prepareloginformAsync($cache_ver = null)
+    public function prepareloginformAsync($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
     {
-        return $this->prepareloginformAsyncWithHttpInfo($cache_ver)
+        return $this->prepareloginformAsyncWithHttpInfo($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1344,15 +1664,21 @@ class LoginApi
      *
      * 
      *
+     * @param  int $cid (optional)
+     * @param  int $sid (optional)
+     * @param  int $pid (optional)
+     * @param  int $cn (optional)
+     * @param  int $sft (optional)
+     * @param  string $lastname (optional)
      * @param  string $cache_ver (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function prepareloginformAsyncWithHttpInfo($cache_ver = null)
+    public function prepareloginformAsyncWithHttpInfo($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
     {
         $returnType = '\Swagger\Client\Model\PrepareLoginForm';
-        $request = $this->prepareloginformRequest($cache_ver);
+        $request = $this->prepareloginformRequest($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1394,12 +1720,18 @@ class LoginApi
     /**
      * Create request for operation 'prepareloginform'
      *
+     * @param  int $cid (optional)
+     * @param  int $sid (optional)
+     * @param  int $pid (optional)
+     * @param  int $cn (optional)
+     * @param  int $sft (optional)
+     * @param  string $lastname (optional)
      * @param  string $cache_ver (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function prepareloginformRequest($cache_ver = null)
+    protected function prepareloginformRequest($cid = null, $sid = null, $pid = null, $cn = null, $sft = null, $lastname = null, $cache_ver = null)
     {
 
         $resourcePath = '/prepareloginform';
@@ -1409,6 +1741,30 @@ class LoginApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($cid !== null) {
+            $queryParams['cid'] = ObjectSerializer::toQueryValue($cid, null);
+        }
+        // query params
+        if ($sid !== null) {
+            $queryParams['sid'] = ObjectSerializer::toQueryValue($sid, null);
+        }
+        // query params
+        if ($pid !== null) {
+            $queryParams['pid'] = ObjectSerializer::toQueryValue($pid, null);
+        }
+        // query params
+        if ($cn !== null) {
+            $queryParams['cn'] = ObjectSerializer::toQueryValue($cn, null);
+        }
+        // query params
+        if ($sft !== null) {
+            $queryParams['sft'] = ObjectSerializer::toQueryValue($sft, null);
+        }
+        // query params
+        if ($lastname !== null) {
+            $queryParams['LASTNAME'] = ObjectSerializer::toQueryValue($lastname, null);
+        }
         // query params
         if ($cache_ver !== null) {
             $queryParams['cacheVer'] = ObjectSerializer::toQueryValue($cache_ver, null);

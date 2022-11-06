@@ -123,6 +123,24 @@ end
 
 api_instance = SwaggerClient::LoginApi.new
 opts = { 
+  cid: 56, # Integer | 
+  sid: 56, # Integer | 
+  pid: 56, # Integer | 
+  cn: 56, # Integer | 
+  sft: 56, # Integer | 
+  lastname: 'lastname_example', # String | 
+  cache_ver: 'cache_ver_example' # String | 
+}
+
+begin
+  result = api_instance.loginform(opts)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling LoginApi->loginform: #{e}"
+end
+
+api_instance = SwaggerClient::LoginApi.new
+opts = { 
   cache_ver: 'cache_ver_example' # String | 
 }
 
@@ -135,6 +153,12 @@ end
 
 api_instance = SwaggerClient::LoginApi.new
 opts = { 
+  cid: 56, # Integer | 
+  sid: 56, # Integer | 
+  pid: 56, # Integer | 
+  cn: 56, # Integer | 
+  sft: 56, # Integer | 
+  lastname: 'lastname_example', # String | 
   cache_ver: 'cache_ver_example' # String | 
 }
 
@@ -217,6 +241,7 @@ Class | Method | HTTP request | Description
 *SwaggerClient::LoginApi* | [**getauthdata**](docs/LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *SwaggerClient::LoginApi* | [**login**](docs/LoginApi.md#login) | **POST** /login | 
 *SwaggerClient::LoginApi* | [**logindata**](docs/LoginApi.md#logindata) | **GET** /logindata | 
+*SwaggerClient::LoginApi* | [**loginform**](docs/LoginApi.md#loginform) | **GET** /loginform | 
 *SwaggerClient::LoginApi* | [**prepareemloginform**](docs/LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 *SwaggerClient::LoginApi* | [**prepareloginform**](docs/LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 *SwaggerClient::MysettingsApi* | [**mysettings**](docs/MysettingsApi.md#mysettings) | **GET** /mysettings | 
@@ -233,7 +258,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::DiaryAssignDetails](docs/DiaryAssignDetails.md)
  - [SwaggerClient::DiaryAssignDetailsAttachments](docs/DiaryAssignDetailsAttachments.md)
  - [SwaggerClient::DiaryAssignDetailsSubjectGroup](docs/DiaryAssignDetailsSubjectGroup.md)
- - [SwaggerClient::DiaryAssignDetailsTeacher](docs/DiaryAssignDetailsTeacher.md)
+ - [SwaggerClient::DiaryAssignDetailsTeachers](docs/DiaryAssignDetailsTeachers.md)
  - [SwaggerClient::DiaryAssignment](docs/DiaryAssignment.md)
  - [SwaggerClient::DiaryLesson](docs/DiaryLesson.md)
  - [SwaggerClient::DiaryWeekDays](docs/DiaryWeekDays.md)
@@ -247,6 +272,7 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::LoginAccountInfoUserRolesRole](docs/LoginAccountInfoUserRolesRole.md)
  - [SwaggerClient::LoginBody](docs/LoginBody.md)
  - [SwaggerClient::LoginData](docs/LoginData.md)
+ - [SwaggerClient::LoginForm](docs/LoginForm.md)
  - [SwaggerClient::LoginRequestData](docs/LoginRequestData.md)
  - [SwaggerClient::Mark](docs/Mark.md)
  - [SwaggerClient::MySettings](docs/MySettings.md)

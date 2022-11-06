@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 [**login**](LoginApi.md#login) | **POST** /login | 
 [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
+[**loginform**](LoginApi.md#loginform) | **GET** /loginform | 
 [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 [**prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 
@@ -171,6 +172,67 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **loginform**
+> \Swagger\Client\Model\LoginForm loginform($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver)
+
+
+
+returns all loginform
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\LoginApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cid = 56; // int | 
+$sid = 56; // int | 
+$pid = 56; // int | 
+$cn = 56; // int | 
+$sft = 56; // int | 
+$lastname = "lastname_example"; // string | 
+$cache_ver = "cache_ver_example"; // string | 
+
+try {
+    $result = $apiInstance->loginform($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LoginApi->loginform: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cid** | **int**|  | [optional]
+ **sid** | **int**|  | [optional]
+ **pid** | **int**|  | [optional]
+ **cn** | **int**|  | [optional]
+ **sft** | **int**|  | [optional]
+ **lastname** | **string**|  | [optional]
+ **cache_ver** | **string**|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\LoginForm**](../Model/LoginForm.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **prepareemloginform**
 > \Swagger\Client\Model\PrepareEmLoginForm prepareemloginform($cache_ver)
 
@@ -221,7 +283,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **prepareloginform**
-> \Swagger\Client\Model\PrepareLoginForm prepareloginform($cache_ver)
+> \Swagger\Client\Model\PrepareLoginForm prepareloginform($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver)
 
 
 
@@ -237,10 +299,16 @@ $apiInstance = new Swagger\Client\Api\LoginApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$cid = 56; // int | 
+$sid = 56; // int | 
+$pid = 56; // int | 
+$cn = 56; // int | 
+$sft = 56; // int | 
+$lastname = "lastname_example"; // string | 
 $cache_ver = "cache_ver_example"; // string | 
 
 try {
-    $result = $apiInstance->prepareloginform($cache_ver);
+    $result = $apiInstance->prepareloginform($cid, $sid, $pid, $cn, $sft, $lastname, $cache_ver);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LoginApi->prepareloginform: ', $e->getMessage(), PHP_EOL;
@@ -252,6 +320,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cid** | **int**|  | [optional]
+ **sid** | **int**|  | [optional]
+ **pid** | **int**|  | [optional]
+ **cn** | **int**|  | [optional]
+ **sft** | **int**|  | [optional]
+ **lastname** | **string**|  | [optional]
  **cache_ver** | **string**|  | [optional]
 
 ### Return type

@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.DiaryAssignDetailsAttachments;
 import io.swagger.client.model.DiaryAssignDetailsSubjectGroup;
-import io.swagger.client.model.DiaryAssignDetailsTeacher;
+import io.swagger.client.model.DiaryAssignDetailsTeachers;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ import org.threeten.bp.LocalDate;
  * DiaryAssignDetails
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-10-24T12:37:15.210Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-11-06T08:52:10.951Z[GMT]")
 public class DiaryAssignDetails {
   @SerializedName("id")
   private Integer id = null;
@@ -48,8 +48,8 @@ public class DiaryAssignDetails {
   @SerializedName("subjectGroup")
   private DiaryAssignDetailsSubjectGroup subjectGroup = null;
 
-  @SerializedName("teacher")
-  private DiaryAssignDetailsTeacher teacher = null;
+  @SerializedName("teachers")
+  private List<DiaryAssignDetailsTeachers> teachers = null;
 
   @SerializedName("productId")
   private Integer productId = null;
@@ -165,22 +165,30 @@ public class DiaryAssignDetails {
     this.subjectGroup = subjectGroup;
   }
 
-  public DiaryAssignDetails teacher(DiaryAssignDetailsTeacher teacher) {
-    this.teacher = teacher;
+  public DiaryAssignDetails teachers(List<DiaryAssignDetailsTeachers> teachers) {
+    this.teachers = teachers;
+    return this;
+  }
+
+  public DiaryAssignDetails addTeachersItem(DiaryAssignDetailsTeachers teachersItem) {
+    if (this.teachers == null) {
+      this.teachers = new ArrayList<DiaryAssignDetailsTeachers>();
+    }
+    this.teachers.add(teachersItem);
     return this;
   }
 
    /**
-   * Get teacher
-   * @return teacher
+   * Get teachers
+   * @return teachers
   **/
   @Schema(description = "")
-  public DiaryAssignDetailsTeacher getTeacher() {
-    return teacher;
+  public List<DiaryAssignDetailsTeachers> getTeachers() {
+    return teachers;
   }
 
-  public void setTeacher(DiaryAssignDetailsTeacher teacher) {
-    this.teacher = teacher;
+  public void setTeachers(List<DiaryAssignDetailsTeachers> teachers) {
+    this.teachers = teachers;
   }
 
   public DiaryAssignDetails productId(Integer productId) {
@@ -366,7 +374,7 @@ public class DiaryAssignDetails {
         Objects.equals(this.activityName, diaryAssignDetails.activityName) &&
         Objects.equals(this.problemName, diaryAssignDetails.problemName) &&
         Objects.equals(this.subjectGroup, diaryAssignDetails.subjectGroup) &&
-        Objects.equals(this.teacher, diaryAssignDetails.teacher) &&
+        Objects.equals(this.teachers, diaryAssignDetails.teachers) &&
         Objects.equals(this.productId, diaryAssignDetails.productId) &&
         Objects.equals(this.isDeleted, diaryAssignDetails.isDeleted) &&
         Objects.equals(this.weight, diaryAssignDetails.weight) &&
@@ -379,7 +387,7 @@ public class DiaryAssignDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, assignmentName, activityName, problemName, subjectGroup, teacher, productId, isDeleted, weight, date, description, attachments, contentElements, codeContentElements);
+    return Objects.hash(id, assignmentName, activityName, problemName, subjectGroup, teachers, productId, isDeleted, weight, date, description, attachments, contentElements, codeContentElements);
   }
 
 
@@ -393,7 +401,7 @@ public class DiaryAssignDetails {
     sb.append("    activityName: ").append(toIndentedString(activityName)).append("\n");
     sb.append("    problemName: ").append(toIndentedString(problemName)).append("\n");
     sb.append("    subjectGroup: ").append(toIndentedString(subjectGroup)).append("\n");
-    sb.append("    teacher: ").append(toIndentedString(teacher)).append("\n");
+    sb.append("    teachers: ").append(toIndentedString(teachers)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    weight: ").append(toIndentedString(weight)).append("\n");

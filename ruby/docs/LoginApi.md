@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 [**login**](LoginApi.md#login) | **POST** /login | 
 [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
+[**loginform**](LoginApi.md#loginform) | **GET** /loginform | 
 [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 [**prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 
@@ -157,6 +158,64 @@ No authorization required
 
 
 
+# **loginform**
+> LoginForm loginform(opts)
+
+
+
+returns all loginform
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::LoginApi.new
+opts = { 
+  cid: 56, # Integer | 
+  sid: 56, # Integer | 
+  pid: 56, # Integer | 
+  cn: 56, # Integer | 
+  sft: 56, # Integer | 
+  lastname: 'lastname_example', # String | 
+  cache_ver: 'cache_ver_example' # String | 
+}
+
+begin
+  result = api_instance.loginform(opts)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling LoginApi->loginform: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cid** | **Integer**|  | [optional] 
+ **sid** | **Integer**|  | [optional] 
+ **pid** | **Integer**|  | [optional] 
+ **cn** | **Integer**|  | [optional] 
+ **sft** | **Integer**|  | [optional] 
+ **lastname** | **String**|  | [optional] 
+ **cache_ver** | **String**|  | [optional] 
+
+### Return type
+
+[**LoginForm**](LoginForm.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
 # **prepareemloginform**
 > PrepareEmLoginForm prepareemloginform(opts)
 
@@ -217,6 +276,12 @@ require 'swagger_client'
 
 api_instance = SwaggerClient::LoginApi.new
 opts = { 
+  cid: 56, # Integer | 
+  sid: 56, # Integer | 
+  pid: 56, # Integer | 
+  cn: 56, # Integer | 
+  sft: 56, # Integer | 
+  lastname: 'lastname_example', # String | 
   cache_ver: 'cache_ver_example' # String | 
 }
 
@@ -232,6 +297,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cid** | **Integer**|  | [optional] 
+ **sid** | **Integer**|  | [optional] 
+ **pid** | **Integer**|  | [optional] 
+ **cn** | **Integer**|  | [optional] 
+ **sft** | **Integer**|  | [optional] 
+ **lastname** | **String**|  | [optional] 
  **cache_ver** | **String**|  | [optional] 
 
 ### Return type

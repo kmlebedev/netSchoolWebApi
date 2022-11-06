@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **activityName** | [**kotlin.String**](.md) |  |  [optional]
 **problemName** | [**kotlin.String**](.md) |  |  [optional]
 **subjectGroup** | [**DiaryAssignDetailsSubjectGroup**](DiaryAssignDetailsSubjectGroup.md) |  |  [optional]
-**teacher** | [**DiaryAssignDetailsTeacher**](DiaryAssignDetailsTeacher.md) |  |  [optional]
+**teachers** | [**kotlin.Array&lt;DiaryAssignDetailsTeachers&gt;**](DiaryAssignDetailsTeachers.md) |  |  [optional]
 **productId** | [**kotlin.Int**](.md) |  |  [optional]
 **isDeleted** | [**kotlin.Boolean**](.md) |  |  [optional]
 **weight** | [**kotlin.Int**](.md) |  |  [optional]

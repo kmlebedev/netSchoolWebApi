@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 *LoginApi* | [**Getauthdata**](docs/LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 *LoginApi* | [**Login**](docs/LoginApi.md#login) | **POST** /login | 
 *LoginApi* | [**Logindata**](docs/LoginApi.md#logindata) | **GET** /logindata | 
+*LoginApi* | [**Loginform**](docs/LoginApi.md#loginform) | **GET** /loginform | 
 *LoginApi* | [**Prepareemloginform**](docs/LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 *LoginApi* | [**Prepareloginform**](docs/LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 *MysettingsApi* | [**Mysettings**](docs/MysettingsApi.md#mysettings) | **GET** /mysettings | 
@@ -115,7 +116,7 @@ Class | Method | HTTP request | Description
  - [Model.DiaryAssignDetails](docs/DiaryAssignDetails.md)
  - [Model.DiaryAssignDetailsAttachments](docs/DiaryAssignDetailsAttachments.md)
  - [Model.DiaryAssignDetailsSubjectGroup](docs/DiaryAssignDetailsSubjectGroup.md)
- - [Model.DiaryAssignDetailsTeacher](docs/DiaryAssignDetailsTeacher.md)
+ - [Model.DiaryAssignDetailsTeachers](docs/DiaryAssignDetailsTeachers.md)
  - [Model.DiaryAssignment](docs/DiaryAssignment.md)
  - [Model.DiaryLesson](docs/DiaryLesson.md)
  - [Model.DiaryWeekDays](docs/DiaryWeekDays.md)
@@ -129,6 +130,7 @@ Class | Method | HTTP request | Description
  - [Model.LoginAccountInfoUserRolesRole](docs/LoginAccountInfoUserRolesRole.md)
  - [Model.LoginBody](docs/LoginBody.md)
  - [Model.LoginData](docs/LoginData.md)
+ - [Model.LoginForm](docs/LoginForm.md)
  - [Model.LoginRequestData](docs/LoginRequestData.md)
  - [Model.Mark](docs/Mark.md)
  - [Model.MySettings](docs/MySettings.md)

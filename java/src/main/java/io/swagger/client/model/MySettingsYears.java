@@ -21,7 +21,7 @@ import java.util.List;
  * MySettingsYears
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-10-24T12:37:15.210Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-11-06T08:52:10.951Z[GMT]")
 public class MySettingsYears extends ArrayList<MySettingsYearsInner> {
 
   @Override

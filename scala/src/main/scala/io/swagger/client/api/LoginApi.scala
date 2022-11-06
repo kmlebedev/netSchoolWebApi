@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat
 import io.swagger.client.model.GetAuthData
 import io.swagger.client.model.Login
 import io.swagger.client.model.LoginData
+import io.swagger.client.model.LoginForm
 import io.swagger.client.model.PrepareEmLoginForm
 import io.swagger.client.model.PrepareLoginForm
 import io.swagger.client.{ApiInvoker, ApiException}
@@ -180,6 +181,44 @@ class LoginApi(
 
   /**
    * 
+   * returns all loginform
+   *
+   * @param cid  (optional)
+   * @param sid  (optional)
+   * @param pid  (optional)
+   * @param cn  (optional)
+   * @param sft  (optional)
+   * @param LASTNAME  (optional)
+   * @param cacheVer  (optional)
+   * @return LoginForm
+   */
+  def loginform(cid: Option[Integer] = None, sid: Option[Integer] = None, pid: Option[Integer] = None, cn: Option[Integer] = None, sft: Option[Integer] = None, LASTNAME: Option[String] = None, cacheVer: Option[String] = None): Option[LoginForm] = {
+    val await = Try(Await.result(loginformAsync(cid, sid, pid, cn, sft, LASTNAME, cacheVer), Duration.Inf))
+    await match {
+      case Success(i) => Some(await.get)
+      case Failure(t) => None
+    }
+  }
+
+  /**
+   *  asynchronously
+   * returns all loginform
+   *
+   * @param cid  (optional)
+   * @param sid  (optional)
+   * @param pid  (optional)
+   * @param cn  (optional)
+   * @param sft  (optional)
+   * @param LASTNAME  (optional)
+   * @param cacheVer  (optional)
+   * @return Future(LoginForm)
+   */
+  def loginformAsync(cid: Option[Integer] = None, sid: Option[Integer] = None, pid: Option[Integer] = None, cn: Option[Integer] = None, sft: Option[Integer] = None, LASTNAME: Option[String] = None, cacheVer: Option[String] = None): Future[LoginForm] = {
+      helper.loginform(cid, sid, pid, cn, sft, LASTNAME, cacheVer)
+  }
+
+  /**
+   * 
    * returns all prepareemloginform
    *
    * @param cacheVer  (optional)
@@ -208,11 +247,17 @@ class LoginApi(
    * 
    * returns all prepareloginform
    *
+   * @param cid  (optional)
+   * @param sid  (optional)
+   * @param pid  (optional)
+   * @param cn  (optional)
+   * @param sft  (optional)
+   * @param LASTNAME  (optional)
    * @param cacheVer  (optional)
    * @return PrepareLoginForm
    */
-  def prepareloginform(cacheVer: Option[String] = None): Option[PrepareLoginForm] = {
-    val await = Try(Await.result(prepareloginformAsync(cacheVer), Duration.Inf))
+  def prepareloginform(cid: Option[Integer] = None, sid: Option[Integer] = None, pid: Option[Integer] = None, cn: Option[Integer] = None, sft: Option[Integer] = None, LASTNAME: Option[String] = None, cacheVer: Option[String] = None): Option[PrepareLoginForm] = {
+    val await = Try(Await.result(prepareloginformAsync(cid, sid, pid, cn, sft, LASTNAME, cacheVer), Duration.Inf))
     await match {
       case Success(i) => Some(await.get)
       case Failure(t) => None
@@ -223,11 +268,17 @@ class LoginApi(
    *  asynchronously
    * returns all prepareloginform
    *
+   * @param cid  (optional)
+   * @param sid  (optional)
+   * @param pid  (optional)
+   * @param cn  (optional)
+   * @param sft  (optional)
+   * @param LASTNAME  (optional)
    * @param cacheVer  (optional)
    * @return Future(PrepareLoginForm)
    */
-  def prepareloginformAsync(cacheVer: Option[String] = None): Future[PrepareLoginForm] = {
-      helper.prepareloginform(cacheVer)
+  def prepareloginformAsync(cid: Option[Integer] = None, sid: Option[Integer] = None, pid: Option[Integer] = None, cn: Option[Integer] = None, sft: Option[Integer] = None, LASTNAME: Option[String] = None, cacheVer: Option[String] = None): Future[PrepareLoginForm] = {
+      helper.prepareloginform(cid, sid, pid, cn, sft, LASTNAME, cacheVer)
   }
 
 }
@@ -296,6 +347,56 @@ class LoginApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extend
     }
   }
 
+  def loginform(cid: Option[Integer] = None,
+    sid: Option[Integer] = None,
+    pid: Option[Integer] = None,
+    cn: Option[Integer] = None,
+    sft: Option[Integer] = None,
+    LASTNAME: Option[String] = None,
+    cacheVer: Option[String] = None
+    )(implicit reader: ClientResponseReader[LoginForm]): Future[LoginForm] = {
+    // create path and map variables
+    val path = (addFmt("/loginform"))
+
+    // query params
+    val queryParams = new mutable.HashMap[String, String]
+    val headerParams = new mutable.HashMap[String, String]
+
+    cid match {
+      case Some(param) => queryParams += "cid" -> param.toString
+      case _ => queryParams
+    }
+    sid match {
+      case Some(param) => queryParams += "sid" -> param.toString
+      case _ => queryParams
+    }
+    pid match {
+      case Some(param) => queryParams += "pid" -> param.toString
+      case _ => queryParams
+    }
+    cn match {
+      case Some(param) => queryParams += "cn" -> param.toString
+      case _ => queryParams
+    }
+    sft match {
+      case Some(param) => queryParams += "sft" -> param.toString
+      case _ => queryParams
+    }
+    LASTNAME match {
+      case Some(param) => queryParams += "LASTNAME" -> param.toString
+      case _ => queryParams
+    }
+    cacheVer match {
+      case Some(param) => queryParams += "cacheVer" -> param.toString
+      case _ => queryParams
+    }
+
+    val resFuture = client.submit("GET", path, queryParams.toMap, headerParams.toMap, "")
+    resFuture flatMap { resp =>
+      process(reader.read(resp))
+    }
+  }
+
   def prepareemloginform(cacheVer: Option[String] = None
     )(implicit reader: ClientResponseReader[PrepareEmLoginForm]): Future[PrepareEmLoginForm] = {
     // create path and map variables
@@ -316,7 +417,13 @@ class LoginApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extend
     }
   }
 
-  def prepareloginform(cacheVer: Option[String] = None
+  def prepareloginform(cid: Option[Integer] = None,
+    sid: Option[Integer] = None,
+    pid: Option[Integer] = None,
+    cn: Option[Integer] = None,
+    sft: Option[Integer] = None,
+    LASTNAME: Option[String] = None,
+    cacheVer: Option[String] = None
     )(implicit reader: ClientResponseReader[PrepareLoginForm]): Future[PrepareLoginForm] = {
     // create path and map variables
     val path = (addFmt("/prepareloginform"))
@@ -325,6 +432,30 @@ class LoginApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extend
     val queryParams = new mutable.HashMap[String, String]
     val headerParams = new mutable.HashMap[String, String]
 
+    cid match {
+      case Some(param) => queryParams += "cid" -> param.toString
+      case _ => queryParams
+    }
+    sid match {
+      case Some(param) => queryParams += "sid" -> param.toString
+      case _ => queryParams
+    }
+    pid match {
+      case Some(param) => queryParams += "pid" -> param.toString
+      case _ => queryParams
+    }
+    cn match {
+      case Some(param) => queryParams += "cn" -> param.toString
+      case _ => queryParams
+    }
+    sft match {
+      case Some(param) => queryParams += "sft" -> param.toString
+      case _ => queryParams
+    }
+    LASTNAME match {
+      case Some(param) => queryParams += "LASTNAME" -> param.toString
+      case _ => queryParams
+    }
     cacheVer match {
       case Some(param) => queryParams += "cacheVer" -> param.toString
       case _ => queryParams

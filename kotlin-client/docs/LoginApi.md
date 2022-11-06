@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getauthdata**](LoginApi.md#getauthdata) | **POST** /auth/getdata | 
 [**login**](LoginApi.md#login) | **POST** /login | 
 [**logindata**](LoginApi.md#logindata) | **GET** /logindata | 
+[**loginform**](LoginApi.md#loginform) | **GET** /loginform | 
 [**prepareemloginform**](LoginApi.md#prepareemloginform) | **GET** /prepareemloginform | 
 [**prepareloginform**](LoginApi.md#prepareloginform) | **GET** /prepareloginform | 
 
@@ -165,6 +166,65 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="loginform"></a>
+# **loginform**
+> LoginForm loginform(cid, sid, pid, cn, sft, lASTNAME, cacheVer)
+
+
+
+returns all loginform
+
+### Example
+```kotlin
+// Import classes:
+//import io.swagger.client.infrastructure.*
+//import io.swagger.client.models.*;
+
+val apiInstance = LoginApi()
+val cid : kotlin.Int = 56 // kotlin.Int | 
+val sid : kotlin.Int = 56 // kotlin.Int | 
+val pid : kotlin.Int = 56 // kotlin.Int | 
+val cn : kotlin.Int = 56 // kotlin.Int | 
+val sft : kotlin.Int = 56 // kotlin.Int | 
+val lASTNAME : kotlin.String = lASTNAME_example // kotlin.String | 
+val cacheVer : kotlin.String = cacheVer_example // kotlin.String | 
+try {
+    val result : LoginForm = apiInstance.loginform(cid, sid, pid, cn, sft, lASTNAME, cacheVer)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling LoginApi#loginform")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling LoginApi#loginform")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cid** | **kotlin.Int**|  | [optional]
+ **sid** | **kotlin.Int**|  | [optional]
+ **pid** | **kotlin.Int**|  | [optional]
+ **cn** | **kotlin.Int**|  | [optional]
+ **sft** | **kotlin.Int**|  | [optional]
+ **lASTNAME** | **kotlin.String**|  | [optional]
+ **cacheVer** | **kotlin.String**|  | [optional]
+
+### Return type
+
+[**LoginForm**](LoginForm.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="prepareemloginform"></a>
 # **prepareemloginform**
 > PrepareEmLoginForm prepareemloginform(cacheVer)
@@ -214,7 +274,7 @@ No authorization required
 
 <a name="prepareloginform"></a>
 # **prepareloginform**
-> PrepareLoginForm prepareloginform(cacheVer)
+> PrepareLoginForm prepareloginform(cid, sid, pid, cn, sft, lASTNAME, cacheVer)
 
 
 
@@ -227,9 +287,15 @@ returns all prepareloginform
 //import io.swagger.client.models.*;
 
 val apiInstance = LoginApi()
+val cid : kotlin.Int = 56 // kotlin.Int | 
+val sid : kotlin.Int = 56 // kotlin.Int | 
+val pid : kotlin.Int = 56 // kotlin.Int | 
+val cn : kotlin.Int = 56 // kotlin.Int | 
+val sft : kotlin.Int = 56 // kotlin.Int | 
+val lASTNAME : kotlin.String = lASTNAME_example // kotlin.String | 
 val cacheVer : kotlin.String = cacheVer_example // kotlin.String | 
 try {
-    val result : PrepareLoginForm = apiInstance.prepareloginform(cacheVer)
+    val result : PrepareLoginForm = apiInstance.prepareloginform(cid, sid, pid, cn, sft, lASTNAME, cacheVer)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling LoginApi#prepareloginform")
@@ -244,6 +310,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cid** | **kotlin.Int**|  | [optional]
+ **sid** | **kotlin.Int**|  | [optional]
+ **pid** | **kotlin.Int**|  | [optional]
+ **cn** | **kotlin.Int**|  | [optional]
+ **sft** | **kotlin.Int**|  | [optional]
+ **lASTNAME** | **kotlin.String**|  | [optional]
  **cacheVer** | **kotlin.String**|  | [optional]
 
 ### Return type
