@@ -982,7 +982,7 @@
           "items" : {
             "type" : "array",
             "items" : {
-              "$ref" : "#/components/schemas/PrepareEmLoginForm_countries"
+              "$ref" : "#/components/schemas/LoginForm_items"
             }
           },
           "lastElem" : {
@@ -1373,6 +1373,20 @@
             "type" : "integer"
           },
           "name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "LoginForm_items" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "atoTypeName" : {
             "type" : "string"
           }
         }
